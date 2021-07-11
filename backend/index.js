@@ -11,11 +11,13 @@ app.set("view engine","ejs");
 app.set("views","../frontend/views")
 
 app.get("/",(req,res)=>{
-    res.render("index")
+    res.render("index",{
+        pageTitle:'Trace % Trace'
+    })
 })
 
-app.post("/sendData",(req,res)=>{
-    
+app.post("/sendData",(req,res)=>{ 
+    console.log(req.body) 
     res.render("index",{
         BLNumber:req.body.BLNumber
     })
