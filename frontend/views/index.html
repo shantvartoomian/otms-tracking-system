@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>gg</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+
+  <link rel="stylesheet" href="../public/css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+<script src="../public/js/bootstrap.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ 
+
+  <style>
+ .btn-change7{
+    height: 50px;
+    width: 50px;
+    background: rgb(214, 39, 39);
+    margin: 0.5%;
+    float: left;
+    border:0px;
+    color:#fff;
+    box-shadow: 0 0 1px #ccc;
+    -webkit-transition-duration: 0.5s;
+    -webkit-transition-timing-function: linear;
+    box-shadow:0px 0 0 #31708f  inset;
+    
+}
+.btn-change7:hover{
+    box-shadow:100px 0 0 rgb(62, 68, 96) inset;
+}
+  </style>
+</head>
+<body>
+  <div class="se-pre-con"></div>
+  <!--Navbar -->
+<nav class="navbar  fixed-top navbar-expand-sm navbar-dark  float-right" style="background-color: rgb(62, 68, 96); font-size: 14px;">
+  <!--BRAND (Logo)-->
+  <a class="navbar-brand" href="#">
+    <img src="../public/pics/cropped-logo-otms-4.png" alt="">
+  </a>
+  <!--end of BRAND (Logo)-->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
+    aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" onclick="smoothScroll(document.getElementById('Home'))" style="cursor: pointer;">Home
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">All Shipments</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link "  onclick="smoothScroll(document.getElementById('OH'))" style="cursor: pointer;">Order History</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link "  onclick="smoothScroll(document.getElementById('Contact'))" style="cursor: pointer;">Contact Us</a>
+      </li>
+      
+    </ul>
+
+
+
+
+    <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
+      <li class="nav-item order-2 order-md-1"><a href="#" class="nav-link" title="settings"><i class="fa fa-cog fa-fw fa-lg"></i></a></li>
+      <li class="dropdown order-1">
+          <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn btn-outline-secondary dropdown-toggle">Login <span class="caret"></span></button>
+          <ul class="dropdown-menu dropdown-menu-right mt-2">
+             <li class="px-3 py-2">
+                 <form class="form" role="form">
+                      <div class="form-group">
+                          <input id="emailInput" placeholder="UserID" class="form-control form-control-sm" type="text" required="">
+                      </div>
+                      <div class="form-group">
+                          <input id="passwordInput" placeholder="Password" class="form-control form-control-sm" type="password" required="">
+                      </div>
+                      <div class="form-group">
+                          <button type="submit" class="btn btn-primary btn-block">Login</button>
+                      </div>
+                      <div class="form-group text-center">
+                          <small><a href="#" data-toggle="modal" data-target="#modalPassword">Forgot password?</a></small>
+                      </div>
+                  </form>
+              </li>
+          </ul>
+      </li>
+  </ul>
+
+
+
+
+
+    <!-- <ul class="navbar-nav ml-auto nav-flex-icons" style="font-family: B Nazanin;">
+      <li class="nav-item avatar p-1">
+        <a class="nav-link p-0 fa fa-user p-2 active" href="#">
+          <img src="" class="rounded-circle z-depth-0 "
+            alt=" " height="35">
+        </a>
+      </li>
+      <div class="dropdown " >
+        <button class="btn btn-secondary dropdown-toggle " style="font-family: B Nazanin;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <b>شانت وارطومیان</b>
+        </button>
+        <div class="dropdown-menu animate slideIn" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">حساب کاربری</a>
+          <a class="dropdown-item" href="#">خروج</a>
+          
+        </div>
+      </div>
+      
+      
+    </ul> -->
+  </div>
+</nav>
+<!--/.Navbar -->
+
+<!-- search bar -->
+<div class="bbbootstrap" id="Home" >
+  
+  <div class="container" style="padding-bottom: 90px; max-width: 600px;">
+    
+      <div class="input-group">
+  <input class="form-control text-center " style="height: 50px;"
+         placeholder="Enter BL/Ref NO.">
+  <div class="input-group-addon" ><i class="icon btn-change7  fa fa-search text-center" style="line-height: 50px; border-radius: 0% 10% 10% 0%; cursor: pointer;" onclick="showDiv(); scrollToResult();"></i></div>
+</div>
+
+  </div>
+
+</div>
+<!-- /.search bar -->
+
+
+
+<!--*********************** RESAULT ************************ -->
+<div class="  text-center body-container" id="OH" style="display: none;">
+<h3 class="text-center body-container">Results</h3><hr>
+  <div class="container body-container"  style="max-width: 100%;">
+    <article class="card body-container " >
+        <header class="card-header body-container"> My Orders / Tracking </header>
+        <div class="card-body body-container">
+          <span id="printableArea" ><h6 style="  -webkit-user-select: none; /* Safari */
+            -ms-user-select: none; /* IE 10 and IE 11 */
+            user-select: none; /* Standard syntax */">Order ID: OD45345345435</h6><span id="printableArea"><button class="btn btn-dark fa fa-moon" onclick="darkLight()"></button>
+            <article class="card body-container">
+                <div class="card-body row body-container">
+                    <div class="col"> <strong>PNo:</strong> <br> 29 nov 2019 </div>
+                    <div class="col"> <strong>FileNo:</strong> <br> Shant |  +989123456789 </div>
+                    <div class="col"> <strong>HBL:</strong> <br> <span style="background-color: rgb(157, 219, 41);"> On The Way</span>  </div>
+                    <div class="col"> <strong>BLIssueDateH:</strong> <br> BD045903594059 </div>
+                </div>
+                <div class="card-body row">
+                  <div class="col"> <strong>ETA:</strong> <br> Bandar Abas</div>
+                  <div class="col"> <strong>ArrivalDate:</strong> <br> Bandar Abbas </div>
+                  <div class="col"> <strong>DORcvdDate:</strong> <br> Semnan (IR SEM) </div>
+                  <div class="col"> <strong>DOSendDate:</strong> <br> Tehran (IR THR) </div>
+              </div>
+              <div class="card-body row">
+                <div class="col-sm-3"> <strong>Sea_CNTR:</strong> <br> Bandar Abas</div>
+                <div class="col-sm-3"> <strong>Sea_GateOut:</strong> <br> Bandar Abbas </div>
+                <div class="col-sm-3"> <strong>Sea_MTRTN:</strong> <br> Semnan (IR SEM) </div>
+              
+            </div>
+              <div class="card-body row">
+                <div class="col"> <strong>OverLand_TruckNo:</strong> <br> Bandar Abas</div>
+                <div class="col"> <strong>OverLand_Dispatch:</strong> <br> Bandar Abbas </div>
+                <div class="col"> <strong>OverLand_BorderCrossing:</strong> <br> Semnan (IR SEM) </div>
+                <div class="col"> <strong>OverLand_Discharge:</strong> <br> Tehran (IR THR) </div>
+            </div>
+              
+            
+
+          <div class="card-body row">
+            <div class="col-sm-3"> <strong>POL:</strong> <br> Bandar Abas</div>
+            <div class="col-sm-3"> <strong>POT:</strong> <br> Bandar Abbas </div>
+            <div class="col-sm-3"> <strong>POD:</strong> <br> Semnan (IR SEM) </div>
+          
+        </div>
+            </article>
+            <div class="track">
+                <div class="step  active "  > <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text darkColorWhite">Order confirmed</span> </div>
+                <div class="step  active "  > <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text darkColorWhite"> Picked by courier</span> </div>
+                <div class="step  active "  > <span class="icon"> <i class="fa fa-truck"></i> </span> <span class="text darkColorWhite"> On the way </span> </div>
+                <div class="step  "  > <span class="icon"> <i class="fa fa-box"></i> </span> <span class="text" >almost ready</span> </div>
+                <div class="step  "  > <span class="icon"> <i class="fa fa-home"></i> </span> <span class="text" id="done">Delivered</span> </div>
+                <div class="step  "  > <span class="icon"> <i class="fa fa-truck"></i> </span> <span class="text"> On the way </span> </div>
+
+            </div><br><br></span>
+            <hr>
+            <ul class="row ">
+                <li class="col-md-4">
+                    <figure class="itemside mb-3">
+                        <div class="aside"><img src="../public/pics/profile-picture-test.png" class="img-sm border"></div>
+                        <figcaption class="info align-self-center">
+                            <p class="title">General Cargo using X Shipments <br> 125kg G.W</p> <span class="text-muted">$950 </span>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li class="col-md-4">
+                    <figure class="itemside mb-3">
+                        <div class="aside"><img src="../public/pics/shipping.jpg" class="img-sm border"></div>
+                        <figcaption class="info align-self-center">
+                            <p class="title">DG Cargo using X Shipments<br> 250kg G.W</p> <span class="text-muted">$850 </span>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li class="col-md-4">
+                    <figure class="itemside mb-3">
+                        <div class="aside"><img src="../public/pics/litium bromide.jpeg" class="img-sm border"></div>
+                        <figcaption class="info align-self-center">
+                            <p class="title">General Cargo using X Shipments <br> 500kg G.w</p> <span class="text-muted">$650 </span>
+                        </figcaption>
+                    </figure>
+                </li>
+            </ul>
+            <hr> <a href="#" class="btn btn-warning" data-abc="true"> <i class="fa fa-chevron-left"></i> Back to orders</a>
+            <button class="btn btn-primary" onclick="printDiv('printableArea')"><i class="fa fa-print" aria-hidden="true" style="    font-size: 17px;"> Print</i></button>
+
+        </div>
+    </article>
+</div> 
+
+</div>
+
+  
+<button
+        type="button"
+        class="btn  btn-floating float-right btn-lg btn-change7"
+        id="btn-back-to-top"
+        >
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<!----------------------- Footer ------------------------>
+<footer class=" text-center text-white" id="Contact" style="background-color: rgb(62, 68, 96);">
+  <!-- Grid container -->
+  <div class="container p-4">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-facebook-f"></i></a>
+
+      <!-- Twitter -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-twitter"></i
+      ></a>
+
+      <!-- Google -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-google"></i
+      ></a>
+
+      <!-- Instagram -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-instagram"></i
+      ></a>
+
+      <!-- Linkedin -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-linkedin-in"></i
+      ></a>
+
+      <!-- Github -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-github"></i
+      ></a>
+    </section>
+    <!-- Section: Social media -->
+    <div class="row">
+      <div class="col-sm-6">
+        <h4>درباره ما</h4>
+        <p>شرکت کیاسامانه پیشگام با ارائه نرم افزارهای کاربردی،مسیر را برای کارمندان آسان میکند<br> .و با محاسبات دقیق، آسایش و آرامش را برای آنها به ارمغان می آورد</p>
+        
+      </div>
+      <div class="col-sm-6">
+        <h4>تماس با ما</h4>
+        <p>آدرس :
+
+          تهران، گیشا، خ ۲۱، پ ۴۹، واحد ۱<br>
+        تلفن تماس: 
+
+        ۸۸۲۷۴۴۴۶   
+ و 
+۸۸۲۷۴۴۶۰ 
+        <br>
+        ارتباط مستقیم با مدیرعامل: 
+
+        ۹۱۲۲۱۱۶۴۷۰ +۹۸ 
+        
+        
+        </p>
+        
+      </div>
+     
+    </div>
+
+<!-- Section: Text -->
+<section class="mb-4 ">
+  <p>
+    <strong>عضویت در خبرنامه</strong><br>
+    .با عضویت در خبرنامه کیا سامانه از آخرین اخبار و اطلاعیه‌های سایت قبل از هر کس دیگری با خبر شوید
+  </p>
+</section>
+    <!-- Section: Form -->
+    <section class="">
+      <form action="">
+        <!--Grid row-->
+        <div class="row d-flex justify-content-center">
+          <!--Grid column-->
+          <div class="col-auto">
+            
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-md-5 col-12">
+            <!-- Email input -->
+            <div class="form-outline form-white mb-4">
+              <input type="email" id="form5Example2" class="form-control text-center" placeholder="ایمیل خود را وارد کنید"/>
+              
+            </div>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-auto">
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-outline-light mb-4">
+              <b>عضویت</b>
+            </button>
+          </div>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </form>
+    </section>
+    <!-- Section: Form -->
+
+    <!-- Section: Text -->
+    
+    <!-- Section: Text -->
+
+    <!-- Section: Links -->
+    <section class="">
+      <!--Grid row-->
+      <div class="row ">
+       
+
+        <!--Grid column-->
+
+                <!--  <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                  <h5 class="text-uppercase">Links</h5>
+
+                  <ul class="list-unstyled mb-0">
+                    <li>
+                      <a href="#!" class="text-white">Link 1</a>
+                    </li>
+                    <li>
+                      <a href="#!" class="text-white">Link 2</a>
+                    </li>
+                    <li>
+                      <a href="#!" class="text-white">Link 3</a>
+                    </li>
+                    <li>
+                      <a href="#!" class="text-white">Link 4</a>
+                    </li>
+                  </ul>
+                </div>   -->
+
+        <!--Grid column-->
+
+       
+
+
+      </div>
+      <!--Grid row-->
+    </section>
+    <!-- Section: Links -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2021 Copyright:
+    <a class="text-white" href="https://otms.ir/">Otms.ir </a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!---------------------------- Footer ---------------------------->
+<script src="../public/js/script.js"></script>
+
+
+</body>
+</html>
+

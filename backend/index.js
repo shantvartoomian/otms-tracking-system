@@ -1,3 +1,7 @@
-console.log('Hello')
+const path=require('path');
 
-var x=10;
+const express=require('express');
+
+const app=express();
+
+console.log(express.static(path.join(__dirname,"../frontend")));
