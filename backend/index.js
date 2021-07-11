@@ -12,7 +12,7 @@ app.set("views","../frontend/views")
 
 app.get("/",(req,res)=>{
     res.render("index",{
-        pageTitle:'Trace % Trace'
+        pageTitle:'Trace & Trace'
     })
 })
 
