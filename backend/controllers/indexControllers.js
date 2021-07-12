@@ -1,9 +1,9 @@
 
 
 module.exports.showIndex=async(req,res)=>{
-    var x=req.body
     res.render("index",{
-        pageTitle:'Track & Trace'
+        pageTitle:'Track & Trace',
+        BlNumber:null
     })
 }
 
