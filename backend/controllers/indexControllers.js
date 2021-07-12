@@ -41,12 +41,13 @@ module.exports.getData=async(req,res)=>{
                 if(data.length>0){
 
                     result.push(data)
+                    console.log(data)
                 }
             }
     
              res.render("index",{
                 pageTitle:'Track & Trace',
-                result : result.length>0 ? result[0] : null
+                result : result.length>0 ? result : null
             })
         } catch (err) {
             console.log(err)          
