@@ -157,38 +157,133 @@
                 user-select: none; /* Standard syntax */">Order ID: OD45345345435</h6><span id="printableArea"><button class="btn btn-dark fa fa-moon" onclick="darkLight()"></button>
                 <article class="card body-container">
                     <div class="card-body row body-container">
-                        <div class="col"> <strong>PNo:</strong> <br><%=result[0].PNo  %> </div>
-                        <div class="col"> <strong>FileNo:</strong> <br> Shant |  +989123456789 </div>
-                        <div class="col"> <strong>HBL:</strong> <br> <span style="background-color: rgb(157, 219, 41);"> On The Way</span>  </div>
-                        <div class="col"> <strong>BLIssueDateH:</strong> <br> BD045903594059 </div>
+                      <% if (result[0].PNo) { %>
+                        <div class="col"> <strong>PNo:</strong> <br><%=result[0].PNo %> </div>
+                        <% } else { %>
+                          <div class="col"> <strong>PNo:</strong> <br> - </div>
+                      <% } %>
+                        
+                      <% if (result[0].FileNo) { %>
+                        <div class="col"> <strong>FileNo:</strong> <br><%=result[0].FileNo %> </div>
+                        <% } else { %>
+                          <div class="col"> <strong>FileNo:</strong> <br> - </div>
+                      <% } %>
+
+                      <% if (result[0].HBL) { %>
+                        <div class="col"> <strong>HBL:</strong> <br> <span style="background-color: rgb(157, 219, 41);"> <%=result[0].HBL %></span>  </div>
+                        <% } else { %>
+                          <div class="col"> <strong>HBL:</strong> <br> <span style="background-color: rgb(157, 219, 41);"> - </span>  </div>
+                      <% } %>
+
+                      <% if (result[0].BLIssueDateH) { %>
+                        <div class="col"> <strong>BLIssueDateH:</strong> <br> <%=result[0].BLIssueDateH %> </div>
+                        <% } else { %>
+                          <div class="col"> <strong>BLIssueDateH:</strong> <br> - </div>
+                      <% } %>
+                        
                     </div>
+
                     <div class="card-body row">
-                      <div class="col"> <strong>ETA:</strong> <br> Bandar Abas</div>
-                      <div class="col"> <strong>ArrivalDate:</strong> <br> Bandar Abbas </div>
-                      <div class="col"> <strong>DORcvdDate:</strong> <br> Semnan (IR SEM) </div>
-                      <div class="col"> <strong>DOSendDate:</strong> <br> Tehran (IR THR) </div>
+
+                      <% if (result[0].ETA) { %>
+                        <div class="col"> <strong>ETA:</strong> <br> <%=result[0].ETA %></div>
+                        <% } else { %>
+                          <div class="col"> <strong>ETA:</strong> <br> - %></div>
+                      <% } %>
+
+                      <% if (result[0].ArrivalDate) { %>
+                        <div class="col"> <strong>ArrivalDate:</strong> <br> <%=result[0].ArrivalDate %> </div>
+                        <% } else { %>
+                          <div class="col"> <strong>ArrivalDate:</strong> <br> - </div>
+                      <% } %>
+
+                      <% if (result[0].DORcvdDate) { %>
+                        <div class="col"> <strong>DORcvdDate:</strong> <br> <%=result[0].DORcvdDate %> </div> 
+                        <% } else { %>
+                          <div class="col"> <strong>DORcvdDate:</strong> <br> - </div>
+                      <% } %>
+                      
+                      <% if (result[0].DOSendDate) { %>
+                        <div class="col"> <strong>DOSendDate:</strong> <br> <%=result[0].DOSendDate %> </div>
+                        <% } else { %>
+                          <div class="col"> <strong>DOSendDate:</strong> <br> - </div>
+                      <% } %>
+                      
                   </div>
+
                   <div class="card-body row">
-                    <div class="col-sm-3"> <strong>Sea_CNTR:</strong> <br> Bandar Abas</div>
-                    <div class="col-sm-3"> <strong>Sea_GateOut:</strong> <br> Bandar Abbas </div>
-                    <div class="col-sm-3"> <strong>Sea_MTRTN:</strong> <br> Semnan (IR SEM) </div>
-                  
+
+                    <% if (result[0].Sea_CNTR) { %>
+                      <div class="col-sm-3"> <strong>Sea_CNTR:</strong> <br> <%=result[0].Sea_CNTR %></div>
+                      <% } else { %>
+                        <div class="col-sm-3"> <strong>Sea_CNTR:</strong> <br> - </div>
+                    <% } %>
+
+                    <% if (result[0].Sea_GateOut) { %>
+                       <div class="col-sm-3"> <strong>Sea_GateOut:</strong> <br> <%=result[0].Sea_GateOut %> </div> 
+                       <% } else { %>
+                        <div class="col-sm-3"> <strong>Sea_GateOut:</strong> <br> - </div> 
+                    <% } %>
+                 
+                    <% if (result[0].Sea_MTRTN) { %>
+                      <div class="col-sm-3"> <strong>Sea_MTRTN:</strong> <br> <%=result[0].Sea_MTRTN %> </div>
+                      <% } else { %>
+                        <div class="col-sm-3"> <strong>Sea_MTRTN:</strong> <br> - </div>
+                    <% } %>
+                    
                 </div>
+
                   <div class="card-body row">
-                    <div class="col"> <strong>OverLand_TruckNo:</strong> <br> Bandar Abas</div>
-                    <div class="col"> <strong>OverLand_Dispatch:</strong> <br> Bandar Abbas </div>
-                    <div class="col"> <strong>OverLand_BorderCrossing:</strong> <br> Semnan (IR SEM) </div>
-                    <div class="col"> <strong>OverLand_Discharge:</strong> <br> Tehran (IR THR) </div>
+
+                    <% if (result[0].OverLand_TruckNo) { %>
+                      <div class="col"> <strong>OverLand_TruckNo:</strong> <br> <%=result[0].OverLand_TruckNo %></div>
+                      <% } else { %>
+                        <div class="col"> <strong>OverLand_TruckNo:</strong> <br> - </div>
+                    <% } %>
+                    
+                    <% if (result[0].OverLand_Dispatch) { %>
+                      <div class="col"> <strong>OverLand_Dispatch:</strong> <br> <%=result[0].OverLand_Dispatch %> </div>
+                      <% } else { %>
+                        <div class="col"> <strong>OverLand_Dispatch:</strong> <br> - </div>
+                    <% } %>
+                    
+                    <% if (result[0].OverLand_BorderCrossing) { %>
+                      <div class="col"> <strong>OverLand_BorderCrossing:</strong> <br> <%=result[0].OverLand_BorderCrossing %> </div>
+                      <% } else { %>
+                        <div class="col"> <strong>OverLand_BorderCrossing:</strong> <br> - </div>
+                    <% } %>
+                    
+                    <% if (result[0].OverLand_Discharge) { %>
+                      <div class="col"> <strong>OverLand_Discharge:</strong> <br> <%=result[0].OverLand_Discharge %>  </div>
+                      <% } else { %>
+                        <div class="col"> <strong>OverLand_Discharge:</strong> <br> - </div>
+                    <% } %>
+                    
                 </div>
                   
                 
-    
               <div class="card-body row">
-                <div class="col-sm-3"> <strong>POL:</strong> <br> Bandar Abas</div>
-                <div class="col-sm-3"> <strong>POT:</strong> <br> Bandar Abbas </div>
-                <div class="col-sm-3"> <strong>POD:</strong> <br> Semnan (IR SEM) </div>
-              
+
+                    <% if (result[0].POL) { %>
+                      <div class="col"> <strong>POL:</strong> <br><%=result[0].POL %> </div>
+                      <% } else { %>
+                        <div class="col"> <strong>POL:</strong> <br> - </div>
+                    <% } %>
+                
+                    <% if (result[0].POT) { %>
+                      <div class="col"> <strong>POT:</strong> <br> <%=result[0].POT %> </div>
+                      <% } else { %>
+                       <div class="col"> <strong>POT:</strong> <br> - </div>
+                    <% } %>
+                
+                    <% if (result[0].POD) { %>
+                      <div class="col"> <strong>POD:</strong> <br> <%=result[0].POD %> </div>
+                      <% } else { %>
+                        <div class="col"> <strong>POD:</strong> <br> - </div>
+                    <% } %>
+                   
             </div>
+
                 </article>
                 <div class="track">
                     <div class="step  active "  > <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text darkColorWhite">Order confirmed</span> </div>
