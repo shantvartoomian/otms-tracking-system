@@ -12,11 +12,7 @@ app.set("views","../frontend/views")
 
 app.get("/",(req,res)=>{
     res.render("index",{
-<<<<<<< Updated upstream
         pageTitle:'Trace & Trace'
-=======
-        pageTitle:"OTMS Track & Trace"
->>>>>>> Stashed changes
     })
 })
 
