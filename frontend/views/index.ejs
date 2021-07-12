@@ -144,7 +144,7 @@
 
 
 <!--*********************** RESAULT ************************ -->
-<% if (BlNumber) { %>
+<% if (result) { %>
   <div class="  text-center body-container" id="OH">
     <h3 class="text-center body-container">Results</h3><hr>
     
@@ -157,7 +157,7 @@
                 user-select: none; /* Standard syntax */">Order ID: OD45345345435</h6><span id="printableArea"><button class="btn btn-dark fa fa-moon" onclick="darkLight()"></button>
                 <article class="card body-container">
                     <div class="card-body row body-container">
-                        <div class="col"> <strong>PNo:</strong> <br>333333</div>
+                        <div class="col"> <strong>PNo:</strong> <br><%=result[0].PNo  %> </div>
                         <div class="col"> <strong>FileNo:</strong> <br> Shant |  +989123456789 </div>
                         <div class="col"> <strong>HBL:</strong> <br> <span style="background-color: rgb(157, 219, 41);"> On The Way</span>  </div>
                         <div class="col"> <strong>BLIssueDateH:</strong> <br> BD045903594059 </div>
