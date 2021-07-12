@@ -1,17 +1,20 @@
 const express=require('express');
-const bodyParser=require('body-parser');
 
 const {setStatics}=require('./utils/statics');
+const setHeaders=require('./middlewares/setHeaders');
 const sequelize=require('./utils/database');
 
 const indexRoutes=require('./routes/index');
 
 const app=express();
 
-app.use(bodyParser.urlencoded({extended:false}))
+app.use(setHeaders)
+
+app.use(express.json())
 
 app.set("view engine","ejs");
 app.set("views","../frontend/views")
+
 
 setStatics(app)
 
