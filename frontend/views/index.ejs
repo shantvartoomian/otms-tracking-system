@@ -145,16 +145,14 @@
 
 <!--*********************** RESAULT ************************ -->
 <% if (result) { %>
-  <div class="  text-center body-container" id="OH">
+  <div class="  text-center body-container" id="OH"><button class="btn btn-dark fa fa-moon float-left" onclick="darkLight()"></button>
     <h3 class="text-center body-container">Results</h3><hr>
     
       <div class="container body-container"  style="max-width: 100%;">
         <article class="card body-container " >
-            <header class="card-header body-container"> My Orders / Tracking </header>
+            <!-- <header class="card-header body-container"> My Orders / Tracking </header> -->
             <div class="card-body body-container" >
-              <span id="printableArea" ><h6 style="  -webkit-user-select: none; /* Safari */
-                -ms-user-select: none; /* IE 10 and IE 11 */
-                user-select: none; /* Standard syntax */">Order ID: OD45345345435</h6><span id="printableArea"><button class="btn btn-dark fa fa-moon" onclick="darkLight()"></button>
+              <span id="printableArea" ><span id="printableArea">
                 <article class="card body-container">
                     <div class="card-body row body-container">
                       <% if (result[0].PNo) { %>
@@ -286,59 +284,76 @@
 
           <!-- tables for multiple container -->
 
-
-            <div style="height: 200px !important;
+<hr>
+            <div style="height: 250px !important;
             overflow: scroll;">
+            
           <div class="list-group" >
-            <% result.forEach(item => { %>           
-              <!-- <a href="#" class="list-group-item list-group-item-action list-group-item-secondary"><p><%=item.Sea_CNTR%></p></a>
-              <a href="#" class="list-group-item list-group-item-action list-group-item-secondary"><p><%=item.Sea_MTRTN%></p></a> -->
-
-              <div class="table-responsive">
-                <table class="table table-bordered table-info "  width="100%" >
-                  <thead>
-                    <tr>
-                      <th>Sea_CNTR</th>
-                      <th>Sea_GateOut</th>
-                      <th>Sea_MTRTN</th>
-                      <th></th>
-    
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td><%=item.Sea_CNTR%></td>
-                      <td><%=item.Sea_GateOut%></td>
-                      <td><%=item.Sea_MTRTN%></td>
-                      <td></th>
-    
-                    </tr>
-                  </tbody>
-
-                  <thead>
-                    <tr>
-                      <th>OverLand_TruckNo</th>
-                      <th>OverLand_Dispatch</th>
-                      <th>OverLand_BorderCrossing</th>
-                      <th>OverLand_Discharge</th>  
-    
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td><%=item.OverLand_TruckNo%></td>
-                      <td><%=item.OverLand_Dispatch%></td>
-                      <td><%=item.OverLand_BorderCrossing%></td>
-                      <tc><%=item.OverLand_Discharge%></th>
-    
-                    </tr>
-                  </tbody>
-
-                </table>
-              </div>
+                   
 
               
-             <% }) %>
+              <div class="table-responsive ">
+                <table class="table table-bordered table-striped table-default table-sm searchable sortable"  width="100%" id="myTable" >
+                  <% if (result[0].TransportationMode == 1 || result[0].TransportationMode == 5) { %>
+                    <thead style="background-color: rgb(173, 171, 171);">
+                      <tr>
+                        <th class="th-sm" onclick="sortTable(0)">CNTR</th>
+                        <th class="th-sm" onclick="sortTable(1)">GateOut</th>
+                        <th class="th-sm" onclick="sortTable(2)">MTRTN</th>
+                        
+      
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <% result.forEach(item => { %>  
+                      <tr>
+                        <td><%=item.Sea_CNTR%></td>
+                        <td><%=item.Sea_GateOut%></td>
+                        <td><%=item.Sea_MTRTN%></td>
+                        
+      
+                      </tr>
+                      <% }) %>
+                    </tbody>
+                    
+                  <% } %>
+                  <% if (result[0].TransportationMode == 3) { %>
+                    <thead style="background-color: rgb(173, 171, 171);">
+                      <tr>
+                        <th>OverLand_TruckNo</th>
+                        <th>OverLand_Dispatch</th>
+                        <th>OverLand_BorderCrossing</th>
+                        <th>OverLand_Discharge</th>  
+      
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <% result.forEach(item => { %>  
+                      <tr>
+                       
+                        <td><%=item.OverLand_TruckNo%></td>
+                        <td><%=item.OverLand_Dispatch%></td>
+                        <td><%=item.OverLand_BorderCrossing%></td>
+                        <td><%=item.OverLand_Discharge%></td>
+      
+                      </tr>
+                      <% }) %>
+                    </tbody>
+                  <% } %>
+                  
+
+                  
+
+                </table>
+
+                
+
+                
+              </div>
+              <!-- ------------------------------------------------------------ -->
+
+              <!-- ------------------------------------------------------------ -->
+           
           </div>
         </div>
          
@@ -358,7 +373,7 @@
     
                 </div><br><br></span>
                 <hr>
-                <ul class="row ">
+                <!-- <ul class="row ">
                     <li class="col-md-4">
                         <figure class="itemside mb-3">
                             <div class="aside"><img src="/../public/pics/profile-picture-test.png" class="img-sm border"></div>
@@ -383,8 +398,8 @@
                             </figcaption>
                         </figure>
                     </li>
-                </ul>
-                <hr> <a href="#" class="btn btn-warning" data-abc="true"> <i class="fa fa-chevron-left"></i> Back to orders</a>
+                </ul> -->
+                 <a href="#" class="btn btn-warning" data-abc="true"> <i class="fa fa-chevron-left"></i> Back to orders</a>
                 <button class="btn btn-primary" onclick="printDiv('printableArea')"><i class="fa fa-print" aria-hidden="true" style="    font-size: 17px;"> Print</i></button>
     
             </div>
