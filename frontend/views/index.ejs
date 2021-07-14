@@ -209,55 +209,8 @@
                       
                   </div>
 
-                  <div class="card-body row">
 
-                    <% if (result[0].Sea_CNTR) { %>
-                      <div class="col-sm-3"> <strong>Sea_CNTR:</strong> <br> <%=result[0].Sea_CNTR %></div>
-                      <% } else { %>
-                        <div class="col-sm-3"> <strong>Sea_CNTR:</strong> <br> - </div>
-                    <% } %>
-
-                    <% if (result[0].Sea_GateOut) { %>
-                       <div class="col-sm-3"> <strong>Sea_GateOut:</strong> <br> <%=result[0].Sea_GateOut %> </div> 
-                       <% } else { %>
-                        <div class="col-sm-3"> <strong>Sea_GateOut:</strong> <br> - </div> 
-                    <% } %>
-                 
-                    <% if (result[0].Sea_MTRTN) { %>
-                      <div class="col-sm-3"> <strong>Sea_MTRTN:</strong> <br> <%=result[0].Sea_MTRTN %> </div>
-                      <% } else { %>
-                        <div class="col-sm-3"> <strong>Sea_MTRTN:</strong> <br> - </div>
-                    <% } %>
-                    
-                </div>
-
-                  <div class="card-body row">
-
-                    <% if (result[0].OverLand_TruckNo) { %>
-                      <div class="col"> <strong>OverLand_TruckNo:</strong> <br> <%=result[0].OverLand_TruckNo %></div>
-                      <% } else { %>
-                        <div class="col"> <strong>OverLand_TruckNo:</strong> <br> - </div>
-                    <% } %>
-                    
-                    <% if (result[0].Overland_Dispatch) { %>
-                      <div class="col"> <strong>OverLand_Dispatch:</strong> <br> <%=result[0].Overland_Dispatch %> </div>
-                      <% } else { %>
-                        <div class="col"> <strong>OverLand_Dispatch:</strong> <br> - </div>
-                    <% } %>
-                    
-                    <% if (result[0].Overland_BorderCrossing) { %>
-                      <div class="col"> <strong>OverLand_BorderCrossing:</strong> <br> <%=result[0].Overland_BorderCrossing %> </div>
-                      <% } else { %>
-                        <div class="col"> <strong>OverLand_BorderCrossing:</strong> <br> - </div>
-                    <% } %>
-                    
-                    <% if (result[0].Overland_Discharge) { %>
-                      <div class="col"> <strong>OverLand_Discharge:</strong> <br> <%=result[0].Overland_Discharge %>  </div>
-                      <% } else { %>
-                        <div class="col"> <strong>OverLand_Discharge:</strong> <br> - </div>
-                    <% } %>
-                    
-                </div>
+                  
                   
                 
               <div class="card-body row">
@@ -320,10 +273,10 @@
                   <% if (result[0].TransportationMode == 3) { %>
                     <thead style="background-color: rgb(173, 171, 171);">
                       <tr>
-                        <th>OverLand_TruckNo</th>
-                        <th>OverLand_Dispatch</th>
-                        <th>OverLand_BorderCrossing</th>
-                        <th>OverLand_Discharge</th>  
+                        <th onclick="sortTable(0)">OverLand_TruckNo</th>
+                        <th onclick="sortTable(1)">OverLand_Dispatch</th>
+                        <th onclick="sortTable(2)">OverLand_BorderCrossing</th>
+                        <th onclick="sortTable(3)">OverLand_Discharge</th>  
       
                       </tr>
                     </thead>
@@ -332,9 +285,9 @@
                       <tr>
                        
                         <td><%=item.OverLand_TruckNo%></td>
-                        <td><%=item.OverLand_Dispatch%></td>
-                        <td><%=item.OverLand_BorderCrossing%></td>
-                        <td><%=item.OverLand_Discharge%></td>
+                        <td><%=item.Overland_Dispatch%></td>
+                        <td><%=item.Overland_BorderCrossing%></td>
+                        <td><%=item.Overland_Discharge%></td>
       
                       </tr>
                       <% }) %>
