@@ -111,3 +111,8 @@ $(window).on("load",function() {
   $(".se-pre-con").fadeOut("slow");;
 });
 //preloading end
+
+// result transportation scroll
+
+
+// end of transportation result scroll

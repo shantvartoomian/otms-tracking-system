@@ -151,7 +151,7 @@
       <div class="container body-container"  style="max-width: 100%;">
         <article class="card body-container " >
             <header class="card-header body-container"> My Orders / Tracking </header>
-            <div class="card-body body-container">
+            <div class="card-body body-container" >
               <span id="printableArea" ><h6 style="  -webkit-user-select: none; /* Safari */
                 -ms-user-select: none; /* IE 10 and IE 11 */
                 user-select: none; /* Standard syntax */">Order ID: OD45345345435</h6><span id="printableArea"><button class="btn btn-dark fa fa-moon" onclick="darkLight()"></button>
@@ -284,17 +284,68 @@
    
             </div>
 
-            <div class="list-group">
-              <a href="#" class="list-group-item list-group-item-action"></a>
-              <a href="#" class="list-group-item list-group-item-action list-group-item-success"></a>
-              <a href="#" class="list-group-item list-group-item-action list-group-item-secondary"></a>
-              <a href="#" class="list-group-item list-group-item-action list-group-item-info"></a>
-              <a href="#" class="list-group-item list-group-item-action list-group-item-warning"></a>
-              <a href="#" class="list-group-item list-group-item-action list-group-item-danger"></a>
-              <a href="#" class="list-group-item list-group-item-action list-group-item-primary"></a>
-              <a href="#" class="list-group-item list-group-item-action list-group-item-dark"></a>
-              <a href="#" class="list-group-item list-group-item-action list-group-item-light"></a>
-            </div>
+          <!-- tables for multiple container -->
+
+
+            <div style="height: 200px !important;
+            overflow: scroll;">
+          <div class="list-group" >
+            <% result.forEach(item => { %>           
+              <!-- <a href="#" class="list-group-item list-group-item-action list-group-item-secondary"><p><%=item.Sea_CNTR%></p></a>
+              <a href="#" class="list-group-item list-group-item-action list-group-item-secondary"><p><%=item.Sea_MTRTN%></p></a> -->
+
+              <div class="table-responsive">
+                <table class="table table-bordered table-info "  width="100%" >
+                  <thead>
+                    <tr>
+                      <th>Sea_CNTR</th>
+                      <th>Sea_GateOut</th>
+                      <th>Sea_MTRTN</th>
+                      <th></th>
+    
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><%=item.Sea_CNTR%></td>
+                      <td><%=item.Sea_GateOut%></td>
+                      <td><%=item.Sea_MTRTN%></td>
+                      <td></th>
+    
+                    </tr>
+                  </tbody>
+
+                  <thead>
+                    <tr>
+                      <th>OverLand_TruckNo</th>
+                      <th>OverLand_Dispatch</th>
+                      <th>OverLand_BorderCrossing</th>
+                      <th>OverLand_Discharge</th>  
+    
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><%=item.OverLand_TruckNo%></td>
+                      <td><%=item.OverLand_Dispatch%></td>
+                      <td><%=item.OverLand_BorderCrossing%></td>
+                      <tc><%=item.OverLand_Discharge%></th>
+    
+                    </tr>
+                  </tbody>
+
+                </table>
+              </div>
+
+              
+             <% }) %>
+          </div>
+        </div>
+         
+
+
+
+          <!-- tables for multiple container -->
 
                 </article>
                 <div class="track">
