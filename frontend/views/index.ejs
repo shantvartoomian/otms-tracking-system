@@ -59,7 +59,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">All Shipments</a>
+        <a class="nav-link disabled" href="#">All Shipments</a>
       </li>
       <li class="nav-item">
         <a class="nav-link "  onclick="smoothScroll(document.getElementById('OH'))" style="cursor: pointer;">Order History</a>
@@ -145,7 +145,7 @@
 
 <!--*********************** RESAULT ************************ -->
 <% if (result) { %>
-  <div class="  text-center body-container" id="OH"><button class="btn btn-dark fa fa-moon float-left" onclick="darkLight()"></button>
+  <div class="  text-center body-container" id="OH" ><button class="btn btn-dark fa fa-moon float-left" onclick="darkLight()"></button>
     <h3 class="text-center body-container">Results</h3><hr>
     
       <div class="container body-container"  style="max-width: 100%;">
@@ -239,14 +239,14 @@
 
 <hr>
             <div style="height: 250px !important;
-            overflow: scroll;">
+            overflow: scroll; max-width: 100%; ">
             
-          <div class="list-group" >
+          <div class="list-group"  >
                    
 
               
               <div class="table-responsive ">
-                <table class="table table-bordered table-striped table-default table-sm searchable sortable"  width="100%" id="myTable" >
+                <table class="table  table-striped table-default table-sm "  width="100%" id="myTable" style="overflow-y: scroll;">
                   <% if (result[0].TransportationMode == 1 || result[0].TransportationMode == 5) { %>
                     <thead style="background-color: rgb(173, 171, 171);">
                       <tr>
@@ -313,19 +313,38 @@
 
 
 
-          <!-- tables for multiple container -->
+          <!-- end of tables for multiple container -->
+  </article>
 
-                </article>
-                <div class="track">
-                    <div class="step  active "  > <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text darkColorWhite">Order confirmed</span> </div>
-                    <div class="step  active "  > <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text darkColorWhite"> Picked by courier</span> </div>
-                    <div class="step  active "  > <span class="icon"> <i class="fa fa-truck"></i> </span> <span class="text darkColorWhite"> On the way </span> </div>
-                    <div class="step  "  > <span class="icon"> <i class="fa fa-box"></i> </span> <span class="text" >almost ready</span> </div>
-                    <div class="step  "  > <span class="icon"> <i class="fa fa-home"></i> </span> <span class="text" id="done">Delivered</span> </div>
-                    <div class="step  "  > <span class="icon"> <i class="fa fa-truck"></i> </span> <span class="text"> On the way </span> </div>
-    
-                </div><br><br></span>
-                <hr>
+
+
+          <% if (result[0].TransportationMode == 1 || result[0].TransportationMode == 5) { %>
+            <div class="track">
+              <div class="step  active "  > <span class="icon"> <i class="fa fa-clock"></i> </span> <span class="text darkColorWhite">ETA</span> </div>
+              <div class="step  active "  > <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text darkColorWhite">Arrived</span> </div>
+              <div class="step  active "  > <span class="icon"> <i class="fa fa-ship"></i> </span> <span class="text darkColorWhite">Do Sent</span> </div>
+              <div class="step  "  > <span class="icon"> <i class="fa fa-box"></i> </span> <span class="text" >MT.Return</span> </div>
+
+
+          </div><br><br></span>
+          <hr>
+
+            
+          <% } %>
+
+
+          <% if (result[0].TransportationMode == 3) { %>
+            <div class="track">
+              <div class="step  active "  > <span class="icon"> <i class="fa fa-box"></i> </span> <span class="text darkColorWhite">Dispatched</span> </div>
+              <div class="step  active "  > <span class="icon"> <i class="fa fa-truck"></i> </span> <span class="text darkColorWhite">Border Crossed</span> </div>
+              <div class="step  active "  > <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text darkColorWhite">Border Discharged</span> </div>
+
+
+          </div><br><br></span>
+          <hr>
+
+            <% } %>
+
                 <!-- <ul class="row ">
                     <li class="col-md-4">
                         <figure class="itemside mb-3">
@@ -411,7 +430,7 @@
     <div class="row">
       <div class="col-sm-6">
         <h4>درباره ما</h4>
-        <p>شرکت کیاسامانه پیشگام با ارائه نرم افزارهای کاربردی،مسیر را برای کارمندان آسان میکند<br> .و با محاسبات دقیق، آسایش و آرامش را برای آنها به ارمغان می آورد</p>
+        <p>شرکت کیاسامانه پیشگام با ارائه نرم افزارهای کاربردی،مسیر را برای کارمندان آسان<br> میکند .و با محاسبات دقیق، آسایش و آرامش را برای آنها به ارمغان می آورد</p>
         
       </div>
       <div class="col-sm-6">
