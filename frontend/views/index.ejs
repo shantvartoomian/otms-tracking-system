@@ -36,6 +36,25 @@
 .btn-change7:hover{
     box-shadow:100px 0 0 rgb(62, 68, 96) inset;
 }
+.btn-change8{
+    height: auto;
+    width: auto;
+    background: rgb(214, 39, 39);
+    margin: 0.5%;
+    float: left;
+    border:0px;
+    color:#fff;
+    box-shadow: 0 0 1px #ccc;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: linear;
+    transition-timing-function: linear;
+    box-shadow:0px 0 0 #31708f  inset;
+    
+}
+.btn-change8:hover{
+    box-shadow:250px 0 0 rgb(62, 68, 96) inset;
+}
   </style>
 </head>
 <body>
@@ -82,7 +101,36 @@
 
 
 
-    <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Login
+      </a>
+        <!-- Here's the magic. Add the .animate and .slide-in classes to your .dropdown-menu and you're all set! -->
+        <div class="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="navbarDropdown"
+        style="width: 300px;">
+          
+          <form class="form" role="form">
+            <div class="form-group">
+                <input id="emailInput" placeholder="UserID" class="form-control form-control-sm text-center" type="email" required
+                style="width: 80%; margin-left: 10%; margin-top: 10%;">
+            </div>
+            <div class="form-group">
+                <input id="passwordInput" placeholder="Password" class="form-control form-control-sm text-center" type="password" required style="width: 80%; margin-left: 10%;">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block btn-change8" style="width: 80%; margin-left: 10%;">Login</button>
+            </div>
+            <div class="form-group text-center">
+                <small><a href="#" data-toggle="modal" data-target="#modalPassword">Forgot password?</a></small><br>
+                <small>Are you new here?<a href="#"> Sign Up</a></small>
+            </div>
+        </form>
+        </div>
+      </li>
+    </ul>
+
+    <!-- <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
       <li class="nav-item order-2 order-md-1"><a href="#" class="nav-link" title="settings"><i class="fa fa-cog fa-fw fa-lg"></i></a></li>
       <li class="dropdown order-1">
           <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn btn-outline-secondary dropdown-toggle">Login <span class="caret"></span></button>
@@ -105,7 +153,7 @@
               </li>
           </ul>
       </li>
-  </ul>
+  </ul> -->
 
   </div>
 </nav>
