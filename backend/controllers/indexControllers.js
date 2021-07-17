@@ -17,6 +17,12 @@ module.exports.showProfile=async(req,res)=>{
     })
 }
 
+module.exports.showSignUp=async(req,res)=>{
+    res.render("signup",{
+        pageTitle:'Track & Trace'
+    })
+}
+
 module.exports.getData=async(req,res)=>{
     var result=new Array()
  
