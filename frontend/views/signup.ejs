@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title><%= pageTitle %></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+
+  <link rel="stylesheet" href="/../public/css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+<link rel="apple-touch-icon" sizes="180x180" href="/../public/pics/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/../public/pics/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/../public/pics/favicon-32x32.png">
+
+ 
+
+  <style>
+ .btn-change7{
+    height: 50px;
+    width: 50px;
+    background: rgb(214, 39, 39);
+    margin: 0.5%;
+    float: left;
+    border:0px;
+    color:#fff;
+    box-shadow: 0 0 1px #ccc;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    -webkit-transition-timing-function: linear;
+    transition-timing-function: linear;
+    box-shadow:0px 0 0 #31708f  inset;
+    
+}
+.btn-change7:hover{
+    box-shadow:100px 0 0 rgb(62, 68, 96) inset;
+}
+.btn-change8{
+    height: auto;
+    width: auto;
+    background: rgb(214, 39, 39);
+    margin: 0.5%;
+    float: left;
+    border:0px;
+    color:#fff;
+    box-shadow: 0 0 1px #ccc;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: linear;
+    transition-timing-function: linear;
+    box-shadow:0px 0 0 #31708f  inset;
+    
+}
+.btn-change8:hover{
+    box-shadow:250px 0 0 rgb(62, 68, 96) inset;
+}
+.register{
+    background: -webkit-linear-gradient(left,rgb(55, 62, 90), #3931af );
+
+    padding: 3%;
+}
+.register-left{
+    text-align: center;
+    color: #fff;
+    margin-top: 4%;
+}
+.register-left input{
+    border: none;
+    border-radius: 1.5rem;
+    padding: 2%;
+    width: 60%;
+    background: #f8f9fa;
+    font-weight: bold;
+    color: #383d41;
+    margin-top: 30%;
+    margin-bottom: 3%;
+    cursor: pointer;
+}
+.register-right{
+    background: #f8f9fa;
+    border-top-left-radius: 10% 50%;
+    border-bottom-left-radius: 10% 50%;
+}
+.register-left img{
+    margin-top: 15%;
+    margin-bottom: 5%;
+    width: 25%;
+    -webkit-animation: mover 2s infinite  alternate;
+    animation: mover 1s infinite  alternate;
+}
+@-webkit-keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+@keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+.register-left p{
+    font-weight: lighter;
+    padding: 12%;
+    margin-top: -9%;
+}
+.register .register-form{
+    padding: 10%;
+    margin-top: 10%;
+}
+.btnRegister{
+    float: right;
+    margin-top: 10%;
+    border: none;
+    border-radius: 1.5rem;
+    padding: 2%;
+    background: #0062cc;
+    color: #fff;
+    font-weight: 600;
+    width: 50%;
+    cursor: pointer;
+}
+.register .nav-tabs{
+    margin-top: 3%;
+    border: none;
+    background: #0062cc;
+    border-radius: 10%;
+    width: 100px;
+    float: right;
+}
+.register .nav-tabs .nav-link{
+    padding: 0%;
+    height: 34px;
+    font-weight: 600;
+    color: #fff;
+    border-top-right-radius: 10%;
+    border-bottom-right-radius: 10%;
+}
+.register .nav-tabs .nav-link:hover{
+    border: none;
+}
+.register .nav-tabs .nav-link.active{
+    width: 100px;
+    color: #0062cc;
+    border: 2px solid #0062cc;
+    border-top-left-radius: 10%;
+    border-bottom-left-radius: 10%;
+}
+.register-heading{
+    text-align: center;
+    margin-top: 8%;
+    margin-bottom: -15%;
+    color: #495057;
+}
+  </style>
+</head>
+<body>
+  <div  class="se-pre-con"></div>
+
+
+
+
+<!-- body -->
+
+
+
+
+
+<div class="container register" style="max-width: 100%; ">
+  <div class="row">
+      <div class="col-md-3 register-left">
+          <img src="../public/pics/favicon.ico" alt=""/>
+          
+          <p>شرکت کیاسامانه پیشگام با ارائه نرم افزارهای کاربردی،مسیر را برای کارمندان آسان
+            میکند .و با محاسبات دقیق، آسایش و آرامش را برای آنها به ارمغان می آورد</p>
+         
+      </div>
+      <div class="col-md-9 register-right">
+          <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+              <li class="nav-item">
+                  <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">ثبت نام</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">ورود</a>
+              </li>
+          </ul>
+          <div class="tab-content text-right" id="myTabContent">
+              <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                  <h3 class="register-heading">کیاسامانه Track And Trace ثبت نام </h3>
+                  <div class="row register-form">
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <input type="text" class="form-control text-right" placeholder="*نام " value="" />
+                          </div>
+                          <div class="form-group">
+                              <input type="text" class="form-control text-right" placeholder="*نام خانوادگی " value="" />
+                          </div>
+                          <div class="form-group">
+                              <input type="password" class="form-control text-right" placeholder="*کلمه عبور " value="" />
+                          </div>
+                          <div class="form-group">
+                              <input type="password" class="form-control text-right"  placeholder="*تکرار کلمه عبور " value="" />
+                          </div>
+                          <div class="form-group">
+                              <div class="maxl">
+                                  <label class="radio inline "> 
+                                      <input type="radio" name="gender" value="male" checked>
+                                      <span> مرد </span> 
+                                  </label>
+                                  <label class="radio inline"> 
+                                      <input type="radio" name="gender" value="female">
+                                      <span>زن </span> 
+                                  </label>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <input type="email" class="form-control text-right" placeholder="*آدرس ایمیل " value="" />
+                          </div>
+                          <div class="form-group">
+                              <input type="text" minlength="10" maxlength="10" name="txtEmpPhone" class="form-control text-right" placeholder="*شماره تلفن" value="" />
+                          </div>
+                          <div class="form-group">
+                              <select class="form-control text-right">
+                                  <option class="hidden"  selected disabled>سوال امنیتی خود را انتخاب کنید</option>
+                                  <option>What is your Birthdate?</option>
+                                  <option>What is Your old Phone Number</option>
+                                  <option>What is your Pet Name?</option>
+                              </select>
+                          </div>
+                          <div class="form-group">
+                              <input type="text" class="form-control text-right" placeholder="*جواب سوال" value="" />
+                          </div>
+                          <input type="submit" class="btnRegister"  value="ثبت نام"/>
+                      </div>
+                  </div>
+              </div>
+              <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                  <h3  class="register-heading">Apply as a Hirer</h3>
+                  <div class="row register-form">
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <input type="text" class="form-control" placeholder="First Name *" value="" />
+                          </div>
+                          <div class="form-group">
+                              <input type="text" class="form-control" placeholder="Last Name *" value="" />
+                          </div>
+                          <div class="form-group">
+                              <input type="email" class="form-control" placeholder="Email *" value="" />
+                          </div>
+                          <div class="form-group">
+                              <input type="text" maxlength="10" minlength="10" class="form-control" placeholder="Phone *" value="" />
+                          </div>
+
+
+                      </div>
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <input type="password" class="form-control" placeholder="Password *" value="" />
+                          </div>
+                          <div class="form-group">
+                              <input type="password" class="form-control" placeholder="Confirm Password *" value="" />
+                          </div>
+                          <div class="form-group">
+                              <select class="form-control">
+                                  <option class="hidden"  selected disabled>Please select your Sequrity Question</option>
+                                  <option>What is your Birthdate?</option>
+                                  <option>What is Your old Phone Number</option>
+                                  <option>What is your Pet Name?</option>
+                              </select>
+                          </div>
+                          <div class="form-group">
+                              <input type="text" class="form-control" placeholder="`Answer *" value="" />
+                          </div>
+                          <input type="submit" class="btnRegister"  value="Register"/>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+</div>
+
+
+
+
+
+<!-- /body -->
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="../public/js/bootstrap.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="../public/js/script.js"></script>
+
+
+</body>
+</html>
+

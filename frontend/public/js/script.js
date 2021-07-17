@@ -75,30 +75,22 @@ function darkLight() {
 
 //back to top scroll button
 
-let mybutton = document.getElementById("btn-back-to-top");
-
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function () {
-  scrollFunction();
-};
-
-function scrollFunction() {
-  if (
-    document.body.scrollTop > 350 ||
-    document.documentElement.scrollTop > 350
-  ) {
-    mybutton.style.display = "block";
+$(document).ready(function() {
+  $(window).scroll(function() {
+  if ($(this).scrollTop() > 300) {
+  $('#toTopBtn').fadeIn();
   } else {
-    mybutton.style.display = "none";
+  $('#toTopBtn').fadeOut();
   }
-}
-// When the user clicks on the button, scroll to the top of the document
-mybutton.addEventListener("click", backToTop);
-
-function backToTop() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-}
+  });
+  
+  $('#toTopBtn').click(function() {
+  $("html, body").animate({
+  scrollTop: 0
+  }, 1000);
+  return false;
+  });
+  });
 
 //back to top scroll end
 
@@ -115,7 +107,7 @@ $(window).on("load",function() {
 
 
 
-// table search---------------------------
+// table sort---------------------------
 function sortTable(n) {
   var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
   table = document.getElementById("myTable");
@@ -189,9 +181,9 @@ function sortTable(n) {
       let _h = window.innerHeight/2;
       let _mouseX = e.clientX;
       let _mouseY = e.clientY;
-      let _depth1 = `${50 - (_mouseX - _w) * 0.01}% ${50 - (_mouseY - _h) * 0.01}%`;
-      let _depth2 = `${50 - (_mouseX - _w) * 0.02}% ${50 - (_mouseY - _h) * 0.02}%`;
-      let _depth3 = `${50 - (_mouseX - _w) * 0.06}% ${50 - (_mouseY - _h) * 0.06}%`;
+      let _depth1 = `${50 - (_mouseX - _w) * 0.01}% ${50 - (_mouseY - _h) * 0.002}%`;
+      let _depth2 = `${50 - (_mouseX - _w) * 0.02}% ${50 - (_mouseY - _h) * 0.004}%`;
+      let _depth3 = `${50 - (_mouseX - _w) * 0.06}% ${50 - (_mouseY - _h) * 0.012}%`;
       let x = `${_depth3}, ${_depth2}, ${_depth1}`;
       console.log(x);
       elem.style.backgroundPosition = x;
