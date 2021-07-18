@@ -103,7 +103,7 @@
 
     <ul class="navbar-nav ml-auto">
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle active" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <b>Login</b>
       </a>
         <!-- Here's the magic. Add the .animate and .slide-in classes to your .dropdown-menu and you're all set! -->
@@ -123,7 +123,7 @@
             </div>
             <div class="form-group text-center">
                 <small><a href="#" data-toggle="modal" data-target="#modalPassword">Forgot password?</a></small><br>
-                <small>Are you new here?<a href="#"> Sign Up</a></small>
+                <small>Are you new here?<a href="signup"> Sign Up</a></small>
             </div>
         </form>
         </div>
@@ -286,15 +286,14 @@
           <!-- tables for multiple container -->
 
 <hr>
-            <div style="height: 250px !important;
-            overflow: scroll; max-width: 100%; ">
+            <div>
             
           <div class="list-group"  >
                    
 
               
               <div class="table-responsive ">
-                <table class="table  table-striped table-default table-sm "  width="100%" id="myTable" style="overflow-y: scroll;">
+                <table class="table  table-striped table-default table-sm"  width="100%" id="myTable" >
                   <% if (result[0].TransportationMode == 1 || result[0].TransportationMode == 5) { %>
                     <thead style="background-color: rgb(173, 171, 171);">
                       <tr>
@@ -406,11 +405,11 @@
   
 <button
         type="button"
-        class="btn   float-right btn-sm btn-change7 cd-top  js-cd-top cd-top--is-visible cd-top--fade-out"
+        class="btn btn-md  float-right  cd-top  js-cd-top cd-top--is-visible cd-top--fade-out"
         id="toTopBtn"
         data-abc="true"
         >
-  <span class="fas fa-arrow-up text-center"></span>
+  <span class=" btn-sm  text-center"></span>
 </button>
 
 <!----------------------- Footer ------------------------>
@@ -518,11 +517,8 @@
       </form>
     </section>
     <!-- Section: Form -->
-
     <!-- Section: Text -->
-    
     <!-- Section: Text -->
-
     <!-- Section: Links -->
     <section class="">
       <!--Grid row-->
@@ -563,9 +559,9 @@
   <!-- Grid container -->
 
   <!-- Copyright -->
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-    © 2021 Copyright:
-    <a class="text-white" href="https://otms.ir/">Otms.ir </a>
+  <div class="text-center p-3 " style="background-color: rgba(0, 0, 0, 0.2);">
+     <span class="fab fa-html5 btn btn-warning" title="Html" style="cursor:auto;"></span> <span class="fab fa-css3 btn btn-primary" style="cursor:auto;" title="Css"></span> تهیه شده با <span class="fa fa-heart btn btn-danger" style="cursor:auto;" title="عشق"></span>  و کمی چاشنی
+    <br> © 2021<a href="" class="btn btn-dark btn-sm">PrivacyPolicy</a>.<a class="text-white btn btn-sm btn-dark" href="https://otms.ir/">KSP</a> توسط
   </div>
   <!-- Copyright -->
 </footer>

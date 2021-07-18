@@ -17,6 +17,9 @@
  
 
   <style>
+.container {
+    margin-bottom: 0;
+}
  .btn-change7{
     height: 50px;
     width: 50px;
@@ -56,7 +59,7 @@
     box-shadow:250px 0 0 rgb(62, 68, 96) inset;
 }
 .register{
-    background: -webkit-linear-gradient(left,rgb(55, 62, 90), #3931af );
+    background: rgb(55, 62, 90);
 
     padding: 3%;
 }
@@ -167,7 +170,7 @@
 <div class="container register" style="max-width: 100%; ">
   <div class="row">
       <div class="col-md-3 register-left">
-          <img src="../public/pics/favicon.ico" alt=""/>
+          <a href="http://localhost:3000/"><img src="../public/pics/favicon.ico" alt=""/></a>
           
           <p>شرکت کیاسامانه پیشگام با ارائه نرم افزارهای کاربردی،مسیر را برای کارمندان آسان
             میکند .و با محاسبات دقیق، آسایش و آرامش را برای آنها به ارمغان می آورد</p>
@@ -184,7 +187,7 @@
           </ul>
           <div class="tab-content text-right" id="myTabContent">
               <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                  <h3 class="register-heading">کیاسامانه Track And Trace ثبت نام </h3>
+                  <h3 class="register-heading">ثبت نام </h3>
                   <div class="row register-form">
                       <div class="col-md-6">
                           <div class="form-group">
@@ -221,7 +224,7 @@
                           </div>
                           <div class="form-group">
                               <select class="form-control text-right">
-                                  <option class="hidden"  selected disabled>سوال امنیتی خود را انتخاب کنید</option>
+                                  <option class="hidden "  selected disabled>سوال امنیتی خود را انتخاب کنید</option>
                                   <option>What is your Birthdate?</option>
                                   <option>What is Your old Phone Number</option>
                                   <option>What is your Pet Name?</option>
@@ -235,44 +238,25 @@
                   </div>
               </div>
               <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                  <h3  class="register-heading">Apply as a Hirer</h3>
+                  <h3  class="register-heading">ورود به سامانه</h3>
                   <div class="row register-form">
-                      <div class="col-md-6">
+                      <div class="col-md-8">
                           <div class="form-group">
-                              <input type="text" class="form-control" placeholder="First Name *" value="" />
+                              <input type="email" class="form-control text-right" placeholder="*ایمیل" value="" />
                           </div>
+
                           <div class="form-group">
-                              <input type="text" class="form-control" placeholder="Last Name *" value="" />
+                              <input type="password" class="form-control text-right" placeholder="*کلمه عبور" value="" />
                           </div>
-                          <div class="form-group">
-                              <input type="email" class="form-control" placeholder="Email *" value="" />
-                          </div>
-                          <div class="form-group">
-                              <input type="text" maxlength="10" minlength="10" class="form-control" placeholder="Phone *" value="" />
-                          </div>
+
+                          <input type="submit" class="btnRegister"  value="ورود"/>
+
+
+
 
 
                       </div>
-                      <div class="col-md-6">
-                          <div class="form-group">
-                              <input type="password" class="form-control" placeholder="Password *" value="" />
-                          </div>
-                          <div class="form-group">
-                              <input type="password" class="form-control" placeholder="Confirm Password *" value="" />
-                          </div>
-                          <div class="form-group">
-                              <select class="form-control">
-                                  <option class="hidden"  selected disabled>Please select your Sequrity Question</option>
-                                  <option>What is your Birthdate?</option>
-                                  <option>What is Your old Phone Number</option>
-                                  <option>What is your Pet Name?</option>
-                              </select>
-                          </div>
-                          <div class="form-group">
-                              <input type="text" class="form-control" placeholder="`Answer *" value="" />
-                          </div>
-                          <input type="submit" class="btnRegister"  value="Register"/>
-                      </div>
+
                   </div>
               </div>
           </div>
@@ -281,17 +265,169 @@
 
 </div>
 
-
-
-
-
 <!-- /body -->
 
 
 
 
 
-
+<!----------------------- Footer ------------------------>
+<footer class=" text-center text-white" id="Contact" style="background-color: rgb(62, 68, 96);">
+    <!-- Grid container -->
+    <div class="container p-4">
+      <!-- Section: Social media -->
+      <section class="mb-4">
+        <!-- Facebook -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+          ><i class="fab fa-facebook-f"></i></a>
+  
+        <!-- Twitter -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+          ><i class="fab fa-twitter"></i
+        ></a>
+  
+        <!-- Google -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+          ><i class="fab fa-google"></i
+        ></a>
+  
+        <!-- Instagram -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+          ><i class="fab fa-instagram"></i
+        ></a>
+  
+        <!-- Linkedin -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+          ><i class="fab fa-linkedin-in"></i
+        ></a>
+  
+        <!-- Github -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+          ><i class="fab fa-github"></i
+        ></a>
+      </section>
+      <!-- Section: Social media -->
+      <div class="row">
+        <div class="col-sm-6">
+          <h4>درباره ما</h4>
+          <p>شرکت کیاسامانه پیشگام با ارائه نرم افزارهای کاربردی،مسیر را برای کارمندان آسان<br> میکند .و با محاسبات دقیق، آسایش و آرامش را برای آنها به ارمغان می آورد</p>
+          
+        </div>
+        <div class="col-sm-6">
+          <h4>تماس با ما</h4>
+          <p>آدرس :
+  
+            تهران، گیشا، خ ۲۱، پ ۴۹، واحد ۱<br>
+          تلفن تماس: 
+  
+          ۸۸۲۷۴۴۴۶   
+   و 
+  ۸۸۲۷۴۴۶۰ 
+          <br>
+          ارتباط مستقیم با مدیرعامل: 
+  
+          ۹۱۲۲۱۱۶۴۷۰ +۹۸ 
+          
+          
+          </p>
+          
+        </div>
+       
+      </div>
+  
+  <!-- Section: Text -->
+  <section class="mb-4 ">
+    <p>
+      <strong>عضویت در خبرنامه</strong><br>
+      .با عضویت در خبرنامه کیا سامانه از آخرین اخبار و اطلاعیه‌های سایت قبل از هر کس دیگری با خبر شوید
+    </p>
+  </section>
+      <!-- Section: Form -->
+      <section class="">
+        <form action="">
+          <!--Grid row-->
+          <div class="row d-flex justify-content-center">
+            <!--Grid column-->
+            <div class="col-auto">
+              
+            </div>
+            <!--Grid column-->
+  
+            <!--Grid column-->
+            <div class="col-md-5 col-12">
+              <!-- Email input -->
+              <div class="form-outline form-white mb-4">
+                <input type="email" id="form5Example2" class="form-control text-center" placeholder="ایمیل خود را وارد کنید"/>
+                
+              </div>
+            </div>
+            <!--Grid column-->
+  
+            <!--Grid column-->
+            <div class="col-auto">
+              <!-- Submit button -->
+              <button type="submit" class="btn btn-outline-light mb-4">
+                <b>عضویت</b>
+              </button>
+            </div>
+            <!--Grid column-->
+          </div>
+          <!--Grid row-->
+        </form>
+      </section>
+      <!-- Section: Form -->
+  
+      <!-- Section: Text -->
+      
+      <!-- Section: Text -->
+  
+      <!-- Section: Links -->
+      <section class="">
+        <!--Grid row-->
+        <div class="row ">
+         
+  
+          <!--Grid column-->
+  
+                  <!--  <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Links</h5>
+  
+                    <ul class="list-unstyled mb-0">
+                      <li>
+                        <a href="#!" class="text-white">Link 1</a>
+                      </li>
+                      <li>
+                        <a href="#!" class="text-white">Link 2</a>
+                      </li>
+                      <li>
+                        <a href="#!" class="text-white">Link 3</a>
+                      </li>
+                      <li>
+                        <a href="#!" class="text-white">Link 4</a>
+                      </li>
+                    </ul>
+                  </div>   -->
+  
+          <!--Grid column-->
+  
+         
+  
+  
+        </div>
+        <!--Grid row-->
+      </section>
+      <!-- Section: Links -->
+    </div>
+    <!-- Grid container -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2021 Copyright:
+      <a class="text-white" href="https://otms.ir/">Otms.ir </a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!---------------------------- Footer ---------------------------->
 
 
 
