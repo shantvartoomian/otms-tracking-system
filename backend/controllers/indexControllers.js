@@ -9,7 +9,8 @@ module.exports.showIndex=async(req,res)=>{
         pageTitle:'Track & Trace',
         result:null,
         middlewareError: req.flash("middlewareError")[0],
-        middlewareSuccess: req.flash("middlewareSuccess")[0]
+        middlewareSuccess: req.flash("middlewareSuccess")[0],
+        session:req.session
     })
 }
 
@@ -48,7 +49,7 @@ module.exports.login = async(req, res) => {
         return res.redirect(req.headers.referer || "/");
     }else{
         req.session.isLogedin = true;
-        req.session.user = user;
+        req.session.user = data[0];
         req.flash("middlewareSuccess" , "ورود کاربر با موفقیت انجام شد");
         return res.redirect("/");
     }
