@@ -24,38 +24,28 @@ module.exports.showSignIn=async(req,res)=>{
 }
 
 module.exports.login = (req, res) => {
-    const _username = req.body.username.toLowerCase();
-    const _password = req.body.password;
+    const _username = req.body.loginemail.toLowerCase();
+    const _password = req.body.loginpassword;
   
     if(!_username || !_password ){
       req.flash("middlewareError" , "لطفا نام کاربری و رمز عبور خود را وارد نمایید");
       return res.redirect(req.headers.referer || "/");
     }
-  
-    Profile.findOne({ userName: _username })
-      .then((user) => {
-        if (!user) {
-          console.log("no users found");
-          req.flash("middlewareError" , "خطا در ورود کاربر");
-          return res.redirect(req.headers.referer || "/");
-        }
-        if (bcrypt.compareSync(_password, user.password)) {
-          req.session.isLogedin = true;
-          req.session.user = user;
-          if (req.body.rememberCheck) {
-            req.session.cookie.originalMaxAge = 60*60*24*30*1000;
-          }
-          req.flash("middlewareSuccess" , "ورود کاربر با موفقیت انجام شد");
-          return res.redirect(req.headers.referer || "/");
-        } else {
-          logout(req, res);
-        }
-      })
-      .catch((err) => {
-        console.log(err);
+    data=await sequelize.query
+    ('SELECT        ID, DesEn, DesFa, Email, password '
+    +'FROM            TbEntity '
+    +'WHERE        (RecStatus > 0) AND (Email = :Email) AND (password = :Password)',{
+        replacements:{Email:_username,Password:_password},
+        type:QueryTypes.SELECT
+    })
+    if (!data) {
+        console.log("no users found");
         req.flash("middlewareError" , "خطا در ورود کاربر");
-        res.redirect(req.headers.referer || "/");
-      });
+        return res.redirect(req.headers.referer || "/");
+    }else{
+        req.flash("middlewareSuccess" , "ورود کاربر با موفقیت انجام شد");
+        return res.redirect(req.headers.referer || "/");
+    }
   };
 
 module.exports.getData=async(req,res)=>{
