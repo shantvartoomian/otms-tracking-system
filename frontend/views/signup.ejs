@@ -59,7 +59,7 @@
     box-shadow:250px 0 0 rgb(62, 68, 96) inset;
 }
 .register{
-    background: rgb(55, 62, 90);
+    background: url(../public/pics/shipping.jpg);
 
     padding: 3%;
 }
@@ -171,22 +171,23 @@
   <div class="row">
       <div class="col-md-3 register-left">
           <a href="http://localhost:3000/"><img src="../public/pics/favicon.ico" alt=""/></a>
-          
-          <p>شرکت کیاسامانه پیشگام با ارائه نرم افزارهای کاربردی،مسیر را برای کارمندان آسان
+          <br><br>
+          <p style="background-color: #495057; opacity: 0.8; border-radius: 10%; ">شرکت کیاسامانه پیشگام با ارائه نرم افزارهای کاربردی،مسیر را برای کارمندان آسان
             میکند .و با محاسبات دقیق، آسایش و آرامش را برای آنها به ارمغان می آورد</p>
          
       </div>
       <div class="col-md-9 register-right">
           <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
               <li class="nav-item">
-                  <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">ثبت نام</a>
+                  <a class="nav-link disabled btn"
+                  id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">ثبت نام</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">ورود</a>
+                  <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">ورود</a>
               </li>
           </ul>
           <div class="tab-content text-right" id="myTabContent">
-              <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+              <div class="tab-pane fade show " id="home" role="tabpanel" aria-labelledby="home-tab">
                   <h3 class="register-heading">ثبت نام </h3>
                   <div class="row register-form">
                       <div class="col-md-6">
@@ -237,16 +238,16 @@
                       </div>
                   </div>
               </div>
-              <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+              <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                   <h3  class="register-heading">ورود به سامانه</h3>
                   <div class="row register-form">
                       <div class="col-md-8">
                           <div class="form-group">
-                              <input type="email" class="form-control text-right" placeholder="*ایمیل" value="" />
+                              <input type="email" name="loginemail" class="form-control text-right" placeholder="*ایمیل" value="" />
                           </div>
 
                           <div class="form-group">
-                              <input type="password" class="form-control text-right" placeholder="*کلمه عبور" value="" />
+                              <input type="password" name="loginpassword" class="form-control text-right" placeholder="*کلمه عبور" value="" />
                           </div>
 
                           <input type="submit" class="btnRegister"  value="ورود"/>
