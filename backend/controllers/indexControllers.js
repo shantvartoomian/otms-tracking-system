@@ -86,7 +86,8 @@ module.exports.getData=async(req,res)=>{
                 pageTitle:'Track & Trace',
                 result : result.length>0 ? result[0] : null,
                 middlewareError: req.flash("middlewareError")[0],
-                middlewareSuccess: req.flash("middlewareSuccess")[0]
+                middlewareSuccess: req.flash("middlewareSuccess")[0],
+                session:req.session
             })
         } catch (err) {
             console.log(err)          
