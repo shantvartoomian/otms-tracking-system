@@ -1,4 +1,5 @@
 const express=require('express');
+const flash=require('connect-flash');
 
 const {setStatics}=require('./utils/statics');
 const setHeaders=require('./middlewares/setHeaders');
@@ -17,6 +18,8 @@ app.set("views","../frontend/views")
 
 
 setStatics(app)
+
+app.use(flash())
 
 app.use(indexRoutes)
 
