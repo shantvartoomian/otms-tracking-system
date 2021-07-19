@@ -7,7 +7,9 @@ const sequelize=require('../utils/database');
 module.exports.showIndex=async(req,res)=>{
     res.render("index",{
         pageTitle:'Track & Trace',
-        result:null
+        result:null,
+        middlewareError: req.flash("middlewareError")[0],
+        middlewareSuccess: req.flash("middlewareSuccess")[0]
     })
 }
 
@@ -19,7 +21,9 @@ module.exports.showProfile=async(req,res)=>{
 
 module.exports.showSignIn=async(req,res)=>{
     res.render("signIn",{
-        pageTitle:'Track & Trace'
+        pageTitle:'Track & Trace',
+        middlewareError: req.flash("middlewareError")[0],
+        middlewareSuccess: req.flash("middlewareSuccess")[0]
     })
 }
 
@@ -44,7 +48,7 @@ module.exports.login = async(req, res) => {
         return res.redirect(req.headers.referer || "/");
     }else{
         req.flash("middlewareSuccess" , "ورود کاربر با موفقیت انجام شد");
-        return res.redirect(req.headers.referer || "/");
+        return res.redirect("/");
     }
   };
 
