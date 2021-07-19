@@ -81,7 +81,9 @@ module.exports.getData=async(req,res)=>{
             console.log(result)
              res.render("index",{
                 pageTitle:'Track & Trace',
-                result : result.length>0 ? result[0] : null
+                result : result.length>0 ? result[0] : null,
+                middlewareError: req.flash("middlewareError")[0],
+                middlewareSuccess: req.flash("middlewareSuccess")[0]
             })
         } catch (err) {
             console.log(err)          
