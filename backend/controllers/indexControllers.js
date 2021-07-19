@@ -23,7 +23,7 @@ module.exports.showSignIn=async(req,res)=>{
     })
 }
 
-module.exports.login = (req, res) => {
+module.exports.login = async(req, res) => {
     const _username = req.body.loginemail.toLowerCase();
     const _password = req.body.loginpassword;
   
