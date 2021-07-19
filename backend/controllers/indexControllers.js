@@ -42,7 +42,7 @@ module.exports.login = async(req, res) => {
         replacements:{Email:_username,Password:_password},
         type:QueryTypes.SELECT
     })
-    if (!data) {
+    if (!data.length>0) {
         console.log("no users found");
         req.flash("middlewareError" , "خطا در ورود کاربر");
         return res.redirect(req.headers.referer || "/");

@@ -13,6 +13,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/../public/pics/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/../public/pics/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/../public/pics/favicon-32x32.png">
+<link type="text/css" rel="stylesheet" href="/../public/css/toastr.min.css">
 
  
 
@@ -164,8 +165,6 @@
 
 
 
-
-<%-include ('./includes/middlewareError.ejs') %> 
 <div class="container register" style="max-width: 100%; ">
   <div class="row">
       <div class="col-md-3 register-left">
@@ -442,7 +441,37 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="../public/js/script.js"></script>
+<script src="/../public/js/toastr.min.js"></script>
 
+<% if(middlewareError){ %>
+  <script>
+      toastr.options = {
+          closeButton: false,
+          showMethod : 'slideDown',
+          hideMethod : 'slideUp',
+          closeMethod : 'slideUp',
+          rtl : true,
+          preventDuplicates : true,
+          positionClass : "toast-top-right"
+      }
+    
+    toastr.error("<%= middlewareError %>" , 'خطا')
+  </script>
+<% } else if(middlewareSuccess) { %>
+  <script>
+      toastr.options = {
+          closeButton: false,
+          showMethod : 'slideDown',
+          hideMethod : 'slideUp',
+          closeMethod : 'slideUp',
+          rtl : true,
+          preventDuplicates : true,
+          positionClass : "toast-top-right"
+      }
+    
+    toastr.success("<%= middlewareSuccess %>")
+  </script>
+<% } %>
 
 </body>
 </html>
