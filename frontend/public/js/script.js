@@ -193,3 +193,14 @@ function sortTable(n) {
 
 
 //end of paralax effect on background image
+
+
+//enter key for login
+
+$('input').on('keypress', (event)=> {
+  if(event.which === 13){
+      $('.login-button').click();
+  }
+});
+
+// end of enter key for login
