@@ -487,7 +487,7 @@ th {
 
   /* paralax */
 
- #parallax {
+ /* #parallax {
     position: relative;
     width: 100%;
     height: 85vh;
@@ -495,7 +495,7 @@ th {
     background-repeat: no-repeat;
     background-position: center;
     background-position: 50% 50%;
-  }
+  } */
   /* end of paralax */
   .table-responsive
   {

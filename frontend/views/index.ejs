@@ -78,9 +78,9 @@
           <span class="sr-only">(current)</span>
         </a>
       </li>
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link disabled" href="#">All Shipments</a>
-      </li>
+      </li> -->
       <li class="nav-item">
         <a class="nav-link "  onclick="smoothScroll(document.getElementById('OH'))" style="cursor: pointer;">Order History</a>
       </li>
@@ -101,7 +101,7 @@
     </ul>
     <ul class="navbar-nav ml-auto">
       <li class="nav-item ">
-        <a class="nav-link" href="signIn"  ><b>Login</b></a>
+        <a class="nav-link" href="signIn"  ><b>SignIn</b></a>
       </li>
     </ul>
 
@@ -149,9 +149,13 @@
 
 <!----------------------- search bar -------------------------------->
 <form action="sendData" method="POST" >
-  <%-include ('./includes/middlewareError.ejs') %> 
-  <%-include ('./includes/middlewareSuccess.ejs') %>  
+
+ 
   <div class="bbbootstrap" id="parallax" >
+
+  
+  <div class="bbbootstrap" >
+
   
   <div class="container" id="home" style="padding-bottom: 90px; max-width: 600px;">
       
