@@ -17,11 +17,46 @@ module.exports.showProfile=async(req,res)=>{
     })
 }
 
-module.exports.showSignUp=async(req,res)=>{
-    res.render("signup",{
+module.exports.showSignIn=async(req,res)=>{
+    res.render("signIn",{
         pageTitle:'Track & Trace'
     })
 }
+
+module.exports.login = (req, res) => {
+    const _username = req.body.username.toLowerCase();
+    const _password = req.body.password;
+  
+    if(!_username || !_password ){
+      req.flash("middlewareError" , "لطفا نام کاربری و رمز عبور خود را وارد نمایید");
+      return res.redirect(req.headers.referer || "/");
+    }
+  
+    Profile.findOne({ userName: _username })
+      .then((user) => {
+        if (!user) {
+          console.log("no users found");
+          req.flash("middlewareError" , "خطا در ورود کاربر");
+          return res.redirect(req.headers.referer || "/");
+        }
+        if (bcrypt.compareSync(_password, user.password)) {
+          req.session.isLogedin = true;
+          req.session.user = user;
+          if (req.body.rememberCheck) {
+            req.session.cookie.originalMaxAge = 60*60*24*30*1000;
+          }
+          req.flash("middlewareSuccess" , "ورود کاربر با موفقیت انجام شد");
+          return res.redirect(req.headers.referer || "/");
+        } else {
+          logout(req, res);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+        req.flash("middlewareError" , "خطا در ورود کاربر");
+        res.redirect(req.headers.referer || "/");
+      });
+  };
 
 module.exports.getData=async(req,res)=>{
     var result=new Array()
@@ -59,3 +94,4 @@ module.exports.getData=async(req,res)=>{
         }
 
 }
+
