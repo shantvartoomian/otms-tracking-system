@@ -2,8 +2,9 @@ const express=require('express');
 const flash=require('connect-flash');
 const session = require("express-session");
 var cookieParser = require('cookie-parser')
+const path = require('path');
+const bodyParser=require('body-parser');
 
-const {setStatics}=require('./utils/statics');
 const setHeaders=require('./middlewares/setHeaders');
 const sequelize=require('./utils/database');
 
@@ -18,9 +19,6 @@ app.use(express.json())
 app.set("view engine","ejs");
 app.set("views","../frontend/views")
 
-
-setStatics(app)
-
 app.use(
     session({
       secret: "1R4e_*tnCx$^53dn#?",
@@ -29,6 +27,11 @@ app.use(
       resave: false
     })
 );
+app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use(express.static(path.join(__dirname, "../backend/report")));
+app.use(express.static(path.join(__dirname, '../frontend/')));
+
 app.use(flash())
 app.use(cookieParser())
 

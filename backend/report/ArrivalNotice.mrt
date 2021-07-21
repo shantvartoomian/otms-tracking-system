@@ -1,0 +1,6009 @@
+{
+  "ReportVersion": "2021.1.1.0",
+  "ReportGuid": "443edd49daec4f298795832693efc050",
+  "ReportName": "Report",
+  "ReportAlias": "Report",
+  "ReportCreated": "/Date(1626679321000+0430)/",
+  "ReportChanged": "/Date(1626852134514+0430)/",
+  "EngineVersion": "EngineV2",
+  "CalculationMode": "Interpretation",
+  "Script": "using System;\r\nusing System.Drawing;\r\nusing System.Windows.Forms;\r\nusing System.Data;\r\nusing Stimulsoft.Controls;\r\nusing Stimulsoft.Base.Drawing;\r\nusing Stimulsoft.Report;\r\nusing Stimulsoft.Report.Dialogs;\r\nusing Stimulsoft.Report.Components;\r\n\r\nnamespace Reports\r\n{\r\n    public class Report : Stimulsoft.Report.StiReport\r\n    {\r\n        public Report()        {\r\n            this.InitializeComponent();\r\n        }\r\n\r\n        #region StiReport Designer generated code - do not modify\r\n\t\t#endregion StiReport Designer generated code - do not modify\r\n    }\r\n}\r\n",
+  "ReferencedAssemblies": {
+    "0": "System.Dll",
+    "1": "System.Drawing.Dll",
+    "2": "System.Windows.Forms.Dll",
+    "3": "System.Data.Dll",
+    "4": "System.Xml.Dll",
+    "5": "Stimulsoft.Controls.Dll",
+    "6": "Stimulsoft.Base.Dll",
+    "7": "Stimulsoft.Report.Dll"
+  },
+  "Dictionary": {
+    "Variables": {
+      "0": {
+        "Name": "ID",
+        "Alias": "ID",
+        "Type": "System.Int32",
+        "RequestFromUser": true,
+        "Key": "e4fa4e4d8e784e0d8957807b39345ccd",
+        "AllowUseAsSqlParameter": true
+      },
+      "1": {
+        "Value": "TbArrivalNoticeH.TbBL.TbVoyage.TbVessel.Des+\" \" +TbArrivalNoticeH.TbBL.TbVoyage.ArrVoy",
+        "Name": "VesselVoy",
+        "Alias": "VesselVoy",
+        "Type": "System.String",
+        "ReadOnly": true,
+        "InitBy": "Expression",
+        "Key": "ca2cc8da2be24a8396628d897bf8475a"
+      },
+      "2": {
+        "Value": "TbArrivalNoticeH.TbBL.HsCode +\" \"+ TbArrivalNoticeH.TbBL.GoodsDes",
+        "Name": "HSCodeGD",
+        "Alias": "HSCodeGD",
+        "Type": "System.String",
+        "ReadOnly": true,
+        "InitBy": "Expression",
+        "Key": "22104f4549fc4c749ced134400dbf669"
+      },
+      "3": {
+        "Name": "User",
+        "Alias": "User",
+        "Type": "System.Int32",
+        "RequestFromUser": true
+      }
+    },
+    "DataSources": {
+      "0": {
+        "Ident": "StiSqlSource",
+        "Name": "TbVoyage",
+        "Alias": "TbVoyage",
+        "Key": "47ff2c4e580e4918ae418df0bd89d63c",
+        "Columns": {
+          "0": {
+            "Name": "ID",
+            "Index": -1,
+            "NameInSource": "ID",
+            "Alias": "ID",
+            "Type": "System.Int32"
+          },
+          "1": {
+            "Name": "VesselCode",
+            "Index": -1,
+            "NameInSource": "VesselCode",
+            "Alias": "VesselCode",
+            "Type": "System.Int32"
+          },
+          "2": {
+            "Name": "ArrVoy",
+            "Index": -1,
+            "NameInSource": "ArrVoy",
+            "Alias": "ArrVoy",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "Port",
+            "Index": -1,
+            "NameInSource": "Port",
+            "Alias": "Port",
+            "Type": "System.Int32"
+          },
+          "4": {
+            "Name": "DispatchDate",
+            "Index": -1,
+            "NameInSource": "DispatchDate",
+            "Alias": "DispatchDate",
+            "Type": "System.DateTime"
+          },
+          "5": {
+            "Name": "ETA",
+            "Index": -1,
+            "NameInSource": "ETA",
+            "Alias": "ETA",
+            "Type": "System.DateTime"
+          },
+          "6": {
+            "Name": "ArrivalDate",
+            "Index": -1,
+            "NameInSource": "ArrivalDate",
+            "Alias": "ArrivalDate",
+            "Type": "System.DateTime"
+          },
+          "7": {
+            "Name": "ArrivalNoticeDate",
+            "Index": -1,
+            "NameInSource": "ArrivalNoticeDate",
+            "Alias": "ArrivalNoticeDate",
+            "Type": "System.DateTime"
+          },
+          "8": {
+            "Name": "NOR",
+            "Index": -1,
+            "NameInSource": "NOR",
+            "Alias": "NOR",
+            "Type": "System.DateTime"
+          },
+          "9": {
+            "Name": "BerthDate",
+            "Index": -1,
+            "NameInSource": "BerthDate",
+            "Alias": "BerthDate",
+            "Type": "System.DateTime"
+          },
+          "10": {
+            "Name": "StartDischargeDate",
+            "Index": -1,
+            "NameInSource": "StartDischargeDate",
+            "Alias": "StartDischargeDate",
+            "Type": "System.DateTime"
+          },
+          "11": {
+            "Name": "ComplateDischargeDate",
+            "Index": -1,
+            "NameInSource": "ComplateDischargeDate",
+            "Alias": "ComplateDischargeDate",
+            "Type": "System.DateTime"
+          },
+          "12": {
+            "Name": "THCROE",
+            "Index": -1,
+            "NameInSource": "THCROE",
+            "Alias": "THCROE",
+            "Type": "System.Single"
+          },
+          "13": {
+            "Name": "DepVoy",
+            "Index": -1,
+            "NameInSource": "DepVoy",
+            "Alias": "DepVoy",
+            "Type": "System.String"
+          },
+          "14": {
+            "Name": "StartLoadDate",
+            "Index": -1,
+            "NameInSource": "StartLoadDate",
+            "Alias": "StartLoadDate",
+            "Type": "System.DateTime"
+          },
+          "15": {
+            "Name": "ComplateLoadDate",
+            "Index": -1,
+            "NameInSource": "ComplateLoadDate",
+            "Alias": "ComplateLoadDate",
+            "Type": "System.DateTime"
+          },
+          "16": {
+            "Name": "UnBerthDate",
+            "Index": -1,
+            "NameInSource": "UnBerthDate",
+            "Alias": "UnBerthDate",
+            "Type": "System.DateTime"
+          },
+          "17": {
+            "Name": "SailingDate",
+            "Index": -1,
+            "NameInSource": "SailingDate",
+            "Alias": "SailingDate",
+            "Type": "System.DateTime"
+          },
+          "18": {
+            "Name": "GoodsDes",
+            "Index": -1,
+            "NameInSource": "GoodsDes",
+            "Alias": "GoodsDes",
+            "Type": "System.String"
+          },
+          "19": {
+            "Name": "Comment",
+            "Index": -1,
+            "NameInSource": "Comment",
+            "Alias": "Comment",
+            "Type": "System.String"
+          },
+          "20": {
+            "Name": "VesselAgent",
+            "Index": -1,
+            "NameInSource": "VesselAgent",
+            "Alias": "VesselAgent",
+            "Type": "System.Int32"
+          },
+          "21": {
+            "Name": "VesselPrincipal",
+            "Index": -1,
+            "NameInSource": "VesselPrincipal",
+            "Alias": "VesselPrincipal",
+            "Type": "System.Int32"
+          },
+          "22": {
+            "Name": "Remark",
+            "Index": -1,
+            "NameInSource": "Remark",
+            "Alias": "Remark",
+            "Type": "System.String"
+          },
+          "23": {
+            "Name": "--",
+            "Index": -1,
+            "NameInSource": "--",
+            "Alias": "--",
+            "Type": "System.Boolean"
+          },
+          "24": {
+            "Name": "RecStatus",
+            "Index": -1,
+            "NameInSource": "RecStatus",
+            "Alias": "RecStatus",
+            "Type": "System.Byte"
+          },
+          "25": {
+            "Name": "SUID",
+            "Index": -1,
+            "NameInSource": "SUID",
+            "Alias": "SUID",
+            "Type": "System.Int32"
+          },
+          "26": {
+            "Name": "Stime",
+            "Index": -1,
+            "NameInSource": "Stime",
+            "Alias": "Stime",
+            "Type": "System.DateTime"
+          },
+          "27": {
+            "Name": "Ship_ShippingAgency",
+            "Index": -1,
+            "NameInSource": "Ship_ShippingAgency",
+            "Alias": "Ship_ShippingAgency",
+            "Type": "System.Byte"
+          },
+          "28": {
+            "Name": "RotationNumber",
+            "Index": -1,
+            "NameInSource": "RotationNumber",
+            "Alias": "RotationNumber",
+            "Type": "System.String"
+          },
+          "29": {
+            "Name": "DocLock",
+            "Index": -1,
+            "NameInSource": "DocLock",
+            "Alias": "DocLock",
+            "Type": "System.Boolean"
+          },
+          "30": {
+            "Name": "BuyLock",
+            "Index": -1,
+            "NameInSource": "BuyLock",
+            "Alias": "BuyLock",
+            "Type": "System.Boolean"
+          },
+          "31": {
+            "Name": "SellLock",
+            "Index": -1,
+            "NameInSource": "SellLock",
+            "Alias": "SellLock",
+            "Type": "System.Boolean"
+          },
+          "32": {
+            "Name": "HldLock",
+            "Index": -1,
+            "NameInSource": "HldLock",
+            "Alias": "HldLock",
+            "Type": "System.Boolean"
+          },
+          "33": {
+            "Name": "FCode",
+            "Index": -1,
+            "NameInSource": "FCode",
+            "Alias": "FCode",
+            "Type": "System.String"
+          },
+          "34": {
+            "Name": "PayLock",
+            "Index": -1,
+            "NameInSource": "PayLock",
+            "Alias": "PayLock",
+            "Type": "System.Boolean"
+          }
+        },
+        "NameInSource": "cnn",
+        "SqlCommand": "select * from TbVoyage"
+      },
+      "1": {
+        "Ident": "StiSqlSource",
+        "Name": "TbBL",
+        "Alias": "TbBL",
+        "Key": "0803ecb22b414bce874aaa36520911e2",
+        "Columns": {
+          "0": {
+            "Name": "HBL",
+            "Index": -1,
+            "NameInSource": "HBL",
+            "Alias": "HBL",
+            "Type": "System.String",
+            "Key": "b3e3a91e6ad04a53bb73a868f4506486"
+          },
+          "1": {
+            "Name": "ID",
+            "Index": -1,
+            "NameInSource": "ID",
+            "Alias": "ID",
+            "Type": "System.Int32",
+            "Key": "9186909508934177ad3ca413aaf887c0"
+          },
+          "2": {
+            "Name": "FirstVID",
+            "Index": -1,
+            "NameInSource": "FirstVID",
+            "Alias": "FirstVID",
+            "Type": "System.Int32",
+            "Key": "52e1a6dc031144389872ca0818ae2821"
+          },
+          "3": {
+            "Name": "VID",
+            "Index": -1,
+            "NameInSource": "VID",
+            "Alias": "VID",
+            "Type": "System.Int32",
+            "Key": "f21daf9006f74d19a2f811b30dda2393"
+          },
+          "4": {
+            "Name": "IOType",
+            "Index": -1,
+            "NameInSource": "IOType",
+            "Alias": "IOType",
+            "Type": "System.Byte",
+            "Key": "4b7556f26ac5471a9cd454dc44aba083"
+          },
+          "5": {
+            "Name": "PNo",
+            "Index": -1,
+            "NameInSource": "PNo",
+            "Alias": "PNo",
+            "Type": "System.Int32",
+            "Key": "0b77617d7b984c9395eba3498a365e13"
+          },
+          "6": {
+            "Name": "FileNo",
+            "Index": -1,
+            "NameInSource": "FileNo",
+            "Alias": "FileNo",
+            "Type": "System.String",
+            "Key": "12365831d4334ab3aae50ec246d1d7ff"
+          },
+          "7": {
+            "Name": "BookingNo",
+            "Index": -1,
+            "NameInSource": "BookingNo",
+            "Alias": "BookingNo",
+            "Type": "System.Int32",
+            "Key": "e95b6ed256f044db840645a240e6fb7c"
+          },
+          "8": {
+            "Name": "MBL",
+            "Index": -1,
+            "NameInSource": "MBL",
+            "Alias": "MBL",
+            "Type": "System.String",
+            "Key": "a3fe8bdebc544ad3bcdd26a065c5aed7"
+          },
+          "9": {
+            "Name": "BLIssueDateH",
+            "Index": -1,
+            "NameInSource": "BLIssueDateH",
+            "Alias": "BLIssueDateH",
+            "Type": "System.DateTime",
+            "Key": "dbf9d897cd784b2d8cf3b6ffb3b17dd3"
+          },
+          "10": {
+            "Name": "BLIssueDateM",
+            "Index": -1,
+            "NameInSource": "BLIssueDateM",
+            "Alias": "BLIssueDateM",
+            "Type": "System.DateTime",
+            "Key": "1bf2e3d7c8b14b9cba0f15aba3072b45"
+          },
+          "11": {
+            "Name": "BookerClient",
+            "Index": -1,
+            "NameInSource": "BookerClient",
+            "Alias": "BookerClient",
+            "Type": "System.Int32",
+            "Key": "df631c67b8f44f72987733a374e32fa3"
+          },
+          "12": {
+            "Name": "InvoiceClient",
+            "Index": -1,
+            "NameInSource": "InvoiceClient",
+            "Alias": "InvoiceClient",
+            "Type": "System.Int32",
+            "Key": "c15d2fccd850459f9cb5d479261b4fc0"
+          },
+          "13": {
+            "Name": "DeliveryClient",
+            "Index": -1,
+            "NameInSource": "DeliveryClient",
+            "Alias": "DeliveryClient",
+            "Type": "System.Int32",
+            "Key": "52f33f27fc934fe8afea356c67ba5547"
+          },
+          "14": {
+            "Name": "SalesPerson",
+            "Index": -1,
+            "NameInSource": "SalesPerson",
+            "Alias": "SalesPerson",
+            "Type": "System.Int16",
+            "Key": "16d70ee72f294e658390bfc8adf3c60b"
+          },
+          "15": {
+            "Name": "TransportationMode",
+            "Index": -1,
+            "NameInSource": "TransportationMode",
+            "Alias": "TransportationMode",
+            "Type": "System.Byte",
+            "Key": "b16c8ccafb2a4ae6929d553cd42a8d08"
+          },
+          "16": {
+            "Name": "ShipmentType",
+            "Index": -1,
+            "NameInSource": "ShipmentType",
+            "Alias": "ShipmentType",
+            "Type": "System.Int16",
+            "Key": "fe6f7d15fae345559c21e5e80d660dfd"
+          },
+          "17": {
+            "Name": "HsCode",
+            "Index": -1,
+            "NameInSource": "HsCode",
+            "Alias": "HsCode",
+            "Type": "System.String",
+            "Key": "fd715e7a3d934e258b8cb5beccce00d9"
+          },
+          "18": {
+            "Name": "GoodsDes",
+            "Index": -1,
+            "NameInSource": "GoodsDes",
+            "Alias": "GoodsDes",
+            "Type": "System.String",
+            "Key": "2b76d6efcd21438aba6525e2dcd69ad8"
+          },
+          "19": {
+            "Name": "PackageNo",
+            "Index": -1,
+            "NameInSource": "PackageNo",
+            "Alias": "PackageNo",
+            "Type": "System.Int32",
+            "Key": "3cd9dd3b784249c2bcb08e84a67954fd"
+          },
+          "20": {
+            "Name": "PackageType",
+            "Index": -1,
+            "NameInSource": "PackageType",
+            "Alias": "PackageType",
+            "Type": "System.Int32",
+            "Key": "d2105e110b3945da9a7c99765de16832"
+          },
+          "21": {
+            "Name": "GW",
+            "Index": -1,
+            "NameInSource": "GW",
+            "Alias": "GW",
+            "Type": "System.Single",
+            "Key": "d00e2a0489384991879d9fdfec3c0600"
+          },
+          "22": {
+            "Name": "CBM",
+            "Index": -1,
+            "NameInSource": "CBM",
+            "Alias": "CBM",
+            "Type": "System.Single",
+            "Key": "1b7b9d0e2a454b908e830a446590c777"
+          },
+          "23": {
+            "Name": "ChargableWeight",
+            "Index": -1,
+            "NameInSource": "ChargableWeight",
+            "Alias": "ChargableWeight",
+            "Type": "System.Single",
+            "Key": "20df87bc696d48778199a140f9b2b14f"
+          },
+          "24": {
+            "Name": "PORText",
+            "Index": -1,
+            "NameInSource": "PORText",
+            "Alias": "PORText",
+            "Type": "System.String",
+            "Key": "df03303d8b064459b867a50be65bdd5b"
+          },
+          "25": {
+            "Name": "POR",
+            "Index": -1,
+            "NameInSource": "POR",
+            "Alias": "POR",
+            "Type": "System.Int32",
+            "Key": "e926b1b1e1dd4dd99389ccdabd6e0cdc"
+          },
+          "26": {
+            "Name": "POLText",
+            "Index": -1,
+            "NameInSource": "POLText",
+            "Alias": "POLText",
+            "Type": "System.String",
+            "Key": "df297a989a0f4d4c947999e479e66dc9"
+          },
+          "27": {
+            "Name": "POL",
+            "Index": -1,
+            "NameInSource": "POL",
+            "Alias": "POL",
+            "Type": "System.Int32",
+            "Key": "ef74b93ff76d4aa2bbf356de8d148755"
+          },
+          "28": {
+            "Name": "POT",
+            "Index": -1,
+            "NameInSource": "POT",
+            "Alias": "POT",
+            "Type": "System.Int32",
+            "Key": "6b4fdd3e3fd9490799858eff46c6f0a0"
+          },
+          "29": {
+            "Name": "POTText",
+            "Index": -1,
+            "NameInSource": "POTText",
+            "Alias": "POTText",
+            "Type": "System.String",
+            "Key": "3bbc2969e2c94a318139b83f7dc3081a"
+          },
+          "30": {
+            "Name": "PODText",
+            "Index": -1,
+            "NameInSource": "PODText",
+            "Alias": "PODText",
+            "Type": "System.String",
+            "Key": "624f832cd5324582bf5dc68ba2bda5fc"
+          },
+          "31": {
+            "Name": "POD",
+            "Index": -1,
+            "NameInSource": "POD",
+            "Alias": "POD",
+            "Type": "System.Int32",
+            "Key": "33e12372c17845e68830fc7d8a8f2238"
+          },
+          "32": {
+            "Name": "FinalDesText",
+            "Index": -1,
+            "NameInSource": "FinalDesText",
+            "Alias": "FinalDesText",
+            "Type": "System.String",
+            "Key": "eaa08c9d0bbc410d9897c4a145353f3a"
+          },
+          "33": {
+            "Name": "FinalDes",
+            "Index": -1,
+            "NameInSource": "FinalDes",
+            "Alias": "FinalDes",
+            "Type": "System.Int32",
+            "Key": "0eb1a0a31872411698e94688f0258c35"
+          },
+          "34": {
+            "Name": "Incoterm",
+            "Index": -1,
+            "NameInSource": "Incoterm",
+            "Alias": "Incoterm",
+            "Type": "System.Byte",
+            "Key": "2cbbe32c970248298deab9e67aad9180"
+          },
+          "35": {
+            "Name": "IncotermPOD",
+            "Index": -1,
+            "NameInSource": "IncotermPOD",
+            "Alias": "IncotermPOD",
+            "Type": "System.Byte",
+            "Key": "63576802a67d4ca0856c11715b4b9d7e"
+          },
+          "36": {
+            "Name": "Shipper",
+            "Index": -1,
+            "NameInSource": "Shipper",
+            "Alias": "Shipper",
+            "Type": "System.Int32",
+            "Key": "3b9630b62ce34d53acb58db6e2f362ba"
+          },
+          "37": {
+            "Name": "ShipperText",
+            "Index": -1,
+            "NameInSource": "ShipperText",
+            "Alias": "ShipperText",
+            "Type": "System.String",
+            "Key": "ccc66297cfb04ec68fab895f9c61469f"
+          },
+          "38": {
+            "Name": "Consignee",
+            "Index": -1,
+            "NameInSource": "Consignee",
+            "Alias": "Consignee",
+            "Type": "System.Int32",
+            "Key": "3ad8caa00595429eb034969c0cd03cc8"
+          },
+          "39": {
+            "Name": "ConsigneeText",
+            "Index": -1,
+            "NameInSource": "ConsigneeText",
+            "Alias": "ConsigneeText",
+            "Type": "System.String",
+            "Key": "fde411efed95444db0edcdbfdaa6515e"
+          },
+          "40": {
+            "Name": "Notify",
+            "Index": -1,
+            "NameInSource": "Notify",
+            "Alias": "Notify",
+            "Type": "System.Int32",
+            "Key": "3c9b14b0dd614f24a24be159ae43651a"
+          },
+          "41": {
+            "Name": "NotifyText",
+            "Index": -1,
+            "NameInSource": "NotifyText",
+            "Alias": "NotifyText",
+            "Type": "System.String",
+            "Key": "2a63337a53c54563ab40edb847717822"
+          },
+          "42": {
+            "Name": "FreightTypeH",
+            "Index": -1,
+            "NameInSource": "FreightTypeH",
+            "Alias": "FreightTypeH",
+            "Type": "System.Byte",
+            "Key": "7d14380f410646f09d39efee4414ad02"
+          },
+          "43": {
+            "Name": "FreightTypeM",
+            "Index": -1,
+            "NameInSource": "FreightTypeM",
+            "Alias": "FreightTypeM",
+            "Type": "System.Byte",
+            "Key": "321873eff865446fa4fcbc9a2764308e"
+          },
+          "44": {
+            "Name": "FreeTimeH",
+            "Index": -1,
+            "NameInSource": "FreeTimeH",
+            "Alias": "FreeTimeH",
+            "Type": "System.Int16",
+            "Key": "e31045a2a01d4e4aa8a8b9edd918dc06"
+          },
+          "45": {
+            "Name": "FreeTimeM",
+            "Index": -1,
+            "NameInSource": "FreeTimeM",
+            "Alias": "FreeTimeM",
+            "Type": "System.Int16",
+            "Key": "458e9d512bc645119ceb23d251d14be5"
+          },
+          "46": {
+            "Name": "ForwardingAgent",
+            "Index": -1,
+            "NameInSource": "ForwardingAgent",
+            "Alias": "ForwardingAgent",
+            "Type": "System.Int16",
+            "Key": "6e5f685e0487484d922050fab277e1b2"
+          },
+          "47": {
+            "Name": "Line",
+            "Index": -1,
+            "NameInSource": "Line",
+            "Alias": "Line",
+            "Type": "System.Int32",
+            "Key": "52cc3aa481aa4fc295afd39fca347ff7"
+          },
+          "48": {
+            "Name": "FormRemark",
+            "Index": -1,
+            "NameInSource": "FormRemark",
+            "Alias": "FormRemark",
+            "Type": "System.String",
+            "Key": "44a9f344bde646e0b4ad365ac11cd7b7"
+          },
+          "49": {
+            "Name": "AlarmRemark",
+            "Index": -1,
+            "NameInSource": "AlarmRemark",
+            "Alias": "AlarmRemark",
+            "Type": "System.String",
+            "Key": "9b9f1ae6036b4f989b9074ecd8070a69"
+          },
+          "50": {
+            "Name": "LCNo",
+            "Index": -1,
+            "NameInSource": "LCNo",
+            "Alias": "LCNo",
+            "Type": "System.String",
+            "Key": "081ab7bc67c2460a8d5417cfbcc84c05"
+          },
+          "51": {
+            "Name": "DocLock",
+            "Index": -1,
+            "NameInSource": "DocLock",
+            "Alias": "DocLock",
+            "Type": "System.Boolean",
+            "Key": "fa52fec2e1ce471f9cf282b92f7c93af"
+          },
+          "52": {
+            "Name": "BuyLock",
+            "Index": -1,
+            "NameInSource": "BuyLock",
+            "Alias": "BuyLock",
+            "Type": "System.Boolean",
+            "Key": "f02a24a9445a405fa6855bc0b641c6ae"
+          },
+          "53": {
+            "Name": "SellLock",
+            "Index": -1,
+            "NameInSource": "SellLock",
+            "Alias": "SellLock",
+            "Type": "System.Boolean",
+            "Key": "8c6ca810b58b419ba4bdc78fb58810e2"
+          },
+          "54": {
+            "Name": "HldLock",
+            "Index": -1,
+            "NameInSource": "HldLock",
+            "Alias": "HldLock",
+            "Type": "System.Boolean",
+            "Key": "57d3f11670d74bffb26be0dd5840a0c6"
+          },
+          "55": {
+            "Name": "BLReleaseTypeH",
+            "Index": -1,
+            "NameInSource": "BLReleaseTypeH",
+            "Alias": "BLReleaseTypeH",
+            "Type": "System.Byte",
+            "Key": "8fc9975eaac749bc8c9bcf15bdd99886"
+          },
+          "56": {
+            "Name": "BLReleaseDateH",
+            "Index": -1,
+            "NameInSource": "BLReleaseDateH",
+            "Alias": "BLReleaseDateH",
+            "Type": "System.DateTime",
+            "Key": "d70dfffe662d4b96b47f53b9c0158473"
+          },
+          "57": {
+            "Name": "BLReleaseTypeM",
+            "Index": -1,
+            "NameInSource": "BLReleaseTypeM",
+            "Alias": "BLReleaseTypeM",
+            "Type": "System.Byte",
+            "Key": "f3a6cf4df5b5466b87041e8e325f2a24"
+          },
+          "58": {
+            "Name": "BLReleaseDateM",
+            "Index": -1,
+            "NameInSource": "BLReleaseDateM",
+            "Alias": "BLReleaseDateM",
+            "Type": "System.DateTime",
+            "Key": "86d616cd1c5a499cac99c3e687e43425"
+          },
+          "59": {
+            "Name": "ArrNoticeRcvdDate",
+            "Index": -1,
+            "NameInSource": "ArrNoticeRcvdDate",
+            "Alias": "ArrNoticeRcvdDate",
+            "Type": "System.DateTime",
+            "Key": "4c31ac6d10a345dabf28d84af4c6aaec"
+          },
+          "60": {
+            "Name": "ArrNoticeSendDate",
+            "Index": -1,
+            "NameInSource": "ArrNoticeSendDate",
+            "Alias": "ArrNoticeSendDate",
+            "Type": "System.DateTime",
+            "Key": "c9e9eed8d0c94fb6b496468b110010aa"
+          },
+          "61": {
+            "Name": "DORcvdDate",
+            "Index": -1,
+            "NameInSource": "DORcvdDate",
+            "Alias": "DORcvdDate",
+            "Type": "System.DateTime",
+            "Key": "599d4fe3d55248ecb953c3c54932d885"
+          },
+          "62": {
+            "Name": "DOSendDate",
+            "Index": -1,
+            "NameInSource": "DOSendDate",
+            "Alias": "DOSendDate",
+            "Type": "System.DateTime",
+            "Key": "a65a9608bb6c43acac43ad72ca76af6f"
+          },
+          "63": {
+            "Name": "DOSendBranch",
+            "Index": -1,
+            "NameInSource": "DOSendBranch",
+            "Alias": "DOSendBranch",
+            "Type": "System.Int16",
+            "Key": "80c5257965bf4634a3a6b061d751b8e6"
+          },
+          "64": {
+            "Name": "AgencyofLine",
+            "Index": -1,
+            "NameInSource": "AgencyofLine",
+            "Alias": "AgencyofLine",
+            "Type": "System.Int32",
+            "Key": "6c50cc6ae7ac44afb33269bb6f1dca9e"
+          },
+          "65": {
+            "Name": "ExitType",
+            "Index": -1,
+            "NameInSource": "ExitType",
+            "Alias": "ExitType",
+            "Type": "System.Byte",
+            "Key": "a5d6b4839b40410594d1c8702a0528a0"
+          },
+          "66": {
+            "Name": "--",
+            "Index": -1,
+            "NameInSource": "--",
+            "Alias": "--",
+            "Type": "System.Boolean",
+            "Key": "229d4476bf0d4cb5b36d4da065934a5e"
+          },
+          "67": {
+            "Name": "Co",
+            "Index": -1,
+            "NameInSource": "Co",
+            "Alias": "Co",
+            "Type": "System.Int16",
+            "Key": "8335fa5f0f9e443b95d3c1326b931af8"
+          },
+          "68": {
+            "Name": "TableID",
+            "Index": -1,
+            "NameInSource": "TableID",
+            "Alias": "TableID",
+            "Type": "System.Int16",
+            "Key": "e1ff0d3b77944ae8a9343393af0e9846"
+          },
+          "69": {
+            "Name": "RecStatus",
+            "Index": -1,
+            "NameInSource": "RecStatus",
+            "Alias": "RecStatus",
+            "Type": "System.Int32",
+            "Key": "31a05a6807ea44a4a0381ce8f94e7477"
+          },
+          "70": {
+            "Name": "SUID",
+            "Index": -1,
+            "NameInSource": "SUID",
+            "Alias": "SUID",
+            "Type": "System.Int32",
+            "Key": "b86c9c2c255a4cd1970782eca14b2155"
+          },
+          "71": {
+            "Name": "Stime",
+            "Index": -1,
+            "NameInSource": "Stime",
+            "Alias": "Stime",
+            "Type": "System.DateTime",
+            "Key": "3eae96b2882f4e06bb1a73d01efaea77"
+          },
+          "72": {
+            "Name": "DOTransitbyUs",
+            "Index": -1,
+            "NameInSource": "DOTransitbyUs",
+            "Alias": "DOTransitbyUs",
+            "Type": "System.Byte",
+            "Key": "8ec21284d3e243f0aac0eea60bda10d7"
+          },
+          "73": {
+            "Name": "AgentofClient",
+            "Index": -1,
+            "NameInSource": "AgentofClient",
+            "Alias": "AgentofClient",
+            "Type": "System.Int32",
+            "Key": "c44cb40d94194582a326a8a883edecb8"
+          },
+          "74": {
+            "Name": "DesAsAtt",
+            "Index": -1,
+            "NameInSource": "DesAsAtt",
+            "Alias": "DesAsAtt",
+            "Type": "System.Boolean",
+            "Key": "5749ec9010ef4e6ca1f05eb67be40fd6"
+          },
+          "75": {
+            "Name": "PayLock",
+            "Index": -1,
+            "NameInSource": "PayLock",
+            "Alias": "PayLock",
+            "Type": "System.Boolean",
+            "Key": "034f7d7da0a74efa9ec5b7cb909ad96c"
+          },
+          "76": {
+            "Name": "OrderRegistrationNo",
+            "Index": -1,
+            "NameInSource": "OrderRegistrationNo",
+            "Alias": "OrderRegistrationNo",
+            "Type": "System.String",
+            "Key": "5826b7ffc0cc4ad2b86bf862c24a490d"
+          }
+        },
+        "NameInSource": "cnn",
+        "SqlCommand": "select * from TbBL"
+      },
+      "2": {
+        "Ident": "StiSqlSource",
+        "Name": "VArrivalNoticeF_Cash",
+        "Alias": "VArrivalNoticeF_Cash",
+        "Key": "08ec720a0bea4daf9d3191d181424997",
+        "Columns": {
+          "0": {
+            "Name": "ArrivalNoticeID",
+            "Index": -1,
+            "NameInSource": "ArrivalNoticeID",
+            "Alias": "ArrivalNoticeID",
+            "Type": "System.Int32"
+          },
+          "1": {
+            "Name": "ServiceDes",
+            "Index": -1,
+            "NameInSource": "ServiceDes",
+            "Alias": "ServiceDes",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "Remark",
+            "Index": -1,
+            "NameInSource": "Remark",
+            "Alias": "Remark",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "StripFee",
+            "Index": -1,
+            "NameInSource": "StripFee",
+            "Alias": "StripFee",
+            "Type": "System.Single"
+          },
+          "4": {
+            "Name": "SentFullFee",
+            "Index": -1,
+            "NameInSource": "SentFullFee",
+            "Alias": "SentFullFee",
+            "Type": "System.Single"
+          },
+          "5": {
+            "Name": "VATpercent",
+            "Index": -1,
+            "NameInSource": "VATpercent",
+            "Alias": "VATpercent",
+            "Type": "System.Byte"
+          },
+          "6": {
+            "Name": "VAT",
+            "Index": -1,
+            "NameInSource": "VAT",
+            "Alias": "VAT",
+            "Type": "System.Byte"
+          },
+          "7": {
+            "Name": "StripFeeVAT",
+            "Index": -1,
+            "NameInSource": "StripFeeVAT",
+            "Alias": "StripFeeVAT",
+            "Type": "System.Single"
+          },
+          "8": {
+            "Name": "SentFullVAT",
+            "Index": -1,
+            "NameInSource": "SentFullVAT",
+            "Alias": "SentFullVAT",
+            "Type": "System.Single"
+          },
+          "9": {
+            "Name": "PayCode",
+            "Index": -1,
+            "NameInSource": "PayCode",
+            "Alias": "PayCode",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "cnn",
+        "SqlCommand": "select * from VArrivalNoticeF_Cash"
+      },
+      "3": {
+        "Ident": "StiSqlSource",
+        "Name": "TbArrivalNoticeH",
+        "Alias": "TbArrivalNoticeH",
+        "Key": "28786cd6c89c4b39a3cc5991863cfab8",
+        "Columns": {
+          "0": {
+            "Name": "ID",
+            "Index": -1,
+            "NameInSource": "ID",
+            "Alias": "ID",
+            "Type": "System.Int32",
+            "Key": "9cf303db85804fa1adff563ed2a2b7ba"
+          },
+          "1": {
+            "Name": "BLID",
+            "Index": -1,
+            "NameInSource": "BLID",
+            "Alias": "BLID",
+            "Type": "System.Int32",
+            "Key": "e42a3a0f92de49098066195539c26483"
+          },
+          "2": {
+            "Name": "Branch",
+            "Index": -1,
+            "NameInSource": "Branch",
+            "Alias": "Branch",
+            "Type": "System.Byte",
+            "Key": "fb9eb90adfdf4ab0b27f311021d1efa6"
+          },
+          "3": {
+            "Name": "Ref",
+            "Index": -1,
+            "NameInSource": "Ref",
+            "Alias": "Ref",
+            "Type": "System.String",
+            "Key": "be6baa484d154bd098a21f060640c54a"
+          },
+          "4": {
+            "Name": "Remark",
+            "Index": -1,
+            "NameInSource": "Remark",
+            "Alias": "Remark",
+            "Type": "System.String",
+            "Key": "4bcfd305f8b84b85ada9e51ba3cc7edb"
+          },
+          "5": {
+            "Name": "TemplateCode",
+            "Index": -1,
+            "NameInSource": "TemplateCode",
+            "Alias": "TemplateCode",
+            "Type": "System.Int16",
+            "Key": "e7baedb4319c402b8a45df7381ca5da0"
+          },
+          "6": {
+            "Name": "SubTitle",
+            "Index": -1,
+            "NameInSource": "SubTitle",
+            "Alias": "SubTitle",
+            "Type": "System.String",
+            "Key": "a5b6fcb9d34b4564b0a3133e2b80284a"
+          },
+          "7": {
+            "Name": "CourierDate",
+            "Index": -1,
+            "NameInSource": "CourierDate",
+            "Alias": "CourierDate",
+            "Type": "System.DateTime",
+            "Key": "3d2a0d1044f94fd0b7415eeaf10bd661"
+          },
+          "8": {
+            "Name": "VATpercent",
+            "Index": -1,
+            "NameInSource": "VATpercent",
+            "Alias": "VATpercent",
+            "Type": "System.Byte",
+            "Key": "43e52ad349244c7bbc43679a2f6afbc0"
+          },
+          "9": {
+            "Name": "Submission",
+            "Index": -1,
+            "NameInSource": "Submission",
+            "Alias": "Submission",
+            "Type": "System.Boolean",
+            "Key": "c835028dde84416097819b0161624671"
+          },
+          "10": {
+            "Name": "PendingDebit",
+            "Index": -1,
+            "NameInSource": "PendingDebit",
+            "Alias": "PendingDebit",
+            "Type": "System.Boolean",
+            "Key": "ddf91ab0ff4a49eaa1efe750a6e6109a"
+          },
+          "11": {
+            "Name": "InvType",
+            "Index": -1,
+            "NameInSource": "InvType",
+            "Alias": "InvType",
+            "Type": "System.Int16",
+            "Key": "c15d5b58960d4e79aa8bb4653b010d1b"
+          },
+          "12": {
+            "Name": "--",
+            "Index": -1,
+            "NameInSource": "--",
+            "Alias": "--",
+            "Type": "System.Boolean",
+            "Key": "bf8a82cdc1484796a5fac09a95921f5a"
+          },
+          "13": {
+            "Name": "Co",
+            "Index": -1,
+            "NameInSource": "Co",
+            "Alias": "Co",
+            "Type": "System.Int16",
+            "Key": "bd2cb53f90004e4dbd71194f41db2ce1"
+          },
+          "14": {
+            "Name": "TableID",
+            "Index": -1,
+            "NameInSource": "TableID",
+            "Alias": "TableID",
+            "Type": "System.Int16",
+            "Key": "a22c798f595c4b2c9a7070d1ff647a7e"
+          },
+          "15": {
+            "Name": "RecStatus",
+            "Index": -1,
+            "NameInSource": "RecStatus",
+            "Alias": "RecStatus",
+            "Type": "System.Byte",
+            "Key": "729bc7e1ca454171b71574fadd182d6b"
+          },
+          "16": {
+            "Name": "SUID",
+            "Index": -1,
+            "NameInSource": "SUID",
+            "Alias": "SUID",
+            "Type": "System.Int32",
+            "Key": "a8c91e70d58c40e49e6b327cef749d05"
+          },
+          "17": {
+            "Name": "Stime",
+            "Index": -1,
+            "NameInSource": "Stime",
+            "Alias": "Stime",
+            "Type": "System.DateTime",
+            "Key": "f3ffed8725ab4bb09ca1f5b46b2b38a9"
+          },
+          "18": {
+            "Name": "ShowAmounts",
+            "Index": -1,
+            "NameInSource": "ShowAmounts",
+            "Alias": "ShowAmounts",
+            "Type": "System.Boolean",
+            "Key": "93886101f3d9452ab702d1d9b7d2db66"
+          },
+          "19": {
+            "Name": "PayCode",
+            "Index": -1,
+            "NameInSource": "PayCode",
+            "Alias": "PayCode",
+            "Type": "System.String",
+            "Key": "3c853cdea74c4a66b98f39634fc42678"
+          }
+        },
+        "NameInSource": "cnn",
+        "SqlCommand": "select * from TbArrivalNoticeH where ID={ID}"
+      },
+      "4": {
+        "Ident": "StiSqlSource",
+        "Name": "TbInvoiceType",
+        "Alias": "TbInvoiceType",
+        "Key": "8e1cdf6e7b284a6193a873092dda78e9",
+        "Columns": {
+          "0": {
+            "Name": "Code",
+            "Index": -1,
+            "NameInSource": "Code",
+            "Alias": "Code",
+            "Type": "System.Int16",
+            "Key": "439703270bc747e191716d33b531a616"
+          },
+          "1": {
+            "Name": "Des",
+            "Index": -1,
+            "NameInSource": "Des",
+            "Alias": "Des",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "SerialPerfix_F",
+            "Index": -1,
+            "NameInSource": "SerialPerfix_F",
+            "Alias": "SerialPerfix_F",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "SerialPerfix_NF",
+            "Index": -1,
+            "NameInSource": "SerialPerfix_NF",
+            "Alias": "SerialPerfix_NF",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "SerialPerfix_Buy",
+            "Index": -1,
+            "NameInSource": "SerialPerfix_Buy",
+            "Alias": "SerialPerfix_Buy",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "PreInvTitle_Fa",
+            "Index": -1,
+            "NameInSource": "PreInvTitle_Fa",
+            "Alias": "PreInvTitle_Fa",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "PreInvTitle_En",
+            "Index": -1,
+            "NameInSource": "PreInvTitle_En",
+            "Alias": "PreInvTitle_En",
+            "Type": "System.String"
+          },
+          "7": {
+            "Name": "InvTitle_F_Fa",
+            "Index": -1,
+            "NameInSource": "InvTitle_F_Fa",
+            "Alias": "InvTitle_F_Fa",
+            "Type": "System.String"
+          },
+          "8": {
+            "Name": "InvTitle_F_En",
+            "Index": -1,
+            "NameInSource": "InvTitle_F_En",
+            "Alias": "InvTitle_F_En",
+            "Type": "System.String"
+          },
+          "9": {
+            "Name": "InvTitle_NF_Fa",
+            "Index": -1,
+            "NameInSource": "InvTitle_NF_Fa",
+            "Alias": "InvTitle_NF_Fa",
+            "Type": "System.String"
+          },
+          "10": {
+            "Name": "InvTitle_NF_En",
+            "Index": -1,
+            "NameInSource": "InvTitle_NF_En",
+            "Alias": "InvTitle_NF_En",
+            "Type": "System.String"
+          },
+          "11": {
+            "Name": "DefultInvTemplateCode_F",
+            "Index": -1,
+            "NameInSource": "DefultInvTemplateCode_F",
+            "Alias": "DefultInvTemplateCode_F",
+            "Type": "System.Int16"
+          },
+          "12": {
+            "Name": "DefultInvTemplateCode_NF",
+            "Index": -1,
+            "NameInSource": "DefultInvTemplateCode_NF",
+            "Alias": "DefultInvTemplateCode_NF",
+            "Type": "System.Int16"
+          },
+          "13": {
+            "Name": "DefultInvTemplateCode_PreInv",
+            "Index": -1,
+            "NameInSource": "DefultInvTemplateCode_PreInv",
+            "Alias": "DefultInvTemplateCode_PreInv",
+            "Type": "System.Int16"
+          },
+          "14": {
+            "Name": "DefultInvTemplateCode_BuyF",
+            "Index": -1,
+            "NameInSource": "DefultInvTemplateCode_BuyF",
+            "Alias": "DefultInvTemplateCode_BuyF",
+            "Type": "System.Int16"
+          },
+          "15": {
+            "Name": "DefultInvTemplateCode_BuyNF",
+            "Index": -1,
+            "NameInSource": "DefultInvTemplateCode_BuyNF",
+            "Alias": "DefultInvTemplateCode_BuyNF",
+            "Type": "System.Int16"
+          },
+          "16": {
+            "Name": "DefultInvTemplateCode_BuyPreInv",
+            "Index": -1,
+            "NameInSource": "DefultInvTemplateCode_BuyPreInv",
+            "Alias": "DefultInvTemplateCode_BuyPreInv",
+            "Type": "System.Int16"
+          },
+          "17": {
+            "Name": "DefultInvTemplateCode_SellF",
+            "Index": -1,
+            "NameInSource": "DefultInvTemplateCode_SellF",
+            "Alias": "DefultInvTemplateCode_SellF",
+            "Type": "System.Int16"
+          },
+          "18": {
+            "Name": "DefultInvTemplateCode_SellNF",
+            "Index": -1,
+            "NameInSource": "DefultInvTemplateCode_SellNF",
+            "Alias": "DefultInvTemplateCode_SellNF",
+            "Type": "System.Int16"
+          },
+          "19": {
+            "Name": "DefultInvTemplateCode_SellPreInv",
+            "Index": -1,
+            "NameInSource": "DefultInvTemplateCode_SellPreInv",
+            "Alias": "DefultInvTemplateCode_SellPreInv",
+            "Type": "System.Int16"
+          },
+          "20": {
+            "Name": "ShowBalanceInPrint",
+            "Index": -1,
+            "NameInSource": "ShowBalanceInPrint",
+            "Alias": "ShowBalanceInPrint",
+            "Type": "System.Boolean"
+          }
+        },
+        "NameInSource": "cnn",
+        "SqlCommand": "select * from TbInvoiceType"
+      },
+      "5": {
+        "Ident": "StiSqlSource",
+        "Name": "VArrivalNoticeF_Cash_Sum",
+        "Alias": "VArrivalNoticeF_Cash_Sum",
+        "Key": "4f47860d8f93444ca73f225c308c3099",
+        "Columns": {
+          "0": {
+            "Name": "ArrivalNoticeID",
+            "Index": -1,
+            "NameInSource": "ArrivalNoticeID",
+            "Alias": "ArrivalNoticeID",
+            "Type": "System.Int32"
+          },
+          "1": {
+            "Name": "SumStripFee",
+            "Index": -1,
+            "NameInSource": "SumStripFee",
+            "Alias": "SumStripFee",
+            "Type": "System.Single"
+          },
+          "2": {
+            "Name": "SumSentFullFee",
+            "Index": -1,
+            "NameInSource": "SumSentFullFee",
+            "Alias": "SumSentFullFee",
+            "Type": "System.Single"
+          },
+          "3": {
+            "Name": "SumStripFee_VAT",
+            "Index": -1,
+            "NameInSource": "SumStripFee_VAT",
+            "Alias": "SumStripFee_VAT",
+            "Type": "System.Single"
+          },
+          "4": {
+            "Name": "SumDentFullFee_VAT",
+            "Index": -1,
+            "NameInSource": "SumDentFullFee_VAT",
+            "Alias": "SumDentFullFee_VAT",
+            "Type": "System.Single"
+          },
+          "5": {
+            "Name": "Payable_Strip",
+            "Index": -1,
+            "NameInSource": "Payable_Strip",
+            "Alias": "Payable_Strip",
+            "Type": "System.Single"
+          },
+          "6": {
+            "Name": "Payable_SentFull",
+            "Index": -1,
+            "NameInSource": "Payable_SentFull",
+            "Alias": "Payable_SentFull",
+            "Type": "System.Single"
+          }
+        },
+        "NameInSource": "cnn",
+        "SqlCommand": "select * from VArrivalNoticeF_Cash_Sum"
+      },
+      "6": {
+        "Ident": "StiSqlSource",
+        "Name": "TbEntity_1",
+        "Alias": "TbEntity_1",
+        "Key": "0a51e8910aac4979923352f06335812f",
+        "Columns": {
+          "0": {
+            "Name": "ID",
+            "Index": -1,
+            "NameInSource": "ID",
+            "Alias": "ID",
+            "Type": "System.Int32"
+          },
+          "1": {
+            "Name": "DesEn",
+            "Index": -1,
+            "NameInSource": "DesEn",
+            "Alias": "DesEn",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "DesFa",
+            "Index": -1,
+            "NameInSource": "DesFa",
+            "Alias": "DesFa",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "Manager",
+            "Index": -1,
+            "NameInSource": "Manager",
+            "Alias": "Manager",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "AddressEn",
+            "Index": -1,
+            "NameInSource": "AddressEn",
+            "Alias": "AddressEn",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "AddressFa",
+            "Index": -1,
+            "NameInSource": "AddressFa",
+            "Alias": "AddressFa",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "Tel",
+            "Index": -1,
+            "NameInSource": "Tel",
+            "Alias": "Tel",
+            "Type": "System.String"
+          },
+          "7": {
+            "Name": "Fax",
+            "Index": -1,
+            "NameInSource": "Fax",
+            "Alias": "Fax",
+            "Type": "System.String"
+          },
+          "8": {
+            "Name": "Tel2",
+            "Index": -1,
+            "NameInSource": "Tel2",
+            "Alias": "Tel2",
+            "Type": "System.String"
+          },
+          "9": {
+            "Name": "Fax2",
+            "Index": -1,
+            "NameInSource": "Fax2",
+            "Alias": "Fax2",
+            "Type": "System.String"
+          },
+          "10": {
+            "Name": "Tel3",
+            "Index": -1,
+            "NameInSource": "Tel3",
+            "Alias": "Tel3",
+            "Type": "System.String"
+          },
+          "11": {
+            "Name": "Fax3",
+            "Index": -1,
+            "NameInSource": "Fax3",
+            "Alias": "Fax3",
+            "Type": "System.String"
+          },
+          "12": {
+            "Name": "Email",
+            "Index": -1,
+            "NameInSource": "Email",
+            "Alias": "Email",
+            "Type": "System.String"
+          },
+          "13": {
+            "Name": "FCode",
+            "Index": -1,
+            "NameInSource": "FCode",
+            "Alias": "FCode",
+            "Type": "System.String"
+          },
+          "14": {
+            "Name": "ClientAlarm",
+            "Index": -1,
+            "NameInSource": "ClientAlarm",
+            "Alias": "ClientAlarm",
+            "Type": "System.String"
+          },
+          "15": {
+            "Name": "PostalCode",
+            "Index": -1,
+            "NameInSource": "PostalCode",
+            "Alias": "PostalCode",
+            "Type": "System.String"
+          },
+          "16": {
+            "Name": "RegisterCode",
+            "Index": -1,
+            "NameInSource": "RegisterCode",
+            "Alias": "RegisterCode",
+            "Type": "System.String"
+          },
+          "17": {
+            "Name": "EconomicCode",
+            "Index": -1,
+            "NameInSource": "EconomicCode",
+            "Alias": "EconomicCode",
+            "Type": "System.String"
+          },
+          "18": {
+            "Name": "NationalID",
+            "Index": -1,
+            "NameInSource": "NationalID",
+            "Alias": "NationalID",
+            "Type": "System.String"
+          },
+          "19": {
+            "Name": "VisforCreator",
+            "Index": -1,
+            "NameInSource": "VisforCreator",
+            "Alias": "VisforCreator",
+            "Type": "System.Boolean"
+          },
+          "20": {
+            "Name": "Remark",
+            "Index": -1,
+            "NameInSource": "Remark",
+            "Alias": "Remark",
+            "Type": "System.String"
+          },
+          "21": {
+            "Name": "Company",
+            "Index": -1,
+            "NameInSource": "Company",
+            "Alias": "Company",
+            "Type": "System.Boolean"
+          },
+          "22": {
+            "Name": "Mobile",
+            "Index": -1,
+            "NameInSource": "Mobile",
+            "Alias": "Mobile",
+            "Type": "System.String"
+          },
+          "23": {
+            "Name": "Text1",
+            "Index": -1,
+            "NameInSource": "Text1",
+            "Alias": "Text1",
+            "Type": "System.String"
+          },
+          "24": {
+            "Name": "Text2",
+            "Index": -1,
+            "NameInSource": "Text2",
+            "Alias": "Text2",
+            "Type": "System.String"
+          },
+          "25": {
+            "Name": "AllocatedSalesPerson",
+            "Index": -1,
+            "NameInSource": "AllocatedSalesPerson",
+            "Alias": "AllocatedSalesPerson",
+            "Type": "System.Int32"
+          },
+          "26": {
+            "Name": "--",
+            "Index": -1,
+            "NameInSource": "--",
+            "Alias": "--",
+            "Type": "System.Boolean"
+          },
+          "27": {
+            "Name": "RecStatus",
+            "Index": -1,
+            "NameInSource": "RecStatus",
+            "Alias": "RecStatus",
+            "Type": "System.Int32"
+          },
+          "28": {
+            "Name": "SUID",
+            "Index": -1,
+            "NameInSource": "SUID",
+            "Alias": "SUID",
+            "Type": "System.Int32"
+          },
+          "29": {
+            "Name": "Stime",
+            "Index": -1,
+            "NameInSource": "Stime",
+            "Alias": "Stime",
+            "Type": "System.DateTime"
+          },
+          "30": {
+            "Name": "SPChangeDate",
+            "Index": -1,
+            "NameInSource": "SPChangeDate",
+            "Alias": "SPChangeDate",
+            "Type": "System.DateTime"
+          },
+          "31": {
+            "Name": "Text3",
+            "Index": -1,
+            "NameInSource": "Text3",
+            "Alias": "Text3",
+            "Type": "System.String"
+          },
+          "32": {
+            "Name": "ClientCategory",
+            "Index": -1,
+            "NameInSource": "ClientCategory",
+            "Alias": "ClientCategory",
+            "Type": "System.Int16"
+          },
+          "33": {
+            "Name": "RequestForNewClientID",
+            "Index": -1,
+            "NameInSource": "RequestForNewClientID",
+            "Alias": "RequestForNewClientID",
+            "Type": "System.Int32"
+          },
+          "34": {
+            "Name": "password",
+            "Index": -1,
+            "NameInSource": "password",
+            "Alias": "password",
+            "Type": "System.String"
+          },
+          "35": {
+            "Name": "PersonType",
+            "Index": -1,
+            "NameInSource": "PersonType",
+            "Alias": "PersonType",
+            "Type": "System.Byte"
+          },
+          "36": {
+            "Name": "EconomicID",
+            "Index": -1,
+            "NameInSource": "EconomicID",
+            "Alias": "EconomicID",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "cnn",
+        "SqlCommand": "select * from TbEntity"
+      },
+      "7": {
+        "Ident": "StiSqlSource",
+        "Name": "TbEntity_2",
+        "Alias": "TbEntity_2",
+        "Key": "3defe24f88944174a07ffed01c6b2ef4",
+        "Columns": {
+          "0": {
+            "Name": "ID",
+            "Index": -1,
+            "NameInSource": "ID",
+            "Alias": "ID",
+            "Type": "System.Int32",
+            "Key": "406610d35f1d48d8908a8a098d278dbf"
+          },
+          "1": {
+            "Name": "DesEn",
+            "Index": -1,
+            "NameInSource": "DesEn",
+            "Alias": "DesEn",
+            "Type": "System.String",
+            "Key": "a1d61c2a8e4f4b09b4ed9251087b6deb"
+          },
+          "2": {
+            "Name": "DesFa",
+            "Index": -1,
+            "NameInSource": "DesFa",
+            "Alias": "DesFa",
+            "Type": "System.String",
+            "Key": "37d97e74704f447889766e90a373ea5b"
+          },
+          "3": {
+            "Name": "Manager",
+            "Index": -1,
+            "NameInSource": "Manager",
+            "Alias": "Manager",
+            "Type": "System.String",
+            "Key": "20a9ffc5307f4c919238eeb61e7e3d85"
+          },
+          "4": {
+            "Name": "AddressEn",
+            "Index": -1,
+            "NameInSource": "AddressEn",
+            "Alias": "AddressEn",
+            "Type": "System.String",
+            "Key": "664a7680da494ebda18865ada6ce4dd4"
+          },
+          "5": {
+            "Name": "AddressFa",
+            "Index": -1,
+            "NameInSource": "AddressFa",
+            "Alias": "AddressFa",
+            "Type": "System.String",
+            "Key": "bb9fe08c4fa347208e97c8f097a98c0a"
+          },
+          "6": {
+            "Name": "Tel",
+            "Index": -1,
+            "NameInSource": "Tel",
+            "Alias": "Tel",
+            "Type": "System.String",
+            "Key": "86ac9cd64bf3482f85a52c31e3b0c4c9"
+          },
+          "7": {
+            "Name": "Fax",
+            "Index": -1,
+            "NameInSource": "Fax",
+            "Alias": "Fax",
+            "Type": "System.String",
+            "Key": "c7cc090b9d784b80b99deda3a6f4d5ea"
+          },
+          "8": {
+            "Name": "Tel2",
+            "Index": -1,
+            "NameInSource": "Tel2",
+            "Alias": "Tel2",
+            "Type": "System.String",
+            "Key": "ef0f94a5fa0d42f8a444c381d775a444"
+          },
+          "9": {
+            "Name": "Fax2",
+            "Index": -1,
+            "NameInSource": "Fax2",
+            "Alias": "Fax2",
+            "Type": "System.String",
+            "Key": "78e99c6b15a64618a73d365658496a4f"
+          },
+          "10": {
+            "Name": "Tel3",
+            "Index": -1,
+            "NameInSource": "Tel3",
+            "Alias": "Tel3",
+            "Type": "System.String",
+            "Key": "c4086ff0b03a4621b0d55426e089c905"
+          },
+          "11": {
+            "Name": "Fax3",
+            "Index": -1,
+            "NameInSource": "Fax3",
+            "Alias": "Fax3",
+            "Type": "System.String",
+            "Key": "9a35cad29eea4c15a39c358e6228b44e"
+          },
+          "12": {
+            "Name": "Email",
+            "Index": -1,
+            "NameInSource": "Email",
+            "Alias": "Email",
+            "Type": "System.String",
+            "Key": "ac17060f12b244928f48fa56f0b12822"
+          },
+          "13": {
+            "Name": "FCode",
+            "Index": -1,
+            "NameInSource": "FCode",
+            "Alias": "FCode",
+            "Type": "System.String",
+            "Key": "7aaef4b1837d4940b41c3e7394b54689"
+          },
+          "14": {
+            "Name": "ClientAlarm",
+            "Index": -1,
+            "NameInSource": "ClientAlarm",
+            "Alias": "ClientAlarm",
+            "Type": "System.String",
+            "Key": "f45763ffa1cb4509a8a0a7e270acb6be"
+          },
+          "15": {
+            "Name": "PostalCode",
+            "Index": -1,
+            "NameInSource": "PostalCode",
+            "Alias": "PostalCode",
+            "Type": "System.String",
+            "Key": "8cdd65d080e34b5ba69c73db5a376bfb"
+          },
+          "16": {
+            "Name": "RegisterCode",
+            "Index": -1,
+            "NameInSource": "RegisterCode",
+            "Alias": "RegisterCode",
+            "Type": "System.String",
+            "Key": "326e5dfa8ec6486688e0602fe7efca6c"
+          },
+          "17": {
+            "Name": "EconomicCode",
+            "Index": -1,
+            "NameInSource": "EconomicCode",
+            "Alias": "EconomicCode",
+            "Type": "System.String",
+            "Key": "acdb1499576049239ebba722aa3f0e0b"
+          },
+          "18": {
+            "Name": "NationalID",
+            "Index": -1,
+            "NameInSource": "NationalID",
+            "Alias": "NationalID",
+            "Type": "System.String",
+            "Key": "40928304de6845829f9fcd15917ecbde"
+          },
+          "19": {
+            "Name": "VisforCreator",
+            "Index": -1,
+            "NameInSource": "VisforCreator",
+            "Alias": "VisforCreator",
+            "Type": "System.Boolean",
+            "Key": "82fa239774504960807cdd608dcd27b3"
+          },
+          "20": {
+            "Name": "Remark",
+            "Index": -1,
+            "NameInSource": "Remark",
+            "Alias": "Remark",
+            "Type": "System.String",
+            "Key": "e3190e3f8ae34da8ad7a9f991d14bee0"
+          },
+          "21": {
+            "Name": "Company",
+            "Index": -1,
+            "NameInSource": "Company",
+            "Alias": "Company",
+            "Type": "System.Boolean",
+            "Key": "28cde3db0eb54406bb26d6c44eeec4e9"
+          },
+          "22": {
+            "Name": "Mobile",
+            "Index": -1,
+            "NameInSource": "Mobile",
+            "Alias": "Mobile",
+            "Type": "System.String",
+            "Key": "5798137aec574137aadea11ba91596a8"
+          },
+          "23": {
+            "Name": "Text1",
+            "Index": -1,
+            "NameInSource": "Text1",
+            "Alias": "Text1",
+            "Type": "System.String",
+            "Key": "f14ac3e3361b4d89b39a166e8088f1da"
+          },
+          "24": {
+            "Name": "Text2",
+            "Index": -1,
+            "NameInSource": "Text2",
+            "Alias": "Text2",
+            "Type": "System.String",
+            "Key": "c6ced724b687491a992272535a46b4ad"
+          },
+          "25": {
+            "Name": "AllocatedSalesPerson",
+            "Index": -1,
+            "NameInSource": "AllocatedSalesPerson",
+            "Alias": "AllocatedSalesPerson",
+            "Type": "System.Int32",
+            "Key": "67378d8e4c0a413faea9e73bc614f2bb"
+          },
+          "26": {
+            "Name": "--",
+            "Index": -1,
+            "NameInSource": "--",
+            "Alias": "--",
+            "Type": "System.Boolean",
+            "Key": "0c53abc22206447f9492112befda6f85"
+          },
+          "27": {
+            "Name": "RecStatus",
+            "Index": -1,
+            "NameInSource": "RecStatus",
+            "Alias": "RecStatus",
+            "Type": "System.Int32",
+            "Key": "db3fd3c8e03040dabc837f9137444def"
+          },
+          "28": {
+            "Name": "SUID",
+            "Index": -1,
+            "NameInSource": "SUID",
+            "Alias": "SUID",
+            "Type": "System.Int32",
+            "Key": "30152bd759104daa9b1710d53566c18f"
+          },
+          "29": {
+            "Name": "Stime",
+            "Index": -1,
+            "NameInSource": "Stime",
+            "Alias": "Stime",
+            "Type": "System.DateTime",
+            "Key": "d99463ccfa1c4fe595ee319b7723911d"
+          },
+          "30": {
+            "Name": "SPChangeDate",
+            "Index": -1,
+            "NameInSource": "SPChangeDate",
+            "Alias": "SPChangeDate",
+            "Type": "System.DateTime",
+            "Key": "4610d9cbda844133bbaa57cbbc65af2c"
+          },
+          "31": {
+            "Name": "Text3",
+            "Index": -1,
+            "NameInSource": "Text3",
+            "Alias": "Text3",
+            "Type": "System.String",
+            "Key": "800e4d533cd94e0a8975d4c5ed080663"
+          },
+          "32": {
+            "Name": "ClientCategory",
+            "Index": -1,
+            "NameInSource": "ClientCategory",
+            "Alias": "ClientCategory",
+            "Type": "System.Int16",
+            "Key": "cbddff006d494b5ba06b36f8d3881c53"
+          },
+          "33": {
+            "Name": "RequestForNewClientID",
+            "Index": -1,
+            "NameInSource": "RequestForNewClientID",
+            "Alias": "RequestForNewClientID",
+            "Type": "System.Int32",
+            "Key": "f0edf177ec2249d6ac2cad9655ecf483"
+          },
+          "34": {
+            "Name": "password",
+            "Index": -1,
+            "NameInSource": "password",
+            "Alias": "password",
+            "Type": "System.String",
+            "Key": "320c7269bf8a4d84be2f30e047fd295d"
+          },
+          "35": {
+            "Name": "PersonType",
+            "Index": -1,
+            "NameInSource": "PersonType",
+            "Alias": "PersonType",
+            "Type": "System.Byte",
+            "Key": "444b2cf3e7a54e41a655f50ac0ba6a68"
+          },
+          "36": {
+            "Name": "EconomicID",
+            "Index": -1,
+            "NameInSource": "EconomicID",
+            "Alias": "EconomicID",
+            "Type": "System.String",
+            "Key": "816fdc7734a5411fbd876f53c60917c7"
+          }
+        },
+        "NameInSource": "cnn",
+        "SqlCommand": "select * from TbEntity"
+      },
+      "8": {
+        "Ident": "StiSqlSource",
+        "Name": "TbVessel",
+        "Alias": "TbVessel",
+        "Key": "90ef7c9836fa4538818a732d0e800be7",
+        "Columns": {
+          "0": {
+            "Name": "ID",
+            "Index": -1,
+            "NameInSource": "ID",
+            "Alias": "ID",
+            "Type": "System.Int32"
+          },
+          "1": {
+            "Name": "Code",
+            "Index": -1,
+            "NameInSource": "Code",
+            "Alias": "Code",
+            "Type": "System.Int32"
+          },
+          "2": {
+            "Name": "Des",
+            "Index": -1,
+            "NameInSource": "Des",
+            "Alias": "Des",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "SpecialCode",
+            "Index": -1,
+            "NameInSource": "SpecialCode",
+            "Alias": "SpecialCode",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "GT",
+            "Index": -1,
+            "NameInSource": "GT",
+            "Alias": "GT",
+            "Type": "System.Single"
+          },
+          "5": {
+            "Name": "NT",
+            "Index": -1,
+            "NameInSource": "NT",
+            "Alias": "NT",
+            "Type": "System.Single"
+          },
+          "6": {
+            "Name": "--",
+            "Index": -1,
+            "NameInSource": "--",
+            "Alias": "--",
+            "Type": "System.Boolean"
+          },
+          "7": {
+            "Name": "RecStatus",
+            "Index": -1,
+            "NameInSource": "RecStatus",
+            "Alias": "RecStatus",
+            "Type": "System.Byte"
+          },
+          "8": {
+            "Name": "SUID",
+            "Index": -1,
+            "NameInSource": "SUID",
+            "Alias": "SUID",
+            "Type": "System.Int32"
+          },
+          "9": {
+            "Name": "Stime",
+            "Index": -1,
+            "NameInSource": "Stime",
+            "Alias": "Stime",
+            "Type": "System.DateTime"
+          },
+          "10": {
+            "Name": "VesselType",
+            "Index": -1,
+            "NameInSource": "VesselType",
+            "Alias": "VesselType",
+            "Type": "System.Byte"
+          },
+          "11": {
+            "Name": "Remark",
+            "Index": -1,
+            "NameInSource": "Remark",
+            "Alias": "Remark",
+            "Type": "System.String"
+          },
+          "12": {
+            "Name": "DWT",
+            "Index": -1,
+            "NameInSource": "DWT",
+            "Alias": "DWT",
+            "Type": "System.Single"
+          },
+          "13": {
+            "Name": "Flag",
+            "Index": -1,
+            "NameInSource": "Flag",
+            "Alias": "Flag",
+            "Type": "System.String"
+          },
+          "14": {
+            "Name": "FlagFa",
+            "Index": -1,
+            "NameInSource": "FlagFa",
+            "Alias": "FlagFa",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "cnn",
+        "SqlCommand": "select * from TbVessel"
+      },
+      "9": {
+        "Ident": "StiSqlSource",
+        "Name": "TbBLReleaseType",
+        "Alias": "TbBLReleaseType",
+        "Key": "aafd6111c2834eca8612a18cf181cb7c",
+        "Columns": {
+          "0": {
+            "Name": "Code",
+            "Index": -1,
+            "NameInSource": "Code",
+            "Alias": "Code",
+            "Type": "System.Byte"
+          },
+          "1": {
+            "Name": "Des",
+            "Index": -1,
+            "NameInSource": "Des",
+            "Alias": "Des",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "OrginalBLQty",
+            "Index": -1,
+            "NameInSource": "OrginalBLQty",
+            "Alias": "OrginalBLQty",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "cnn",
+        "SqlCommand": "select * from TbBLReleaseType"
+      },
+      "10": {
+        "Ident": "StiSqlSource",
+        "Name": "TbShipment",
+        "Alias": "TbShipment",
+        "Key": "b1d5cc0a157249ac83dc86132b5eebdc",
+        "Columns": {
+          "0": {
+            "Name": "Code",
+            "Index": -1,
+            "NameInSource": "Code",
+            "Alias": "Code",
+            "Type": "System.Int16"
+          },
+          "1": {
+            "Name": "Des",
+            "Index": -1,
+            "NameInSource": "Des",
+            "Alias": "Des",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "THCSortOrder",
+            "Index": -1,
+            "NameInSource": "THCSortOrder",
+            "Alias": "THCSortOrder",
+            "Type": "System.Int16"
+          },
+          "3": {
+            "Name": "EDICode_Cus",
+            "Index": -1,
+            "NameInSource": "EDICode_Cus",
+            "Alias": "EDICode_Cus",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "FCode",
+            "Index": -1,
+            "NameInSource": "FCode",
+            "Alias": "FCode",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "cnn",
+        "SqlCommand": "select * from TbShipment"
+      },
+      "11": {
+        "Ident": "StiSqlSource",
+        "Name": "TbLine",
+        "Alias": "TbLine",
+        "Key": "8f84f9cddfc140b9a66c9d22c67c9325",
+        "Columns": {
+          "0": {
+            "Name": "ID",
+            "Index": -1,
+            "NameInSource": "ID",
+            "Alias": "ID",
+            "Type": "System.Int32"
+          },
+          "1": {
+            "Name": "Des",
+            "Index": -1,
+            "NameInSource": "Des",
+            "Alias": "Des",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "Active",
+            "Index": -1,
+            "NameInSource": "Active",
+            "Alias": "Active",
+            "Type": "System.Boolean"
+          },
+          "3": {
+            "Name": "CurrentAgency",
+            "Index": -1,
+            "NameInSource": "CurrentAgency",
+            "Alias": "CurrentAgency",
+            "Type": "System.Int32"
+          },
+          "4": {
+            "Name": "DOText",
+            "Index": -1,
+            "NameInSource": "DOText",
+            "Alias": "DOText",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "Description",
+            "Index": -1,
+            "NameInSource": "Description",
+            "Alias": "Description",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "Logo",
+            "Index": -1,
+            "NameInSource": "Logo",
+            "Alias": "Logo",
+            "Type": "System.Byte[]"
+          },
+          "7": {
+            "Name": "BLPic",
+            "Index": -1,
+            "NameInSource": "BLPic",
+            "Alias": "BLPic",
+            "Type": "System.Byte[]"
+          },
+          "8": {
+            "Name": "FCode",
+            "Index": -1,
+            "NameInSource": "FCode",
+            "Alias": "FCode",
+            "Type": "System.String"
+          },
+          "9": {
+            "Name": "FCode2",
+            "Index": -1,
+            "NameInSource": "FCode2",
+            "Alias": "FCode2",
+            "Type": "System.String"
+          },
+          "10": {
+            "Name": "CrFile",
+            "Index": -1,
+            "NameInSource": "CrFile",
+            "Alias": "CrFile",
+            "Type": "System.Byte[]"
+          },
+          "11": {
+            "Name": "LineType",
+            "Index": -1,
+            "NameInSource": "LineType",
+            "Alias": "LineType",
+            "Type": "System.Byte"
+          },
+          "12": {
+            "Name": "AgencyofLine",
+            "Index": -1,
+            "NameInSource": "AgencyofLine",
+            "Alias": "AgencyofLine",
+            "Type": "System.Int32"
+          },
+          "13": {
+            "Name": "--",
+            "Index": -1,
+            "NameInSource": "--",
+            "Alias": "--",
+            "Type": "System.Boolean"
+          },
+          "14": {
+            "Name": "Co",
+            "Index": -1,
+            "NameInSource": "Co",
+            "Alias": "Co",
+            "Type": "System.Int16"
+          },
+          "15": {
+            "Name": "TableID",
+            "Index": -1,
+            "NameInSource": "TableID",
+            "Alias": "TableID",
+            "Type": "System.Int16"
+          },
+          "16": {
+            "Name": "RecStatus",
+            "Index": -1,
+            "NameInSource": "RecStatus",
+            "Alias": "RecStatus",
+            "Type": "System.Byte"
+          },
+          "17": {
+            "Name": "SUID",
+            "Index": -1,
+            "NameInSource": "SUID",
+            "Alias": "SUID",
+            "Type": "System.Int32"
+          },
+          "18": {
+            "Name": "Stime",
+            "Index": -1,
+            "NameInSource": "Stime",
+            "Alias": "Stime",
+            "Type": "System.DateTime"
+          },
+          "19": {
+            "Name": "blid",
+            "Index": -1,
+            "NameInSource": "blid",
+            "Alias": "blid",
+            "Type": "System.String"
+          },
+          "20": {
+            "Name": "ShowCopyInDraft",
+            "Index": -1,
+            "NameInSource": "ShowCopyInDraft",
+            "Alias": "ShowCopyInDraft",
+            "Type": "System.Boolean"
+          },
+          "21": {
+            "Name": "CrFileExp_del",
+            "Index": -1,
+            "NameInSource": "CrFileExp_del",
+            "Alias": "CrFileExp_del",
+            "Type": "System.Byte[]"
+          }
+        },
+        "NameInSource": "cnn",
+        "SqlCommand": "SELECT        ID, Des, Active, CurrentAgency, DOText, Description, ISNULL(Logo, '') AS Logo, ISNULL(BLPic, '') AS BLPic, FCode, FCode2, ISNULL(CrFile, '') AS CrFile, LineType, AgencyofLine, [--], Co, TableID, RecStatus, SUID, Stime, blid, \r\n\tShowCopyInDraft, ISNULL(CrFileExp_del, '') AS CrFileExp_del\r\nfrom TbLine"
+      },
+      "12": {
+        "Ident": "StiSqlSource",
+        "Name": "TbFreightType",
+        "Alias": "TbFreightType",
+        "Key": "1e955609ab7d45edb1651166098f3bf2",
+        "Columns": {
+          "0": {
+            "Name": "Code",
+            "Index": -1,
+            "NameInSource": "Code",
+            "Alias": "Code",
+            "Type": "System.Byte"
+          },
+          "1": {
+            "Name": "Des",
+            "Index": -1,
+            "NameInSource": "Des",
+            "Alias": "Des",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "cnn",
+        "SqlCommand": "select * from TbFreightType"
+      },
+      "13": {
+        "Ident": "StiSqlSource",
+        "Name": "TbPackageType",
+        "Alias": "TbPackageType",
+        "Key": "545c09accb7b42d3bd6c6cf7e979bbed",
+        "Columns": {
+          "0": {
+            "Name": "ID",
+            "Index": -1,
+            "NameInSource": "ID",
+            "Alias": "ID",
+            "Type": "System.Int32"
+          },
+          "1": {
+            "Name": "Code",
+            "Index": -1,
+            "NameInSource": "Code",
+            "Alias": "Code",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "Des",
+            "Index": -1,
+            "NameInSource": "Des",
+            "Alias": "Des",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "SpecialDes",
+            "Index": -1,
+            "NameInSource": "SpecialDes",
+            "Alias": "SpecialDes",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "cnn",
+        "SqlCommand": "select * from TbPackageType"
+      },
+      "14": {
+        "Ident": "StiSqlSource",
+        "Name": "VBL_CNTRQuantity",
+        "Alias": "VBL_CNTRQuantity",
+        "Key": "2567f33fc87a4e4b994fd1fd002c71b8",
+        "Columns": {
+          "0": {
+            "Name": "BLID",
+            "Index": -1,
+            "NameInSource": "BLID",
+            "Alias": "BLID",
+            "Type": "System.Int32",
+            "Key": "e4639a8138fd4a40845ebc60bddd56a7"
+          },
+          "1": {
+            "Name": "Q",
+            "Index": -1,
+            "NameInSource": "Q",
+            "Alias": "Q",
+            "Type": "System.Int32",
+            "Key": "e5d047a3d1c24118b136cb7781673f57"
+          },
+          "2": {
+            "Name": "SizeDes",
+            "Index": -1,
+            "NameInSource": "SizeDes",
+            "Alias": "SizeDes",
+            "Type": "System.String",
+            "Key": "7b2ac5fef19445709b26ad703147ac55"
+          },
+          "3": {
+            "Name": "TypeDes",
+            "Index": -1,
+            "NameInSource": "TypeDes",
+            "Alias": "TypeDes",
+            "Type": "System.String",
+            "Key": "18541c726b9c4bf3a258acd427c1c91a"
+          },
+          "4": {
+            "Name": "MovementType",
+            "Index": -1,
+            "NameInSource": "MovementType",
+            "Alias": "MovementType",
+            "Type": "System.String",
+            "Key": "2293c363cea24c4ebfba293ed717ea4a"
+          },
+          "5": {
+            "Name": "SDO",
+            "Index": -1,
+            "NameInSource": "SDO",
+            "Alias": "SDO",
+            "Type": "System.String",
+            "Key": "ea886fc758e94f688ac359a5183b1764"
+          }
+        },
+        "NameInSource": "cnn",
+        "SqlCommand": "select * from VBL_CNTRQuantity"
+      },
+      "15": {
+        "Ident": "StiSqlSource",
+        "Name": "TbPageTemplate",
+        "Alias": "TbPageTemplate",
+        "Key": "da8508fbe5334be393bf91496bc05028",
+        "Columns": {
+          "0": {
+            "Name": "ID",
+            "Index": -1,
+            "NameInSource": "ID",
+            "Alias": "ID",
+            "Type": "System.Int16"
+          },
+          "1": {
+            "Name": "Code",
+            "Index": -1,
+            "NameInSource": "Code",
+            "Alias": "Code",
+            "Type": "System.Byte"
+          },
+          "2": {
+            "Name": "Des",
+            "Index": -1,
+            "NameInSource": "Des",
+            "Alias": "Des",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "PicFa",
+            "Index": -1,
+            "NameInSource": "PicFa",
+            "Alias": "PicFa",
+            "Type": "System.Byte[]"
+          },
+          "4": {
+            "Name": "PicEn",
+            "Index": -1,
+            "NameInSource": "PicEn",
+            "Alias": "PicEn",
+            "Type": "System.Byte[]"
+          },
+          "5": {
+            "Name": "AccID",
+            "Index": -1,
+            "NameInSource": "AccID",
+            "Alias": "AccID",
+            "Type": "System.Int16"
+          },
+          "6": {
+            "Name": "BodyTextFa",
+            "Index": -1,
+            "NameInSource": "BodyTextFa",
+            "Alias": "BodyTextFa",
+            "Type": "System.String"
+          },
+          "7": {
+            "Name": "AddressFa",
+            "Index": -1,
+            "NameInSource": "AddressFa",
+            "Alias": "AddressFa",
+            "Type": "System.String"
+          },
+          "8": {
+            "Name": "BodyTextEn",
+            "Index": -1,
+            "NameInSource": "BodyTextEn",
+            "Alias": "BodyTextEn",
+            "Type": "System.String"
+          },
+          "9": {
+            "Name": "AddressEn",
+            "Index": -1,
+            "NameInSource": "AddressEn",
+            "Alias": "AddressEn",
+            "Type": "System.String"
+          },
+          "10": {
+            "Name": "ShowPrintedby",
+            "Index": -1,
+            "NameInSource": "ShowPrintedby",
+            "Alias": "ShowPrintedby",
+            "Type": "System.Boolean"
+          },
+          "11": {
+            "Name": "--",
+            "Index": -1,
+            "NameInSource": "--",
+            "Alias": "--",
+            "Type": "System.Boolean"
+          },
+          "12": {
+            "Name": "RecStatus",
+            "Index": -1,
+            "NameInSource": "RecStatus",
+            "Alias": "RecStatus",
+            "Type": "System.Byte"
+          },
+          "13": {
+            "Name": "SUID",
+            "Index": -1,
+            "NameInSource": "SUID",
+            "Alias": "SUID",
+            "Type": "System.Int32"
+          },
+          "14": {
+            "Name": "Stime",
+            "Index": -1,
+            "NameInSource": "Stime",
+            "Alias": "Stime",
+            "Type": "System.DateTime"
+          },
+          "15": {
+            "Name": "ShowUser",
+            "Index": -1,
+            "NameInSource": "ShowUser",
+            "Alias": "ShowUser",
+            "Type": "System.Boolean"
+          },
+          "16": {
+            "Name": "SecondPageTextEn",
+            "Index": -1,
+            "NameInSource": "SecondPageTextEn",
+            "Alias": "SecondPageTextEn",
+            "Type": "System.String"
+          },
+          "17": {
+            "Name": "SecondPageTextFa",
+            "Index": -1,
+            "NameInSource": "SecondPageTextFa",
+            "Alias": "SecondPageTextFa",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "cnn",
+        "SqlCommand": "SELECT        ID, Code, Des, ISNULL(PicFa, '') AS PicFa, ISNULL(PicEn, '') AS PicEn, AccID, BodyTextFa, AddressFa, BodyTextEn, AddressEn, ShowPrintedby, [--], RecStatus, SUID, Stime, ShowUser, SecondPageTextEn, \r\n\tSecondPageTextFa\r\n\tFROM            TbPageTemplate"
+      },
+      "16": {
+        "Ident": "StiSqlSource",
+        "Name": "TbAccountNo",
+        "Alias": "TbAccountNo",
+        "Key": "25912c4eb8a045b6a0fda5e0e719e2fd",
+        "Columns": {
+          "0": {
+            "Name": "ID",
+            "Index": -1,
+            "NameInSource": "ID",
+            "Alias": "ID",
+            "Type": "System.Int16"
+          },
+          "1": {
+            "Name": "Name",
+            "Index": -1,
+            "NameInSource": "Name",
+            "Alias": "Name",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "AccountNoFa",
+            "Index": -1,
+            "NameInSource": "AccountNoFa",
+            "Alias": "AccountNoFa",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "AccountNoEn",
+            "Index": -1,
+            "NameInSource": "AccountNoEn",
+            "Alias": "AccountNoEn",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "FCode",
+            "Index": -1,
+            "NameInSource": "FCode",
+            "Alias": "FCode",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "--",
+            "Index": -1,
+            "NameInSource": "--",
+            "Alias": "--",
+            "Type": "System.Boolean"
+          },
+          "6": {
+            "Name": "RecStatus",
+            "Index": -1,
+            "NameInSource": "RecStatus",
+            "Alias": "RecStatus",
+            "Type": "System.Byte"
+          },
+          "7": {
+            "Name": "SUID",
+            "Index": -1,
+            "NameInSource": "SUID",
+            "Alias": "SUID",
+            "Type": "System.Int32"
+          },
+          "8": {
+            "Name": "Stime",
+            "Index": -1,
+            "NameInSource": "Stime",
+            "Alias": "Stime",
+            "Type": "System.DateTime"
+          }
+        },
+        "NameInSource": "cnn",
+        "SqlCommand": "select * from TbAccountNo"
+      },
+      "17": {
+        "Ident": "StiSqlSource",
+        "Name": "VArrivalNoticeF_NotCash",
+        "Alias": "VArrivalNoticeF_NotCash",
+        "Key": "3c2bcc3109304635810dcec6d39f9d38",
+        "Columns": {
+          "0": {
+            "Name": "ArrivalNoticeID",
+            "Index": -1,
+            "NameInSource": "ArrivalNoticeID",
+            "Alias": "ArrivalNoticeID",
+            "Type": "System.Int32"
+          },
+          "1": {
+            "Name": "ServiceDes",
+            "Index": -1,
+            "NameInSource": "ServiceDes",
+            "Alias": "ServiceDes",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "Remark",
+            "Index": -1,
+            "NameInSource": "Remark",
+            "Alias": "Remark",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "StripFee",
+            "Index": -1,
+            "NameInSource": "StripFee",
+            "Alias": "StripFee",
+            "Type": "System.Single"
+          },
+          "4": {
+            "Name": "SentFullFee",
+            "Index": -1,
+            "NameInSource": "SentFullFee",
+            "Alias": "SentFullFee",
+            "Type": "System.Single"
+          }
+        },
+        "NameInSource": "cnn",
+        "SqlCommand": "select * from VArrivalNoticeF_NotCash"
+      }
+    },
+    "Databases": {
+      "0": {
+        "Ident": "StiSqlDatabase",
+        "Name": "cnn",
+        "Alias": "cnn",
+        "Key": "6540b90422034771bc23196e66545d7d"
+      }
+    },
+    "Relations": {
+      "0": {
+        "Name": "TbBL",
+        "ChildColumns": {
+          "0": "BLID"
+        },
+        "ParentColumns": {
+          "0": "ID"
+        },
+        "NameInSource": "TbBL",
+        "Alias": "TbArrivalNoticeH to TbBL",
+        "Key": "a62a4e0d1f3a487d97f6dde3187fa2ec",
+        "ParentSource": "TbBL",
+        "ChildSource": "TbArrivalNoticeH"
+      },
+      "1": {
+        "Name": "TbInvoiceType",
+        "ChildColumns": {
+          "0": "InvType"
+        },
+        "ParentColumns": {
+          "0": "Code"
+        },
+        "NameInSource": "TbInvoiceType",
+        "Alias": "TbArrivalNoticeH to TbInvoiceType",
+        "Key": "f0eb0970bf9d4779b85f1604507d58f5",
+        "ParentSource": "TbInvoiceType",
+        "ChildSource": "TbArrivalNoticeH"
+      },
+      "2": {
+        "Name": "VArrivalNoticeF_Cash",
+        "ChildColumns": {
+          "0": "ID"
+        },
+        "ParentColumns": {
+          "0": "ArrivalNoticeID"
+        },
+        "NameInSource": "VArrivalNoticeF_Cash",
+        "Alias": "TbArrivalNoticeH to VArrivalNoticeF_Cash",
+        "Key": "a95ff36031464ad6a6f7a9cc779b882d",
+        "ParentSource": "VArrivalNoticeF_Cash",
+        "ChildSource": "TbArrivalNoticeH"
+      },
+      "3": {
+        "Name": "VArrivalNoticeF_Cash_Sum",
+        "ChildColumns": {
+          "0": "ID"
+        },
+        "ParentColumns": {
+          "0": "ArrivalNoticeID"
+        },
+        "NameInSource": "VArrivalNoticeF_Cash_Sum",
+        "Alias": "TbArrivalNoticeH to VArrivalNoticeF_Cash_Sum",
+        "Key": "381a8de133e94ec68a3718f614c2b249",
+        "ParentSource": "VArrivalNoticeF_Cash_Sum",
+        "ChildSource": "TbArrivalNoticeH"
+      },
+      "4": {
+        "Name": "TbEntity_1",
+        "ChildColumns": {
+          "0": "InvoiceClient"
+        },
+        "ParentColumns": {
+          "0": "ID"
+        },
+        "NameInSource": "TbEntity_1",
+        "Alias": "TbBL toTbEntity_1",
+        "Key": "8899696538b64bffae89e4080ed543f7",
+        "ParentSource": "TbEntity_1",
+        "ChildSource": "TbBL"
+      },
+      "5": {
+        "Name": "TbEntity_2",
+        "ChildColumns": {
+          "0": "DeliveryClient"
+        },
+        "ParentColumns": {
+          "0": "ID"
+        },
+        "NameInSource": "TbEntity_2",
+        "Alias": "TbBL toTbEntity_2",
+        "Key": "21809afa4d11453fbb80883408340c60",
+        "ParentSource": "TbEntity_2",
+        "ChildSource": "TbBL"
+      },
+      "6": {
+        "Name": "TbVoyage",
+        "ChildColumns": {
+          "0": "VID"
+        },
+        "ParentColumns": {
+          "0": "ID"
+        },
+        "NameInSource": "TbVoyage",
+        "Alias": "TbBL to TbVoyage",
+        "Key": "1984f592c2564a0285392fde7c3cc492",
+        "ParentSource": "TbVoyage",
+        "ChildSource": "TbBL"
+      },
+      "7": {
+        "Name": "TbVessel",
+        "ChildColumns": {
+          "0": "VesselCode"
+        },
+        "ParentColumns": {
+          "0": "Code"
+        },
+        "NameInSource": "TbVessel",
+        "Alias": "TbVoyage to TbVessel",
+        "ParentSource": "TbVessel",
+        "ChildSource": "TbVoyage"
+      },
+      "8": {
+        "Name": "TbBLReleaseType",
+        "ChildColumns": {
+          "0": "BLReleaseTypeH"
+        },
+        "ParentColumns": {
+          "0": "Code"
+        },
+        "NameInSource": "TbBLReleaseType",
+        "Alias": "TbBL to TbBLReleaseType",
+        "Key": "fc49e5058a2e4818a598de52a3bc31e7",
+        "ParentSource": "TbBLReleaseType",
+        "ChildSource": "TbBL"
+      },
+      "9": {
+        "Name": "TbShipment",
+        "ChildColumns": {
+          "0": "ShipmentType"
+        },
+        "ParentColumns": {
+          "0": "Code"
+        },
+        "NameInSource": "TbShipment",
+        "Alias": "TbBL to TbShipment",
+        "Key": "0c99c3b803b7471abc2c398923a97db7",
+        "ParentSource": "TbShipment",
+        "ChildSource": "TbBL"
+      },
+      "10": {
+        "Name": "TbFreightType",
+        "ChildColumns": {
+          "0": "FreightTypeH"
+        },
+        "ParentColumns": {
+          "0": "Code"
+        },
+        "NameInSource": "TbFreightType",
+        "Alias": "TbBL to TbFreightType",
+        "ParentSource": "TbFreightType",
+        "ChildSource": "TbBL"
+      },
+      "11": {
+        "Name": "TbLine",
+        "ChildColumns": {
+          "0": "Line"
+        },
+        "ParentColumns": {
+          "0": "ID"
+        },
+        "NameInSource": "TbLine",
+        "Alias": "TbBL to TbLine",
+        "ParentSource": "TbLine",
+        "ChildSource": "TbBL"
+      },
+      "12": {
+        "Name": "TbPackageType",
+        "ChildColumns": {
+          "0": "PackageType"
+        },
+        "ParentColumns": {
+          "0": "ID"
+        },
+        "NameInSource": "TbPackageType",
+        "Alias": "TbBL to TbPackageType",
+        "ParentSource": "TbPackageType",
+        "ChildSource": "TbBL"
+      },
+      "13": {
+        "Name": "TbAccountNo",
+        "ChildColumns": {
+          "0": "AccID"
+        },
+        "ParentColumns": {
+          "0": "ID"
+        },
+        "NameInSource": "TbAccountNo",
+        "Alias": "TbPageTemplate to TbAccountNo",
+        "ParentSource": "TbAccountNo",
+        "ChildSource": "TbPageTemplate"
+      },
+      "14": {
+        "Name": "TbPageTemplate",
+        "ChildColumns": {
+          "0": "TemplateCode"
+        },
+        "ParentColumns": {
+          "0": "ID"
+        },
+        "NameInSource": "TbPageTemplate",
+        "Alias": "TbArrivalNoticeH to TbPageTemplate",
+        "ParentSource": "TbPageTemplate",
+        "ChildSource": "TbArrivalNoticeH"
+      }
+    }
+  },
+  "Pages": {
+    "0": {
+      "Ident": "StiPage",
+      "Name": "Page1",
+      "Guid": "75384eccee9547e09c846be530b75596",
+      "Interaction": {
+        "Ident": "StiInteraction"
+      },
+      "Border": ";;2;;;;;solid:Black",
+      "Brush": "solid:",
+      "Components": {
+        "0": {
+          "Ident": "StiPageHeaderBand",
+          "Name": "PageHeaderBand1",
+          "ClientRectangle": "0,0.4,19,4.4",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiShape",
+              "Name": "Shape1",
+              "ClientRectangle": "0.2,1,5.6,0.2",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Brush": "solid:",
+              "Style": "Dot",
+              "ShapeType": {
+                "Ident": "StiHorizontalLineShapeType"
+              }
+            },
+            "1": {
+              "Ident": "StiShape",
+              "Name": "Shape2",
+              "ClientRectangle": "0.2,1.6,5.6,0.2",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Brush": "solid:",
+              "Style": "Dot",
+              "ShapeType": {
+                "Ident": "StiHorizontalLineShapeType"
+              }
+            },
+            "2": {
+              "Ident": "StiShape",
+              "Name": "Shape3",
+              "ClientRectangle": "0.2,2.2,5.6,0.2",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Brush": "solid:",
+              "Style": "Dot",
+              "ShapeType": {
+                "Ident": "StiHorizontalLineShapeType"
+              }
+            },
+            "3": {
+              "Ident": "StiShape",
+              "Name": "Shape4",
+              "ClientRectangle": "0.2,2.8,5.6,0.2",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Brush": "solid:",
+              "Style": "Dot",
+              "ShapeType": {
+                "Ident": "StiHorizontalLineShapeType"
+              }
+            },
+            "4": {
+              "Ident": "StiShape",
+              "Name": "Shape5",
+              "ClientRectangle": "0.2,3.4,5.6,0.2",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Brush": "solid:",
+              "Style": "Dot",
+              "ShapeType": {
+                "Ident": "StiHorizontalLineShapeType"
+              }
+            },
+            "5": {
+              "Ident": "StiText",
+              "Name": "Text4",
+              "ClientRectangle": "0.4,0.6,3.6,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{TbVoyage.ArrivalNoticeDate}"
+              },
+              "Font": "Tahoma;;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextFormat": {
+                "Ident": "StiCustomFormatService",
+                "StringFormat": "yyyy/MM/dd"
+              }
+            },
+            "6": {
+              "Ident": "StiText",
+              "Name": "Text2",
+              "ClientRectangle": "4.4,0.6,1.4,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "تاریخ"
+              },
+              "Font": "Tahoma;7;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "7": {
+              "Ident": "StiText",
+              "Name": "Text3",
+              "ClientRectangle": "4.4,1.2,1.4,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "شماره فایل"
+              },
+              "Font": "Tahoma;7;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "8": {
+              "Ident": "StiText",
+              "Name": "Text5",
+              "ClientRectangle": "4.4,1.8,1.4,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "شماره پروژه"
+              },
+              "Font": "Tahoma;7;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "9": {
+              "Ident": "StiText",
+              "Name": "Text6",
+              "ClientRectangle": "4.4,2.4,1.4,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "شماره بارنامه"
+              },
+              "Font": "Tahoma;7;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "10": {
+              "Ident": "StiText",
+              "Name": "Text7",
+              "ClientRectangle": "4.4,3,1.4,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "کد پرداخت"
+              },
+              "Font": "Tahoma;7;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "11": {
+              "Ident": "StiText",
+              "Name": "Text8",
+              "ClientRectangle": "4.4,3.6,1.4,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "شناسه"
+              },
+              "Font": "Tahoma;7;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "12": {
+              "Ident": "StiText",
+              "Name": "Text13",
+              "ClientRectangle": "0.4,3.6,3.6,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{TbArrivalNoticeH.ID}"
+              },
+              "Font": "Tahoma;;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black"
+            },
+            "13": {
+              "Ident": "StiText",
+              "Name": "Text14",
+              "ClientRectangle": "7.4,1,5.6,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{TbInvoiceType.PreInvTitle_Fa}"
+              },
+              "HorAlignment": "Center",
+              "Font": "Tahoma;9;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black"
+            },
+            "14": {
+              "Ident": "StiText",
+              "Name": "Text15",
+              "ClientRectangle": "7.4,1.6,5.6,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{TbArrivalNoticeH.SubTitle}"
+              },
+              "HorAlignment": "Center",
+              "Font": "Tahoma;;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black"
+            },
+            "15": {
+              "Ident": "StiText",
+              "Name": "Text10",
+              "ClientRectangle": "0.4,1.8,3.6,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{TbArrivalNoticeH.TbBL.PNo}"
+              },
+              "Font": "Tahoma;;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black"
+            },
+            "16": {
+              "Ident": "StiText",
+              "Name": "Text11",
+              "ClientRectangle": "0.4,2.4,3.6,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{TbArrivalNoticeH.TbBL.HBL}"
+              },
+              "Font": "Tahoma;7;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black"
+            },
+            "17": {
+              "Ident": "StiText",
+              "Name": "Text12",
+              "ClientRectangle": "0.4,3,3.6,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{TbArrivalNoticeH.VArrivalNoticeF_Cash.PayCode}"
+              },
+              "Font": "Tahoma;;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black"
+            },
+            "18": {
+              "Ident": "StiText",
+              "Name": "Text9",
+              "ClientRectangle": "0.4,1.2,3.6,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{TbArrivalNoticeH.TbBL.FileNo}"
+              },
+              "Font": "Tahoma;7;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black"
+            },
+            "19": {
+              "Ident": "StiImage",
+              "Name": "Image1",
+              "ClientRectangle": "14.2,0.4,4.4,3.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "HorAlignment": "Right",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "Stretch": true,
+              "AspectRatio": true,
+              "DataColumn": "TbArrivalNoticeH.TbPageTemplate.PicFa"
+            },
+            "20": {
+              "Ident": "StiStartPointPrimitive",
+              "Name": "StartPointPrimitive1",
+              "ClientRectangle": "0.2,0.4,0,0",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "ReferenceToGuid": "4a93636a719a4f96ad5d481122c8ea0c"
+            },
+            "21": {
+              "Ident": "StiEndPointPrimitive",
+              "Name": "EndPointPrimitive1",
+              "ClientRectangle": "5.8,4.2,0,0",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "ReferenceToGuid": "4a93636a719a4f96ad5d481122c8ea0c"
+            },
+            "22": {
+              "Ident": "StiStartPointPrimitive",
+              "Name": "StartPointPrimitive2",
+              "ClientRectangle": "4.2,0.4,0,0",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "ReferenceToGuid": "818984829ec84835aeae66e4fd0dbe4c"
+            },
+            "23": {
+              "Ident": "StiEndPointPrimitive",
+              "Name": "EndPointPrimitive2",
+              "ClientRectangle": "4.2,4.2,0,0",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "ReferenceToGuid": "818984829ec84835aeae66e4fd0dbe4c"
+            }
+          }
+        },
+        "1": {
+          "Ident": "StiPageFooterBand",
+          "Name": "PageFooterBand2",
+          "ClientRectangle": "0,32.64,19,0.6",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": "Top;;;;;;;solid:Black",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text106",
+              "ClientRectangle": "0,0.16,6,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "(Printed by : OTMS Plus- www.OTMS.ir)"
+              },
+              "VertAlignment": "Center",
+              "Font": "Tahoma;;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text1",
+              "ClientRectangle": "6,0.16,1,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "User :\r\n"
+              },
+              "VertAlignment": "Center",
+              "Font": "Tahoma;;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "Text107",
+              "ClientRectangle": "7,0.16,1.6,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{User}"
+              },
+              "VertAlignment": "Center",
+              "Font": "Tahoma;;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black"
+            },
+            "3": {
+              "Ident": "StiText",
+              "Name": "Text108",
+              "ClientRectangle": "8.8,0.16,2.2,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{PageNofM}"
+              },
+              "VertAlignment": "Center",
+              "Font": "Tahoma;;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black"
+            }
+          }
+        },
+        "2": {
+          "Ident": "StiDataBand",
+          "Name": "DataBand1",
+          "ClientRectangle": "0,5.6,19,5.4",
+          "Interaction": {
+            "Ident": "StiBandInteraction"
+          },
+          "Border": "All;;;;;;;solid:Black",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text16",
+              "ClientRectangle": "16.8,0.4,1.8,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "1. عنوان"
+              },
+              "Font": "Tahoma;7;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "RightToLeft": true,
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text17",
+              "ClientRectangle": "16.8,2.6,1.8,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "2. مشخصات\r\nمحموله"
+              },
+              "Font": "Tahoma;7;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "RightToLeft": true,
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "Text18",
+              "ClientRectangle": "14.6,0.4,1.8,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "به :\r\n"
+              },
+              "Font": "Tahoma;;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "RightToLeft": true,
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "3": {
+              "Ident": "StiText",
+              "Name": "Text19",
+              "ClientRectangle": "14.6,1.2,1.8,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "مطلع شونده :\r\n"
+              },
+              "Font": "Tahoma;;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "RightToLeft": true,
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "4": {
+              "Ident": "StiText",
+              "Name": "Text20",
+              "ClientRectangle": "15.8,0.2,0.6,0.2",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "D/C\r\n\r\n"
+              },
+              "Font": "Tahoma;5;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "RightToLeft": true,
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "5": {
+              "Ident": "StiText",
+              "Name": "Text21",
+              "ClientRectangle": "15.8,1,0.6,0.2",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "I/C\r\n\r\n"
+              },
+              "Font": "Tahoma;5;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "RightToLeft": true,
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "6": {
+              "Ident": "StiText",
+              "Name": "Text22",
+              "ClientRectangle": "9.4,0.4,5.2,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{TbArrivalNoticeH.TbBL.TbEntity_1.DesFa}"
+              },
+              "HorAlignment": "Right",
+              "Font": "Tahoma;;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black"
+            },
+            "7": {
+              "Ident": "StiText",
+              "Name": "Text23",
+              "ClientRectangle": "9.2,1.2,5.2,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{TbArrivalNoticeH.TbBL.TbEntity_2.DesFa}"
+              },
+              "HorAlignment": "Right",
+              "Font": "Tahoma;;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black"
+            },
+            "8": {
+              "Ident": "StiText",
+              "Name": "Text24",
+              "ClientRectangle": "8.2,0.4,1,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "تلفن :\r\n"
+              },
+              "Font": "Tahoma;;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "RightToLeft": true,
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "9": {
+              "Ident": "StiText",
+              "Name": "Text25",
+              "ClientRectangle": "4,0.4,1,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "فکس :\r\n"
+              },
+              "Font": "Tahoma;;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "RightToLeft": true,
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "10": {
+              "Ident": "StiText",
+              "Name": "Text26",
+              "ClientRectangle": "5.2,0.4,3,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{TbArrivalNoticeH.TbBL.TbEntity_1.Tel}"
+              },
+              "HorAlignment": "Center",
+              "Font": "Tahoma;;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black"
+            },
+            "11": {
+              "Ident": "StiText",
+              "Name": "Text27",
+              "ClientRectangle": "0.8,0.4,3.4,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{TbArrivalNoticeH.TbBL.TbEntity_1.Fax}"
+              },
+              "HorAlignment": "Center",
+              "Font": "Tahoma;;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black"
+            },
+            "12": {
+              "Ident": "StiText",
+              "Name": "Text28",
+              "ClientRectangle": "5.2,1.2,3,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{TbArrivalNoticeH.TbBL.TbEntity_2.Tel}"
+              },
+              "HorAlignment": "Center",
+              "Font": "Tahoma;;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black"
+            },
+            "13": {
+              "Ident": "StiText",
+              "Name": "Text29",
+              "ClientRectangle": "0.8,1.2,3.4,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{TbArrivalNoticeH.TbBL.TbEntity_2.Fax}"
+              },
+              "HorAlignment": "Center",
+              "Font": "Tahoma;;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black"
+            },
+            "14": {
+              "Ident": "StiText",
+              "Name": "Text30",
+              "ClientRectangle": "9.6,1.6,6.8,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "احتراما به استحضار ميرساند محموله بارنامه فوق در تاريخ"
+              },
+              "Font": "Tahoma;;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "RightToLeft": true,
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "15": {
+              "Ident": "StiText",
+              "Name": "Text31",
+              "ClientRectangle": "7.6,1.6,2,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{TbBL.TbVoyage.ComplateDischargeDate}"
+              },
+              "HorAlignment": "Center",
+              "Font": "Tahoma;;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextFormat": {
+                "Ident": "StiCustomFormatService",
+                "StringFormat": "yyyy/MM/dd"
+              }
+            },
+            "16": {
+              "Ident": "StiText",
+              "Name": "Text32",
+              "ClientRectangle": "7.2,1.6,0.4,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "به "
+              },
+              "Font": "Tahoma;;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "RightToLeft": true,
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "17": {
+              "Ident": "StiText",
+              "Name": "Text33",
+              "ClientRectangle": "2.2,1.6,5,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{TbArrivalNoticeH.TbBL.PODText}"
+              },
+              "HorAlignment": "Center",
+              "Font": "Tahoma;;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black"
+            },
+            "18": {
+              "Ident": "StiText",
+              "Name": "Text34",
+              "ClientRectangle": "0.8,1.6,1.4,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "وارد گردید"
+              },
+              "Font": "Tahoma;;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "RightToLeft": true,
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "19": {
+              "Ident": "StiText",
+              "Name": "Text35",
+              "ClientRectangle": "0.2,2,16.2,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "لطفا در صورتیکه اسناد مثبته دال بر مالکیت کالا در اختیار دارید با دردست داشتن اسناد جهت دریافت ترخیصیه به این شرکت مراجعه فرمایید."
+              },
+              "Font": "Tahoma;;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "RightToLeft": true,
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "20": {
+              "Ident": "StiShape",
+              "Name": "Shape6",
+              "ClientRectangle": "0,2.4,16.4,0.2",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Brush": "solid:",
+              "ShapeType": {
+                "Ident": "StiHorizontalLineShapeType"
+              }
+            },
+            "21": {
+              "Ident": "StiText",
+              "Name": "Text36",
+              "ClientRectangle": "14.4,2.6,2,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "کشتی و سفر :\r\n"
+              },
+              "Font": "Tahoma;;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "RightToLeft": true,
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "22": {
+              "Ident": "StiText",
+              "Name": "Text37",
+              "ClientRectangle": "11,2.6,3.4,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{VesselVoy}"
+              },
+              "Font": "Tahoma;7;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black"
+            },
+            "23": {
+              "Ident": "StiText",
+              "Name": "Text38",
+              "ClientRectangle": "14.6,3.2,1.8,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "فروشنده بار :\r\n"
+              },
+              "Font": "Tahoma;;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "RightToLeft": true,
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "24": {
+              "Ident": "StiText",
+              "Name": "Text39",
+              "ClientRectangle": "11,3.2,3.6,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{TbArrivalNoticeH.TbBL.ShipperText}"
+              },
+              "Font": "Tahoma;7;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black"
+            },
+            "25": {
+              "Ident": "StiText",
+              "Name": "Text40",
+              "ClientRectangle": "14.4,3.8,2,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "کد و شرح کالا :\r\n"
+              },
+              "Font": "Tahoma;;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "RightToLeft": true,
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "26": {
+              "Ident": "StiText",
+              "Name": "Text41",
+              "ClientRectangle": "11,3.8,3.4,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{HSCodeGD}"
+              },
+              "Font": "Tahoma;7;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black"
+            },
+            "27": {
+              "Ident": "StiText",
+              "Name": "Text42",
+              "ClientRectangle": "14.4,4.4,2,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "نوع و ریلیز بار :\r\n"
+              },
+              "Font": "Tahoma;;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "RightToLeft": true,
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "28": {
+              "Ident": "StiText",
+              "Name": "Text43",
+              "ClientRectangle": "11,4.4,3.4,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{TbArrivalNoticeH.TbBL.TbBLReleaseType.Des}"
+              },
+              "Font": ";7;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black"
+            },
+            "29": {
+              "Ident": "StiShape",
+              "Name": "Shape7",
+              "ClientRectangle": "0,3,16.4,0.2",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Brush": "solid:",
+              "Style": "Dot",
+              "ShapeType": {
+                "Ident": "StiHorizontalLineShapeType"
+              }
+            },
+            "30": {
+              "Ident": "StiShape",
+              "Name": "Shape8",
+              "ClientRectangle": "0,3.6,16.4,0.2",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Brush": "solid:",
+              "Style": "Dot",
+              "ShapeType": {
+                "Ident": "StiHorizontalLineShapeType"
+              }
+            },
+            "31": {
+              "Ident": "StiShape",
+              "Name": "Shape9",
+              "ClientRectangle": "0,4.2,16.4,0.2",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Brush": "solid:",
+              "Style": "Dot",
+              "ShapeType": {
+                "Ident": "StiHorizontalLineShapeType"
+              }
+            },
+            "32": {
+              "Ident": "StiText",
+              "Name": "Text44",
+              "ClientRectangle": "10,2.6,1,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "نوع :\r\n"
+              },
+              "Font": "Tahoma;;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "RightToLeft": true,
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "33": {
+              "Ident": "StiText",
+              "Name": "Text46",
+              "ClientRectangle": "9.2,3.2,1.8,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "گیرنده بار :\r\n"
+              },
+              "Font": "Tahoma;;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "RightToLeft": true,
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "34": {
+              "Ident": "StiText",
+              "Name": "Text48",
+              "ClientRectangle": "9,3.8,2,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "نوع کرایه :\r\n"
+              },
+              "Font": "Tahoma;;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "RightToLeft": true,
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "35": {
+              "Ident": "StiText",
+              "Name": "Text50",
+              "ClientRectangle": "10,4.4,1,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "خط :\r\n"
+              },
+              "Font": "Tahoma;;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "RightToLeft": true,
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "36": {
+              "Ident": "StiText",
+              "Name": "Text45",
+              "ClientRectangle": "5.8,2.6,4.2,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{TbArrivalNoticeH.TbBL.TbShipment.Des}"
+              },
+              "Font": ";7;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black"
+            },
+            "37": {
+              "Ident": "StiText",
+              "Name": "Text47",
+              "ClientRectangle": "5.8,3.2,3.4,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{TbArrivalNoticeH.TbBL.ConsigneeText}"
+              },
+              "Font": ";7;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black"
+            },
+            "38": {
+              "Ident": "StiText",
+              "Name": "Text49",
+              "ClientRectangle": "5.8,3.8,3.2,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{TbArrivalNoticeH.TbBL.TbFreightType.Des}"
+              },
+              "Font": ";7;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black"
+            },
+            "39": {
+              "Ident": "StiText",
+              "Name": "Text51",
+              "ClientRectangle": "5.8,4.4,4.2,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{TbArrivalNoticeH.TbBL.TbLine.Des}"
+              },
+              "Font": ";7;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black"
+            },
+            "40": {
+              "Ident": "StiText",
+              "Name": "Text52",
+              "ClientRectangle": "4.6,2.6,1.2,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "مقصد :\r\n"
+              },
+              "Font": "Tahoma;;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "RightToLeft": true,
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "41": {
+              "Ident": "StiText",
+              "Name": "Text53",
+              "ClientRectangle": "4,3.2,1.8,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "مطلع شونده :\r\n"
+              },
+              "Font": "Tahoma;;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "RightToLeft": true,
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "42": {
+              "Ident": "StiText",
+              "Name": "Text54",
+              "ClientRectangle": "3.2,3.8,2.6,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "وزن بار، تعداد بسته:"
+              },
+              "Font": "Tahoma;;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "RightToLeft": true,
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "43": {
+              "Ident": "StiText",
+              "Name": "Text55",
+              "ClientRectangle": "3,4.4,2.8,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "نرخ تبديل تي اچ سي :\r\n"
+              },
+              "Font": "Tahoma;;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "RightToLeft": true,
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "44": {
+              "Ident": "StiText",
+              "Name": "Text56",
+              "ClientRectangle": "0.2,2.6,4.4,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{TbArrivalNoticeH.TbBL.FinalDesText}"
+              },
+              "Font": ";7;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black"
+            },
+            "45": {
+              "Ident": "StiText",
+              "Name": "Text57",
+              "ClientRectangle": "0.2,3.2,3.8,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{TbArrivalNoticeH.TbBL.NotifyText}"
+              },
+              "Font": ";7;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black"
+            },
+            "46": {
+              "Ident": "StiText",
+              "Name": "Text58",
+              "ClientRectangle": "0.2,3.8,0.8,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{TbArrivalNoticeH.TbBL.GW}"
+              },
+              "Font": ";7;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black"
+            },
+            "47": {
+              "Ident": "StiText",
+              "Name": "Text59",
+              "ClientRectangle": "1.2,3.8,1,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{TbArrivalNoticeH.TbBL.PackageNo}"
+              },
+              "Font": ";7;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black"
+            },
+            "48": {
+              "Ident": "StiText",
+              "Name": "Text60",
+              "ClientRectangle": "2.2,3.8,1,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{TbArrivalNoticeH.TbBL.TbPackageType.Des}"
+              },
+              "Font": ";7;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black"
+            },
+            "49": {
+              "Ident": "StiText",
+              "Name": "Text61",
+              "ClientRectangle": "1,3.8,0.2,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": ",\r\n\r\n"
+              },
+              "Font": "Tahoma;5;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "RightToLeft": true,
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "50": {
+              "Ident": "StiText",
+              "Name": "Text62",
+              "ClientRectangle": "0.2,4.4,2.8,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{TbArrivalNoticeH.TbBL.TbVoyage.THCROE}"
+              },
+              "Font": ";7;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black"
+            },
+            "51": {
+              "Ident": "StiShape",
+              "Name": "Shape10",
+              "ClientRectangle": "0,4.8,16.4,0.2",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Brush": "solid:",
+              "Style": "Dot",
+              "ShapeType": {
+                "Ident": "StiHorizontalLineShapeType"
+              }
+            },
+            "52": {
+              "Ident": "StiSubReport",
+              "Name": "SubReport1",
+              "ClientRectangle": "5.8,5,8,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "SubReportPageGuid": "0c25cbc3388a41a785c41c43cdcf8976"
+            },
+            "53": {
+              "Ident": "StiText",
+              "Name": "Text73",
+              "ClientRectangle": "13.8,5,2.6,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "تعداد و نوع کانتينر:\r\n"
+              },
+              "Font": "Tahoma;;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "RightToLeft": true,
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "54": {
+              "Ident": "StiStartPointPrimitive",
+              "Name": "StartPointPrimitive3",
+              "ClientRectangle": "16.4,0,0,0",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "ReferenceToGuid": "05149b258ebb462083d9657353e6e753"
+            },
+            "55": {
+              "Ident": "StiStartPointPrimitive",
+              "Name": "StartPointPrimitive4",
+              "ClientRectangle": "11,2.4,0,0",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "ReferenceToGuid": "351e219a015248268d4a374c2c3d21c6"
+            },
+            "56": {
+              "Ident": "StiEndPointPrimitive",
+              "Name": "EndPointPrimitive4",
+              "ClientRectangle": "11,5,0,0",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "ReferenceToGuid": "351e219a015248268d4a374c2c3d21c6"
+            },
+            "57": {
+              "Ident": "StiStartPointPrimitive",
+              "Name": "StartPointPrimitive5",
+              "ClientRectangle": "5.8,2.4,0,0",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "ReferenceToGuid": "bf8859ff14e84c13b0f33cfd18969896"
+            },
+            "58": {
+              "Ident": "StiEndPointPrimitive",
+              "Name": "EndPointPrimitive5",
+              "ClientRectangle": "5.8,5.4,0,0",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "ReferenceToGuid": "bf8859ff14e84c13b0f33cfd18969896"
+            },
+            "59": {
+              "Ident": "StiEndPointPrimitive",
+              "Name": "EndPointPrimitive3",
+              "ClientRectangle": "16.4,5.4,0,0",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "ReferenceToGuid": "05149b258ebb462083d9657353e6e753"
+            }
+          },
+          "DataSourceName": "TbArrivalNoticeH"
+        },
+        "3": {
+          "Ident": "StiHeaderBand",
+          "Name": "HeaderBand1",
+          "ClientRectangle": "0,11.8,19,1",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": "All;;;;;;;solid:Black",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text82",
+              "ClientRectangle": "17,0.2,1.8,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "3. وجوه نقدی"
+              },
+              "VertAlignment": "Center",
+              "Font": "Tahoma;7;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "RightToLeft": true,
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text83",
+              "ClientRectangle": "6.2,0.2,4.2,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "وجوه نقدي ريالي درصورت\r\n"
+              },
+              "HorAlignment": "Center",
+              "Font": "Tahoma;7;Bold;",
+              "Border": "Top, Left, Right;;;;;;;solid:Black",
+              "Brush": "solid:233,233,233",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "Text84",
+              "ClientRectangle": "6.2,0.6,4.2,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "درخواست تخليه كانتينر در محوطه\r\n"
+              },
+              "HorAlignment": "Center",
+              "Font": "Tahoma;7;Bold;",
+              "Border": "Left, Right, Bottom;;;;;;;solid:Black",
+              "Brush": "solid:233,233,233",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "3": {
+              "Ident": "StiText",
+              "Name": "Text85",
+              "ClientRectangle": "5.4,0.2,0.8,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "VAT\r\n"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Tahoma;7;Bold;",
+              "Border": "All;;;;;;;solid:Black",
+              "Brush": "solid:233,233,233",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "4": {
+              "Ident": "StiText",
+              "Name": "Text86",
+              "ClientRectangle": "0.4,0.2,0.8,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "VAT\r\n"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Tahoma;7;Bold;",
+              "Border": "All;;;;;;;solid:Black",
+              "Brush": "solid:233,233,233",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "5": {
+              "Ident": "StiText",
+              "Name": "Text87",
+              "ClientRectangle": "1.2,0.2,4.2,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "وجوه نقدي ريالي درصورت\r\n"
+              },
+              "HorAlignment": "Center",
+              "Font": "Tahoma;7;Bold;",
+              "Border": "Top, Left, Right;;;;;;;solid:Black",
+              "Brush": "solid:233,233,233",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "6": {
+              "Ident": "StiText",
+              "Name": "Text88",
+              "ClientRectangle": "1.2,0.6,4.2,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "درخواست خروج كانتينر از محوطه\r\n"
+              },
+              "HorAlignment": "Center",
+              "Font": "Tahoma;7;Bold;",
+              "Border": "Left, Right, Bottom;;;;;;;solid:Black",
+              "Brush": "solid:233,233,233",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "7": {
+              "Ident": "StiText",
+              "Name": "Text89",
+              "ClientRectangle": "10.4,0.2,6,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "شرح خدمات\r\n"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Tahoma;7;Bold;",
+              "Border": "Top, Right, Bottom;;;;;;;solid:Black",
+              "Brush": "solid:233,233,233",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            }
+          }
+        },
+        "4": {
+          "Ident": "StiDataBand",
+          "Name": "DataBand3",
+          "ClientRectangle": "0,13.6,19,0.8",
+          "Interaction": {
+            "Ident": "StiBandInteraction"
+          },
+          "Border": "Left, Right;;;;;;;solid:Black",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text74",
+              "CanGrow": true,
+              "ClientRectangle": "10.4,0,6,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{VArrivalNoticeF_Cash.ServiceDes}"
+              },
+              "HorAlignment": "Right",
+              "Font": "Tahoma;;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "DataColumn"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text75",
+              "CanGrow": true,
+              "ClientRectangle": "10.4,0.4,6,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{VArrivalNoticeF_Cash.Remark}"
+              },
+              "HorAlignment": "Right",
+              "Font": "Tahoma;7;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "DataColumn"
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "Text76",
+              "ClientRectangle": "6.2,0,4.2,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{VArrivalNoticeF_Cash.StripFee}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Tahoma;;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextFormat": {
+                "Ident": "StiNumberFormatService",
+                "NegativePattern": 1,
+                "GroupSeparator": ","
+              },
+              "Type": "DataColumn"
+            },
+            "3": {
+              "Ident": "StiText",
+              "Name": "Text77",
+              "ClientRectangle": "1.2,0,4.2,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{VArrivalNoticeF_Cash.SentFullFee}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Tahoma;;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextFormat": {
+                "Ident": "StiNumberFormatService",
+                "NegativePattern": 1,
+                "GroupSeparator": ","
+              },
+              "Type": "DataColumn"
+            },
+            "4": {
+              "Ident": "StiShape",
+              "Name": "Shape11",
+              "ClientRectangle": "0.4,0.8,16,0.1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Brush": "solid:",
+              "Style": "Dot",
+              "ShapeType": {
+                "Ident": "StiHorizontalLineShapeType"
+              }
+            },
+            "5": {
+              "Ident": "StiStartPointPrimitive",
+              "Name": "StartPointPrimitive7",
+              "ClientRectangle": "6.2,-0.2,0,0",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "ReferenceToGuid": "3ae70f93c1f24be08fc38cfce238f3f2"
+            },
+            "6": {
+              "Ident": "StiStartPointPrimitive",
+              "Name": "StartPointPrimitive8",
+              "ClientRectangle": "5.4,-0.2,0,0",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "ReferenceToGuid": "b56a4eca31954abb8682be7493b6bf85"
+            },
+            "7": {
+              "Ident": "StiStartPointPrimitive",
+              "Name": "StartPointPrimitive9",
+              "ClientRectangle": "1.2,-0.2,0,0",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "ReferenceToGuid": "a26d2fe9b767431a813e65e9d3879b90"
+            },
+            "8": {
+              "Ident": "StiStartPointPrimitive",
+              "Name": "StartPointPrimitive10",
+              "ClientRectangle": "0.4,-0.2,0,0",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "ReferenceToGuid": "d4f016b232764036a712963850bd3939"
+            },
+            "9": {
+              "Ident": "StiStartPointPrimitive",
+              "Name": "StartPointPrimitive6",
+              "ClientRectangle": "10.4,-0.2,0,0",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "ReferenceToGuid": "24a7a5c936c448ccbccaa1bd83f3d073"
+            },
+            "10": {
+              "Ident": "StiStartPointPrimitive",
+              "Name": "StartPointPrimitive11",
+              "ClientRectangle": "16.4,-0.2,0,0",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "ReferenceToGuid": "34ecd03c543445998a1a5d7df936e18f"
+            },
+            "11": {
+              "Ident": "StiEndPointPrimitive",
+              "Name": "EndPointPrimitive7",
+              "ClientRectangle": "6.2,0.8,0,0",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "ReferenceToGuid": "3ae70f93c1f24be08fc38cfce238f3f2"
+            },
+            "12": {
+              "Ident": "StiEndPointPrimitive",
+              "Name": "EndPointPrimitive9",
+              "ClientRectangle": "1.2,0.8,0,0",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "ReferenceToGuid": "a26d2fe9b767431a813e65e9d3879b90"
+            }
+          },
+          "DataSourceName": "VArrivalNoticeF_Cash",
+          "Filters": {
+            "0": {
+              "Ident": "StiFilter",
+              "DataType": "Expression",
+              "Column": "ArrivalNoticeID",
+              "Value1": "ID"
+            }
+          }
+        },
+        "5": {
+          "Ident": "StiDataBand",
+          "Name": "DataBand4",
+          "ClientRectangle": "0,15.2,19,2.2",
+          "Interaction": {
+            "Ident": "StiBandInteraction"
+          },
+          "Border": "Top, Left, Right;;;;;;;solid:Black",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text78",
+              "ClientRectangle": "13.4,0.2,3,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "ماليات بر ارزش افزوده %"
+              },
+              "Font": "Tahoma;;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "RightToLeft": true,
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "1": {
+              "Ident": "StiShape",
+              "Name": "Shape12",
+              "ClientRectangle": "0.4,0.6,16,0.1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Brush": "solid:",
+              "ShapeType": {
+                "Ident": "StiHorizontalLineShapeType"
+              }
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "Text79",
+              "ClientRectangle": "10.6,0.2,2.8,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{TbArrivalNoticeH.VATpercent}"
+              },
+              "HorAlignment": "Right",
+              "VertAlignment": "Center",
+              "Font": "Tahoma;;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black"
+            },
+            "3": {
+              "Ident": "StiText",
+              "Name": "Text80",
+              "ClientRectangle": "6.2,0.2,4.2,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{VArrivalNoticeF_Cash_Sum.SumStripFee_VAT}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Tahoma;;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextFormat": {
+                "Ident": "StiNumberFormatService",
+                "NegativePattern": 1,
+                "GroupSeparator": ","
+              }
+            },
+            "4": {
+              "Ident": "StiText",
+              "Name": "Text81",
+              "ClientRectangle": "1.2,0.2,4.2,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{VArrivalNoticeF_Cash_Sum.SumDentFullFee_VAT}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Tahoma;;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextFormat": {
+                "Ident": "StiNumberFormatService",
+                "NegativePattern": 1,
+                "GroupSeparator": ","
+              }
+            },
+            "5": {
+              "Ident": "StiText",
+              "Name": "Text90",
+              "ClientRectangle": "6.2,0.8,4.2,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{VArrivalNoticeF_Cash_Sum.Payable_Strip}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Tahoma;9;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:0,176,80",
+              "TextFormat": {
+                "Ident": "StiNumberFormatService",
+                "NegativePattern": 1,
+                "GroupSeparator": ","
+              }
+            },
+            "6": {
+              "Ident": "StiText",
+              "Name": "Text91",
+              "ClientRectangle": "1.2,0.8,4.2,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{VArrivalNoticeF_Cash_Sum.Payable_SentFull}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Tahoma;9;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:0,176,80",
+              "TextFormat": {
+                "Ident": "StiNumberFormatService",
+                "NegativePattern": 1,
+                "GroupSeparator": ","
+              }
+            },
+            "7": {
+              "Ident": "StiShape",
+              "Name": "Shape13",
+              "ClientRectangle": "0.4,1.4,10,0.1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Brush": "solid:",
+              "ShapeType": {
+                "Ident": "StiHorizontalLineShapeType"
+              }
+            },
+            "8": {
+              "Ident": "StiSubReport",
+              "Name": "SubReport2",
+              "ClientRectangle": "0,1.4,19,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "SubReportPageGuid": "52690cfb4992401baae039fc88342c67"
+            },
+            "9": {
+              "Ident": "StiEndPointPrimitive",
+              "Name": "EndPointPrimitive23",
+              "ClientRectangle": "16.4,0.4,0,0",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "ReferenceToGuid": "a7606b2c8c864bd986317a100f119168"
+            },
+            "10": {
+              "Ident": "StiEndPointPrimitive",
+              "Name": "EndPointPrimitive6",
+              "ClientRectangle": "10.4,1.4,0,0",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "ReferenceToGuid": "24a7a5c936c448ccbccaa1bd83f3d073"
+            },
+            "11": {
+              "Ident": "StiEndPointPrimitive",
+              "Name": "EndPointPrimitive11",
+              "ClientRectangle": "16.4,0.6,0,0",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "ReferenceToGuid": "34ecd03c543445998a1a5d7df936e18f"
+            },
+            "12": {
+              "Ident": "StiEndPointPrimitive",
+              "Name": "EndPointPrimitive10",
+              "ClientRectangle": "0.4,1.4,0,0",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "ReferenceToGuid": "d4f016b232764036a712963850bd3939"
+            },
+            "13": {
+              "Ident": "StiEndPointPrimitive",
+              "Name": "EndPointPrimitive12",
+              "ClientRectangle": "6.2,0.8,0,0",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "ReferenceToGuid": "1990455a2b01407b9b14fe19a9bd9b0c"
+            },
+            "14": {
+              "Ident": "StiEndPointPrimitive",
+              "Name": "EndPointPrimitive13",
+              "ClientRectangle": "5.4,0.8,0,0",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "ReferenceToGuid": "226dba6d4cc74552abf38a95143a4e06"
+            },
+            "15": {
+              "Ident": "StiEndPointPrimitive",
+              "Name": "EndPointPrimitive14",
+              "ClientRectangle": "1.2,0.8,0,0",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "ReferenceToGuid": "a6b82f3bef5741fe837746421333f4df"
+            },
+            "16": {
+              "Ident": "StiEndPointPrimitive",
+              "Name": "EndPointPrimitive15",
+              "ClientRectangle": "0.4,0.8,0,0",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "ReferenceToGuid": "f9c19694a09241dd91132c5a681b152d"
+            },
+            "17": {
+              "Ident": "StiEndPointPrimitive",
+              "Name": "EndPointPrimitive16",
+              "ClientRectangle": "10.4,0.8,0,0",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "ReferenceToGuid": "7f544d0a4e8044359e47322f7db02711"
+            },
+            "18": {
+              "Ident": "StiEndPointPrimitive",
+              "Name": "EndPointPrimitive8",
+              "ClientRectangle": "5.4,1.4,0,0",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "ReferenceToGuid": "b56a4eca31954abb8682be7493b6bf85"
+            }
+          },
+          "DataSourceName": "VArrivalNoticeF_Cash_Sum",
+          "Filters": {
+            "0": {
+              "Ident": "StiFilter",
+              "DataType": "Expression",
+              "Column": "ArrivalNoticeID",
+              "Value1": "ID"
+            }
+          }
+        },
+        "6": {
+          "Ident": "StiDataBand",
+          "Name": "DataBand6",
+          "ClientRectangle": "0,18.2,19,1",
+          "Interaction": {
+            "Ident": "StiBandInteraction"
+          },
+          "Border": "All;;;;;;;solid:Black",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text100",
+              "ClientRectangle": "16.8,0.2,2,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "5. شماره حساب"
+              },
+              "VertAlignment": "Center",
+              "Font": "Tahoma;7;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "RightToLeft": true,
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text101",
+              "CanGrow": true,
+              "ClientRectangle": "0.4,0.2,16,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{TbArrivalNoticeH.TbPageTemplate.TbAccountNo.AccountNoFa}"
+              },
+              "VertAlignment": "Center",
+              "Font": "Tahoma;;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "RightToLeft": true,
+                "WordWrap": true
+              }
+            },
+            "2": {
+              "Ident": "StiStartPointPrimitive",
+              "Name": "StartPointPrimitive26",
+              "ClientRectangle": "16.4,0,0,0",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "ReferenceToGuid": "066463b28eef44219d133abb57646f95"
+            },
+            "3": {
+              "Ident": "StiEndPointPrimitive",
+              "Name": "EndPointPrimitive26",
+              "ClientRectangle": "16.4,1,0,0",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "ReferenceToGuid": "066463b28eef44219d133abb57646f95"
+            }
+          },
+          "DataSourceName": "TbArrivalNoticeH"
+        },
+        "7": {
+          "Ident": "StiDataBand",
+          "Name": "DataBand8",
+          "ClientRectangle": "0,20,19,0.8",
+          "Interaction": {
+            "Ident": "StiBandInteraction"
+          },
+          "Border": "Top, Left, Right;;;;;;;solid:Black",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text104",
+              "ClientRectangle": "0.4,0,16,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{TbArrivalNoticeH.Remark}"
+              },
+              "VertAlignment": "Center",
+              "Font": "Tahoma;;;",
+              "Border": "Top;;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "RightToLeft": true
+              }
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text102",
+              "ClientRectangle": "16.8,0,2,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "6. ملاحظات"
+              },
+              "VertAlignment": "Center",
+              "Font": "Tahoma;7;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "RightToLeft": true,
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            }
+          },
+          "DataSourceName": "TbArrivalNoticeH"
+        },
+        "8": {
+          "Ident": "StiDataBand",
+          "Name": "DataBand7",
+          "ClientRectangle": "0,21.6,19,0.8",
+          "Interaction": {
+            "Ident": "StiBandInteraction"
+          },
+          "Border": "Left, Right, Bottom;;;;;;;solid:Black",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text103",
+              "CanGrow": true,
+              "ClientRectangle": "0.4,0,16,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{TbArrivalNoticeH.TbPageTemplate.BodyTextFa}"
+              },
+              "VertAlignment": "Center",
+              "Font": "Tahoma;;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "RightToLeft": true,
+                "WordWrap": true
+              },
+              "Type": "DataColumn"
+            }
+          },
+          "DataSourceName": "TbArrivalNoticeH"
+        },
+        "9": {
+          "Ident": "StiFooterBand",
+          "Name": "FooterBand1",
+          "PrintOn": "ExceptFirstAndLastPage",
+          "ClientRectangle": "0,23.2,19,0.8",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text105",
+              "CanGrow": true,
+              "ClientRectangle": "0.4,0,16,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{TbArrivalNoticeH.TbPageTemplate.SecondPageTextFa}"
+              },
+              "VertAlignment": "Center",
+              "Font": "Tahoma;;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "RightToLeft": true,
+                "WordWrap": true
+              }
+            }
+          },
+          "NewPageBefore": true
+        },
+        "10": {
+          "Ident": "StiRoundedRectanglePrimitive",
+          "Name": "RoundedRectanglePrimitive1",
+          "Guid": "4a93636a719a4f96ad5d481122c8ea0c",
+          "ClientRectangle": "0.2,0.8,5.6,3.8",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          }
+        },
+        "11": {
+          "Ident": "StiVerticalLinePrimitive",
+          "Name": "VerticalLinePrimitive1",
+          "Guid": "818984829ec84835aeae66e4fd0dbe4c",
+          "ClientRectangle": "4.2,0.8,0.0254,3.8",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Style": "Dot",
+          "StartCap": ";;;",
+          "EndCap": ";;;"
+        },
+        "12": {
+          "Ident": "StiVerticalLinePrimitive",
+          "Name": "VerticalLinePrimitive2",
+          "Guid": "05149b258ebb462083d9657353e6e753",
+          "ClientRectangle": "16.4,5.6,0.0254,5.4",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Style": "Dot",
+          "StartCap": ";;;",
+          "EndCap": ";;;"
+        },
+        "13": {
+          "Ident": "StiVerticalLinePrimitive",
+          "Name": "VerticalLinePrimitive3",
+          "Guid": "351e219a015248268d4a374c2c3d21c6",
+          "ClientRectangle": "11,8,0.0254,2.6",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Style": "Dot",
+          "StartCap": ";;;",
+          "EndCap": ";;;"
+        },
+        "14": {
+          "Ident": "StiVerticalLinePrimitive",
+          "Name": "VerticalLinePrimitive4",
+          "Guid": "bf8859ff14e84c13b0f33cfd18969896",
+          "ClientRectangle": "5.8,8,0.0254,3",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Style": "Dot",
+          "StartCap": ";;;",
+          "EndCap": ";;;"
+        },
+        "15": {
+          "Ident": "StiVerticalLinePrimitive",
+          "Name": "VerticalLinePrimitive5",
+          "Guid": "24a7a5c936c448ccbccaa1bd83f3d073",
+          "ClientRectangle": "10.4,13.4,0.0254,3.2",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "StartCap": ";;;",
+          "EndCap": ";;;"
+        },
+        "16": {
+          "Ident": "StiVerticalLinePrimitive",
+          "Name": "VerticalLinePrimitive6",
+          "Guid": "3ae70f93c1f24be08fc38cfce238f3f2",
+          "ClientRectangle": "6.2,13.4,0.0254,1",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "StartCap": ";;;",
+          "EndCap": ";;;"
+        },
+        "17": {
+          "Ident": "StiVerticalLinePrimitive",
+          "Name": "VerticalLinePrimitive7",
+          "Guid": "b56a4eca31954abb8682be7493b6bf85",
+          "ClientRectangle": "5.4,13.4,0.0254,3.2",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "StartCap": ";;;",
+          "EndCap": ";;;"
+        },
+        "18": {
+          "Ident": "StiVerticalLinePrimitive",
+          "Name": "VerticalLinePrimitive8",
+          "Guid": "a26d2fe9b767431a813e65e9d3879b90",
+          "ClientRectangle": "1.2,13.4,0.0254,1",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "StartCap": ";;;",
+          "EndCap": ";;;"
+        },
+        "19": {
+          "Ident": "StiVerticalLinePrimitive",
+          "Name": "VerticalLinePrimitive9",
+          "Guid": "d4f016b232764036a712963850bd3939",
+          "ClientRectangle": "0.4,13.4,0.0254,3.2",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "StartCap": ";;;",
+          "EndCap": ";;;"
+        },
+        "20": {
+          "Ident": "StiVerticalLinePrimitive",
+          "Name": "VerticalLinePrimitive10",
+          "Guid": "34ecd03c543445998a1a5d7df936e18f",
+          "ClientRectangle": "16.4,13.4,0.0254,2.4",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "StartCap": ";;;",
+          "EndCap": ";;;"
+        },
+        "21": {
+          "Ident": "StiStartPointPrimitive",
+          "Name": "StartPointPrimitive18",
+          "ClientRectangle": "10.4,14.6,0,0",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "ReferenceToGuid": "7f544d0a4e8044359e47322f7db02711"
+        },
+        "22": {
+          "Ident": "StiStartPointPrimitive",
+          "Name": "StartPointPrimitive19",
+          "ClientRectangle": "6.2,14.6,0,0",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "ReferenceToGuid": "1990455a2b01407b9b14fe19a9bd9b0c"
+        },
+        "23": {
+          "Ident": "StiStartPointPrimitive",
+          "Name": "StartPointPrimitive20",
+          "ClientRectangle": "5.4,14.6,0,0",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "ReferenceToGuid": "226dba6d4cc74552abf38a95143a4e06"
+        },
+        "24": {
+          "Ident": "StiStartPointPrimitive",
+          "Name": "StartPointPrimitive21",
+          "ClientRectangle": "1.2,14.6,0,0",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "ReferenceToGuid": "a6b82f3bef5741fe837746421333f4df"
+        },
+        "25": {
+          "Ident": "StiStartPointPrimitive",
+          "Name": "StartPointPrimitive22",
+          "ClientRectangle": "0.4,14.6,0,0",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "ReferenceToGuid": "f9c19694a09241dd91132c5a681b152d"
+        },
+        "26": {
+          "Ident": "StiStartPointPrimitive",
+          "Name": "StartPointPrimitive23",
+          "ClientRectangle": "16.4,14.6,0,0",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "ReferenceToGuid": "a7606b2c8c864bd986317a100f119168"
+        },
+        "27": {
+          "Ident": "StiVerticalLinePrimitive",
+          "Name": "VerticalLinePrimitive15",
+          "Guid": "066463b28eef44219d133abb57646f95",
+          "ClientRectangle": "16.4,18.2,0.0254,1",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "StartCap": ";;;",
+          "EndCap": ";;;"
+        }
+      },
+      "PageWidth": 21.0,
+      "PageHeight": 29.7,
+      "Watermark": {
+        "TextBrush": "solid:50,0,0,0"
+      },
+      "Margins": {
+        "Left": 1.0,
+        "Right": 1.0,
+        "Top": 1.0,
+        "Bottom": 1.0
+      },
+      "ReportUnit": {
+        "Ident": "StiCentimetersUnit"
+      }
+    },
+    "1": {
+      "Ident": "StiPage",
+      "Name": "subReport1",
+      "Guid": "0c25cbc3388a41a785c41c43cdcf8976",
+      "Alias": "subReport1",
+      "Interaction": {
+        "Ident": "StiInteraction"
+      },
+      "Border": ";;2;;;;;solid:Black",
+      "Brush": "solid:",
+      "Components": {
+        "0": {
+          "Ident": "StiDataBand",
+          "Name": "DataBand2",
+          "ClientRectangle": "0,0.4,8,0.4",
+          "Interaction": {
+            "Ident": "StiBandInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text63",
+              "ClientRectangle": "5.6,0,1.6,0.4",
+              "Enabled": false,
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{VBL_CNTRQuantity.BLID}"
+              },
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "DataColumn"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text64",
+              "ClientRectangle": "0,0,0.8,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{VBL_CNTRQuantity.Q}"
+              },
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black"
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "Text65",
+              "ClientRectangle": "1,0,0.8,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{VBL_CNTRQuantity.SizeDes}"
+              },
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black"
+            },
+            "3": {
+              "Ident": "StiText",
+              "Name": "Text66",
+              "ClientRectangle": "2,0,0.8,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{VBL_CNTRQuantity.TypeDes}"
+              },
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black"
+            },
+            "4": {
+              "Ident": "StiText",
+              "Name": "Text67",
+              "ClientRectangle": "3,0,0.8,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{VBL_CNTRQuantity.MovementType}"
+              },
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black"
+            },
+            "5": {
+              "Ident": "StiText",
+              "Name": "Text68",
+              "ClientRectangle": "4,0,1,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{VBL_CNTRQuantity.SDO}"
+              },
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black"
+            },
+            "6": {
+              "Ident": "StiText",
+              "Name": "Text69",
+              "ClientRectangle": "0.8,0,0.2,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": ",\r\n\r\n"
+              },
+              "Font": "Tahoma;5;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "RightToLeft": true,
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "7": {
+              "Ident": "StiText",
+              "Name": "Text70",
+              "ClientRectangle": "1.8,0,0.2,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": ",\r\n\r\n"
+              },
+              "Font": "Tahoma;5;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "RightToLeft": true,
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "8": {
+              "Ident": "StiText",
+              "Name": "Text71",
+              "ClientRectangle": "2.8,0,0.2,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": ",\r\n\r\n"
+              },
+              "Font": "Tahoma;5;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "RightToLeft": true,
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "9": {
+              "Ident": "StiText",
+              "Name": "Text72",
+              "ClientRectangle": "3.8,0,0.2,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": ",\r\n\r\n"
+              },
+              "Font": "Tahoma;5;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "RightToLeft": true,
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            }
+          },
+          "DataSourceName": "VBL_CNTRQuantity",
+          "FilterEngine": "SQLQuery",
+          "Filters": {
+            "0": {
+              "Ident": "StiFilter",
+              "DataType": "Expression",
+              "Column": "BLID",
+              "Value1": "TbArrivalNoticeH.BLID"
+            }
+          }
+        }
+      },
+      "PageWidth": 10.0,
+      "PageHeight": 29.7,
+      "Watermark": {
+        "TextBrush": "solid:50,0,0,0"
+      },
+      "Margins": {
+        "Left": 1.0,
+        "Right": 1.0,
+        "Top": 1.0,
+        "Bottom": 1.0
+      }
+    },
+    "2": {
+      "Ident": "StiPage",
+      "Name": "subReport2",
+      "Guid": "52690cfb4992401baae039fc88342c67",
+      "Alias": "subReport2",
+      "Interaction": {
+        "Ident": "StiInteraction"
+      },
+      "Border": ";;2;;;;;solid:Black",
+      "Brush": "solid:",
+      "Components": {
+        "0": {
+          "Ident": "StiHeaderBand",
+          "Name": "HeaderBand2",
+          "ClientRectangle": "0,0.4,19,1",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": "All;;;;;;;solid:Black",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text92",
+              "ClientRectangle": "17,0.2,1.8,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "4. سایر وجوه"
+              },
+              "VertAlignment": "Center",
+              "Font": "Tahoma;7;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "RightToLeft": true,
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text93",
+              "ClientRectangle": "5.4,0.2,5,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "درصورت خواست تخليه كانتينر در محوطه\r\n"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Tahoma;7;Bold;",
+              "Border": "All;;;;;;;solid:Black",
+              "Brush": "solid:233,233,233",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "Text97",
+              "ClientRectangle": "0.4,0.2,5,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "در صورت درخواست خروج كانتينر از محوطه\r\n"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Tahoma;7;Bold;",
+              "Border": "All;;;;;;;solid:Black",
+              "Brush": "solid:233,233,233",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "3": {
+              "Ident": "StiText",
+              "Name": "Text99",
+              "ClientRectangle": "10.4,0.2,6,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "\r\n"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Tahoma;7;Bold;",
+              "Border": "Top, Right, Bottom;;;;;;;solid:Black",
+              "Brush": "solid:233,233,233",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "4": {
+              "Ident": "StiStartPointPrimitive",
+              "Name": "StartPointPrimitive12",
+              "ClientRectangle": "16.4,0.2,0,0",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "ReferenceToGuid": "b22478fb87a74cd0a2bd9a0178614947"
+            },
+            "5": {
+              "Ident": "StiStartPointPrimitive",
+              "Name": "StartPointPrimitive15",
+              "ClientRectangle": "10.4,0.2,0,0",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "ReferenceToGuid": "4f3e145aeb344e8f8ce2ded473afcf11"
+            },
+            "6": {
+              "Ident": "StiStartPointPrimitive",
+              "Name": "StartPointPrimitive13",
+              "ClientRectangle": "5.4,0.2,0,0",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "ReferenceToGuid": "76e27ab42932452ca5c1ff6ce7554c52"
+            },
+            "7": {
+              "Ident": "StiStartPointPrimitive",
+              "Name": "StartPointPrimitive14",
+              "ClientRectangle": "0.4,0.2,0,0",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "ReferenceToGuid": "bc1d48d40e044bcea79a57efe60289e6"
+            }
+          }
+        },
+        "1": {
+          "Ident": "StiDataBand",
+          "Name": "DataBand5",
+          "ClientRectangle": "0,2.2,19,0.8",
+          "Interaction": {
+            "Ident": "StiBandInteraction"
+          },
+          "Border": "Left, Right;;;;;;;solid:Black",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text94",
+              "CanGrow": true,
+              "ClientRectangle": "10.4,0,6,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{VArrivalNoticeF_NotCash.ServiceDes}"
+              },
+              "HorAlignment": "Right",
+              "Font": "Tahoma;;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "DataColumn"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text95",
+              "CanGrow": true,
+              "ClientRectangle": "10.4,0.4,6,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{VArrivalNoticeF_NotCash.Remark}"
+              },
+              "HorAlignment": "Right",
+              "Font": "Tahoma;7;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "DataColumn"
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "Text96",
+              "ClientRectangle": "5.4,0,5,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{VArrivalNoticeF_NotCash.StripFee}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Tahoma;;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextFormat": {
+                "Ident": "StiNumberFormatService",
+                "NegativePattern": 1,
+                "GroupSeparator": ","
+              },
+              "Type": "DataColumn"
+            },
+            "3": {
+              "Ident": "StiText",
+              "Name": "Text98",
+              "ClientRectangle": "0.4,0,5,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{VArrivalNoticeF_NotCash.SentFullFee}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Tahoma;;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextFormat": {
+                "Ident": "StiNumberFormatService",
+                "NegativePattern": 1,
+                "GroupSeparator": ","
+              },
+              "Type": "DataColumn"
+            },
+            "4": {
+              "Ident": "StiStartPointPrimitive",
+              "Name": "StartPointPrimitive16",
+              "ClientRectangle": "10.4,-0.4,0,0",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "ReferenceToGuid": "4f3e145aeb344e8f8ce2ded473afcf11"
+            },
+            "5": {
+              "Ident": "StiEndPointPrimitive",
+              "Name": "EndPointPrimitive21",
+              "ClientRectangle": "10.4,0.8,0,0",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "ReferenceToGuid": "4f3e145aeb344e8f8ce2ded473afcf11"
+            },
+            "6": {
+              "Ident": "StiStartPointPrimitive",
+              "Name": "StartPointPrimitive17",
+              "ClientRectangle": "5.4,-0.4,0,0",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "ReferenceToGuid": "76e27ab42932452ca5c1ff6ce7554c52"
+            },
+            "7": {
+              "Ident": "StiEndPointPrimitive",
+              "Name": "EndPointPrimitive22",
+              "ClientRectangle": "5.4,0.8,0,0",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "ReferenceToGuid": "76e27ab42932452ca5c1ff6ce7554c52"
+            },
+            "8": {
+              "Ident": "StiStartPointPrimitive",
+              "Name": "StartPointPrimitive24",
+              "ClientRectangle": "0.4,-0.4,0,0",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "ReferenceToGuid": "bc1d48d40e044bcea79a57efe60289e6"
+            },
+            "9": {
+              "Ident": "StiEndPointPrimitive",
+              "Name": "EndPointPrimitive24",
+              "ClientRectangle": "0.4,0.8,0,0",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "ReferenceToGuid": "bc1d48d40e044bcea79a57efe60289e6"
+            },
+            "10": {
+              "Ident": "StiStartPointPrimitive",
+              "Name": "StartPointPrimitive25",
+              "ClientRectangle": "16.4,-0.4,0,0",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "ReferenceToGuid": "b22478fb87a74cd0a2bd9a0178614947"
+            },
+            "11": {
+              "Ident": "StiEndPointPrimitive",
+              "Name": "EndPointPrimitive25",
+              "ClientRectangle": "16.4,0.8,0,0",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "ReferenceToGuid": "b22478fb87a74cd0a2bd9a0178614947"
+            }
+          },
+          "DataSourceName": "VArrivalNoticeF_NotCash",
+          "Filters": {
+            "0": {
+              "Ident": "StiFilter",
+              "DataType": "Expression",
+              "Column": "ArrivalNoticeID",
+              "Value1": "ID"
+            }
+          }
+        },
+        "2": {
+          "Ident": "StiVerticalLinePrimitive",
+          "Name": "VerticalLinePrimitive14",
+          "Guid": "4f3e145aeb344e8f8ce2ded473afcf11",
+          "ClientRectangle": "10.4,0.6,0.0254,2.4",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "StartCap": ";;;",
+          "EndCap": ";;;"
+        },
+        "3": {
+          "Ident": "StiVerticalLinePrimitive",
+          "Name": "VerticalLinePrimitive12",
+          "Guid": "76e27ab42932452ca5c1ff6ce7554c52",
+          "ClientRectangle": "5.4,0.6,0.0254,2.4",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "StartCap": ";;;",
+          "EndCap": ";;;"
+        },
+        "4": {
+          "Ident": "StiVerticalLinePrimitive",
+          "Name": "VerticalLinePrimitive13",
+          "Guid": "bc1d48d40e044bcea79a57efe60289e6",
+          "ClientRectangle": "0.4,0.6,0.0254,2.4",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "StartCap": ";;;",
+          "EndCap": ";;;"
+        },
+        "5": {
+          "Ident": "StiVerticalLinePrimitive",
+          "Name": "VerticalLinePrimitive11",
+          "Guid": "b22478fb87a74cd0a2bd9a0178614947",
+          "ClientRectangle": "16.4,0.6,0.0254,2.4",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "StartCap": ";;;",
+          "EndCap": ";;;"
+        },
+        "6": {
+          "Ident": "StiEndPointPrimitive",
+          "Name": "EndPointPrimitive17",
+          "ClientRectangle": "16.4,3.2,0,0",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "ReferenceToGuid": "b22478fb87a74cd0a2bd9a0178614947"
+        },
+        "7": {
+          "Ident": "StiEndPointPrimitive",
+          "Name": "EndPointPrimitive20",
+          "ClientRectangle": "10.4,3.2,0,0",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "ReferenceToGuid": "4f3e145aeb344e8f8ce2ded473afcf11"
+        },
+        "8": {
+          "Ident": "StiEndPointPrimitive",
+          "Name": "EndPointPrimitive18",
+          "ClientRectangle": "5.4,3.2,0,0",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "ReferenceToGuid": "76e27ab42932452ca5c1ff6ce7554c52"
+        },
+        "9": {
+          "Ident": "StiEndPointPrimitive",
+          "Name": "EndPointPrimitive19",
+          "ClientRectangle": "0.4,3.2,0,0",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "ReferenceToGuid": "bc1d48d40e044bcea79a57efe60289e6"
+        }
+      },
+      "PaperSize": "A4",
+      "PageWidth": 21.0,
+      "PageHeight": 29.7,
+      "Watermark": {
+        "TextBrush": "solid:50,0,0,0"
+      },
+      "Margins": {
+        "Left": 1.0,
+        "Right": 1.0,
+        "Top": 1.0,
+        "Bottom": 1.0
+      }
+    }
+  }
+}
