@@ -1,7 +1,5 @@
 const {QueryTypes} = require('sequelize');
 
-
-
 const sequelize=require('../utils/database');
 
 

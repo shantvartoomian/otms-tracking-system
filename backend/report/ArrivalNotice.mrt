@@ -1,10 +1,10 @@
 {
   "ReportVersion": "2021.1.1.0",
-  "ReportGuid": "443edd49daec4f298795832693efc050",
+  "ReportGuid": "28478f4e28d647f18f96f304ba8bc78d",
   "ReportName": "Report",
   "ReportAlias": "Report",
   "ReportCreated": "/Date(1626679321000+0430)/",
-  "ReportChanged": "/Date(1626852134514+0430)/",
+  "ReportChanged": "/Date(1626849915695+0430)/",
   "EngineVersion": "EngineV2",
   "CalculationMode": "Interpretation",
   "Script": "using System;\r\nusing System.Drawing;\r\nusing System.Windows.Forms;\r\nusing System.Data;\r\nusing Stimulsoft.Controls;\r\nusing Stimulsoft.Base.Drawing;\r\nusing Stimulsoft.Report;\r\nusing Stimulsoft.Report.Dialogs;\r\nusing Stimulsoft.Report.Components;\r\n\r\nnamespace Reports\r\n{\r\n    public class Report : Stimulsoft.Report.StiReport\r\n    {\r\n        public Report()        {\r\n            this.InitializeComponent();\r\n        }\r\n\r\n        #region StiReport Designer generated code - do not modify\r\n\t\t#endregion StiReport Designer generated code - do not modify\r\n    }\r\n}\r\n",
@@ -2712,7 +2712,8 @@
         "Ident": "StiSqlDatabase",
         "Name": "cnn",
         "Alias": "cnn",
-        "Key": "6540b90422034771bc23196e66545d7d"
+        "Key": "6540b90422034771bc23196e66545d7d",
+        "ConnectionStringEncrypted": "9NDhSGEMSxn7SdGE6QQlP9FWs81FcbuAb2PobGpo4yqGerXJSw9DzWIVKexohHc/wsTPL8gB+oBGXdnJYezhRo1w90lWW7v17VvtvXkY9W6AyPujTkyi3WtH6NzpGGIX1mxTiVlRS51rWw=="
       }
     },
     "Relations": {

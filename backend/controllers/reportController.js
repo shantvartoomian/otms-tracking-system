@@ -1,42 +1,59 @@
 var Stimulsoft = require('stimulsoft-reports-js');
 const { v4: uuidv4 } = require('uuid');
+var fs = require("fs");
+const {QueryTypes} = require('sequelize');
 
-module.exports.printArrivalNotice=(req,res)=>{
+const sequelize=require('../utils/database');
 
 
+module.exports.printArrivalNotice=async(req,res)=>{
+
+    
     Stimulsoft.Base.StiLicense.loadFromFile("report/license.key");  
 
-    // Loading fonts
-    Stimulsoft.Base.StiFontCollection.addOpentypeFontFile("report/Roboto-Black.ttf");
+    Stimulsoft.Base.StiFontCollection.addOpentypeFontFile("report/BNazanin.ttf");
     console.log("Font loaded");
-    
-    // Creating new report
+
     var report = new Stimulsoft.Report.StiReport();
-    console.log("New report created");
     
-    
-    // Loading report template
     report.loadFile("report/ArrivalNotice.mrt");
-    console.log("Report template loaded");
     
-    var dbcnn = report.dictionary.databases.getByName("cnn");
-    dbcnn.connectionString = "Data Source=37.156.29.46;Initial Catalog=tempOTMS;Persist Security Info=True;User ID=sa;Password=Kian@09122116470";
+// var dbcnn = report.dictionary.databases.getByName("cnn");
+// var config=sequelize.config
+// dbcnn.connectionString = `Data Source=${config.host};Initial Catalog=${config.database};Persist Security Info=True;User ID=${config.username};Password=${config.password}`;
+try {
+    data=await sequelize.query
+    ('SELECT  dbo.TbArrivalNoticeH.ID FROM    dbo.TbArrivalNoticeH INNER JOIN dbo.TbBL ON dbo.TbArrivalNoticeH.BLID = dbo.TbBL.ID '
+    +'WHERE      (dbo.TbBL.HBL = :HBL)',{
+        replacements:{HBL:req.query.hbl},
+        type:QueryTypes.SELECT
+    })
+    if (data.length>0) {
 
-    report.dictionary.variables.getByName("ID").valueObject = 7;
+    report.dictionary.variables.getByName("ID").valueObject = data[0].ID;
     report.dictionary.variables.getByName("User").valueObject = 4040;
-    
-    // Renreding report
-     report.renderAsync(() => {
-
-    var data = report.exportDocument(Stimulsoft.Report.StiExportFormat.Pdf);
-	var buffer = new Buffer(data, "utf-8");
-	var fs = require("fs");
 
     fileName=uuidv4()
 
-	fs.writeFileSync(`report/${fileName}.pdf`, buffer);
-        res.download(`report/${fileName}.pdf`)
-    })
- 
-}
+    report.renderAsync(()=>{
+        // console.log("Report rendered. Pages count: ", report.renderedPages.count);
 
+        // // Saving rendered report to file
+
+        var data = report.exportDocument(Stimulsoft.Report.StiExportFormat.Pdf);
+
+        var buffer = new Buffer(data, "utf-8");
+        var fs = require("fs");
+        fs.writeFileSync(`report/temp/${fileName}.pdf`, buffer);
+    
+        res.download(`report/temp/${fileName}.pdf`)
+
+    })
+    //res.redirect('/')
+}
+} catch (err) {
+    console.log(err)
+    res.redirect('/')
+}
+   
+}
