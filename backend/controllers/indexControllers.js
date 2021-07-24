@@ -80,7 +80,6 @@ module.exports.getData=async(req,res)=>{
                     result.push(data)
                 }
             }
-            console.log(result)
              res.render("index",{
                 pageTitle:'Track & Trace',
                 result : result.length>0 ? result[0] : null,
@@ -93,4 +92,10 @@ module.exports.getData=async(req,res)=>{
         }
 
 }
+
+// module.exports.showReport=async(req,res)=>{
+//     res.render("showReport",{
+//         pageTitle:'Track & Trace'
+//     })
+// }
 

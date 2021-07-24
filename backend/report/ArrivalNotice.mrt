@@ -1,12 +1,13 @@
 {
   "ReportVersion": "2021.1.1.0",
-  "ReportGuid": "28478f4e28d647f18f96f304ba8bc78d",
+  "ReportGuid": "58b7f14265f6480e84921379913b9250",
   "ReportName": "Report",
   "ReportAlias": "Report",
   "ReportCreated": "/Date(1626679321000+0430)/",
-  "ReportChanged": "/Date(1626849915695+0430)/",
+  "ReportChanged": "/Date(1627056187118+0430)/",
   "EngineVersion": "EngineV2",
   "CalculationMode": "Interpretation",
+  "ScriptLanguage": "JS",
   "Script": "using System;\r\nusing System.Drawing;\r\nusing System.Windows.Forms;\r\nusing System.Data;\r\nusing Stimulsoft.Controls;\r\nusing Stimulsoft.Base.Drawing;\r\nusing Stimulsoft.Report;\r\nusing Stimulsoft.Report.Dialogs;\r\nusing Stimulsoft.Report.Components;\r\n\r\nnamespace Reports\r\n{\r\n    public class Report : Stimulsoft.Report.StiReport\r\n    {\r\n        public Report()        {\r\n            this.InitializeComponent();\r\n        }\r\n\r\n        #region StiReport Designer generated code - do not modify\r\n\t\t#endregion StiReport Designer generated code - do not modify\r\n    }\r\n}\r\n",
   "ReferencedAssemblies": {
     "0": "System.Dll",
@@ -50,7 +51,8 @@
         "Name": "User",
         "Alias": "User",
         "Type": "System.Int32",
-        "RequestFromUser": true
+        "RequestFromUser": true,
+        "Key": "7e2ad0f4ee2f4deb90b1154b1f1b0643"
       }
     },
     "DataSources": {
@@ -946,70 +948,80 @@
             "Index": -1,
             "NameInSource": "ArrivalNoticeID",
             "Alias": "ArrivalNoticeID",
-            "Type": "System.Int32"
+            "Type": "System.Int32",
+            "Key": "0a4c628c6d744c8c89a98096ce0b3238"
           },
           "1": {
             "Name": "ServiceDes",
             "Index": -1,
             "NameInSource": "ServiceDes",
             "Alias": "ServiceDes",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "b4eb264f5c6b442db5228716759d5f86"
           },
           "2": {
             "Name": "Remark",
             "Index": -1,
             "NameInSource": "Remark",
             "Alias": "Remark",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "d1c5d83531464ca8b5c47f067e43ca09"
           },
           "3": {
             "Name": "StripFee",
             "Index": -1,
             "NameInSource": "StripFee",
             "Alias": "StripFee",
-            "Type": "System.Single"
+            "Type": "System.Single",
+            "Key": "f60b04ec97564552b38cb6f64ca775e3"
           },
           "4": {
             "Name": "SentFullFee",
             "Index": -1,
             "NameInSource": "SentFullFee",
             "Alias": "SentFullFee",
-            "Type": "System.Single"
+            "Type": "System.Single",
+            "Key": "58d82c762ea24bac801f7d0c150163da"
           },
           "5": {
             "Name": "VATpercent",
             "Index": -1,
             "NameInSource": "VATpercent",
             "Alias": "VATpercent",
-            "Type": "System.Byte"
+            "Type": "System.Byte",
+            "Key": "01a636ffab294e7a826011de9c763b3a"
           },
           "6": {
             "Name": "VAT",
             "Index": -1,
             "NameInSource": "VAT",
             "Alias": "VAT",
-            "Type": "System.Byte"
+            "Type": "System.Byte",
+            "Key": "91c8373b9088480494a8e31dfa58ebf8"
           },
           "7": {
             "Name": "StripFeeVAT",
             "Index": -1,
             "NameInSource": "StripFeeVAT",
             "Alias": "StripFeeVAT",
-            "Type": "System.Single"
+            "Type": "System.Single",
+            "Key": "4553d080dea348c48759ba4d7ddbc2dc"
           },
           "8": {
             "Name": "SentFullVAT",
             "Index": -1,
             "NameInSource": "SentFullVAT",
             "Alias": "SentFullVAT",
-            "Type": "System.Single"
+            "Type": "System.Single",
+            "Key": "aa6c26b58a014cbfbfc264ca233abad6"
           },
           "9": {
             "Name": "PayCode",
             "Index": -1,
             "NameInSource": "PayCode",
             "Alias": "PayCode",
-            "Type": "System.String"
+            "Type": "System.String",
+            "Key": "237c0c6e79874d9a9fbdcf8ff79660d6"
           }
         },
         "NameInSource": "cnn",
@@ -2712,8 +2724,7 @@
         "Ident": "StiSqlDatabase",
         "Name": "cnn",
         "Alias": "cnn",
-        "Key": "6540b90422034771bc23196e66545d7d",
-        "ConnectionStringEncrypted": "9NDhSGEMSxn7SdGE6QQlP9FWs81FcbuAb2PobGpo4yqGerXJSw9DzWIVKexohHc/wsTPL8gB+oBGXdnJYezhRo1w90lWW7v17VvtvXkY9W6AyPujTkyi3WtH6NzpGGIX1mxTiVlRS51rWw=="
+        "Key": "6540b90422034771bc23196e66545d7d"
       }
     },
     "Relations": {
@@ -2918,6 +2929,7 @@
         },
         "NameInSource": "TbPageTemplate",
         "Alias": "TbArrivalNoticeH to TbPageTemplate",
+        "Key": "87efe7f3f9d24c408e118093627cdc9b",
         "ParentSource": "TbPageTemplate",
         "ChildSource": "TbArrivalNoticeH"
       }
@@ -4632,6 +4644,78 @@
               }
             },
             "5": {
+              "Ident": "StiText",
+              "Name": "Text109",
+              "ClientRectangle": "5.4,0,0.8,0.8",
+              "Conditions": {
+                "0": {
+                  "Ident": "StiIconSetCondition",
+                  "Column": "VArrivalNoticeF_Cash.VAT",
+                  "IconSet": "SymbolsUncircled3",
+                  "ContentAlignment": "MiddleCenter",
+                  "IconSetItem1": {
+                    "Ident": "StiIconSetItem",
+                    "Icon": "CheckGreen",
+                    "Operation": "MoreThanOrEqual",
+                    "ValueType": "Value",
+                    "Value": 1.0
+                  },
+                  "IconSetItem2": {
+                    "Ident": "StiIconSetItem",
+                    "Icon": "CrossRed"
+                  },
+                  "IconSetItem3": {
+                    "Ident": "StiIconSetItem",
+                    "Icon": "CrossRed"
+                  }
+                }
+              },
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "HorAlignment": "Center",
+              "Font": "Webdings;16;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black"
+            },
+            "6": {
+              "Ident": "StiText",
+              "Name": "Text110",
+              "ClientRectangle": "0.4,0,0.8,0.8",
+              "Conditions": {
+                "0": {
+                  "Ident": "StiIconSetCondition",
+                  "Column": "VArrivalNoticeF_Cash.VAT",
+                  "IconSet": "SymbolsUncircled3",
+                  "ContentAlignment": "MiddleCenter",
+                  "IconSetItem1": {
+                    "Ident": "StiIconSetItem",
+                    "Icon": "CheckGreen",
+                    "Operation": "MoreThanOrEqual",
+                    "ValueType": "Value",
+                    "Value": 1.0
+                  },
+                  "IconSetItem2": {
+                    "Ident": "StiIconSetItem",
+                    "Icon": "CrossRed"
+                  },
+                  "IconSetItem3": {
+                    "Ident": "StiIconSetItem",
+                    "Icon": "CrossRed"
+                  }
+                }
+              },
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "HorAlignment": "Center",
+              "Font": "Webdings;16;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black"
+            },
+            "7": {
               "Ident": "StiStartPointPrimitive",
               "Name": "StartPointPrimitive7",
               "ClientRectangle": "6.2,-0.2,0,0",
@@ -4640,7 +4724,7 @@
               },
               "ReferenceToGuid": "3ae70f93c1f24be08fc38cfce238f3f2"
             },
-            "6": {
+            "8": {
               "Ident": "StiStartPointPrimitive",
               "Name": "StartPointPrimitive8",
               "ClientRectangle": "5.4,-0.2,0,0",
@@ -4649,7 +4733,7 @@
               },
               "ReferenceToGuid": "b56a4eca31954abb8682be7493b6bf85"
             },
-            "7": {
+            "9": {
               "Ident": "StiStartPointPrimitive",
               "Name": "StartPointPrimitive9",
               "ClientRectangle": "1.2,-0.2,0,0",
@@ -4658,7 +4742,7 @@
               },
               "ReferenceToGuid": "a26d2fe9b767431a813e65e9d3879b90"
             },
-            "8": {
+            "10": {
               "Ident": "StiStartPointPrimitive",
               "Name": "StartPointPrimitive10",
               "ClientRectangle": "0.4,-0.2,0,0",
@@ -4667,7 +4751,7 @@
               },
               "ReferenceToGuid": "d4f016b232764036a712963850bd3939"
             },
-            "9": {
+            "11": {
               "Ident": "StiStartPointPrimitive",
               "Name": "StartPointPrimitive6",
               "ClientRectangle": "10.4,-0.2,0,0",
@@ -4676,7 +4760,7 @@
               },
               "ReferenceToGuid": "24a7a5c936c448ccbccaa1bd83f3d073"
             },
-            "10": {
+            "12": {
               "Ident": "StiStartPointPrimitive",
               "Name": "StartPointPrimitive11",
               "ClientRectangle": "16.4,-0.2,0,0",
@@ -4685,7 +4769,7 @@
               },
               "ReferenceToGuid": "34ecd03c543445998a1a5d7df936e18f"
             },
-            "11": {
+            "13": {
               "Ident": "StiEndPointPrimitive",
               "Name": "EndPointPrimitive7",
               "ClientRectangle": "6.2,0.8,0,0",
@@ -4694,7 +4778,7 @@
               },
               "ReferenceToGuid": "3ae70f93c1f24be08fc38cfce238f3f2"
             },
-            "12": {
+            "14": {
               "Ident": "StiEndPointPrimitive",
               "Name": "EndPointPrimitive9",
               "ClientRectangle": "1.2,0.8,0,0",
@@ -5595,6 +5679,9 @@
         "Right": 1.0,
         "Top": 1.0,
         "Bottom": 1.0
+      },
+      "ReportUnit": {
+        "Ident": "StiCentimetersUnit"
       }
     },
     "2": {
@@ -6004,6 +6091,9 @@
         "Right": 1.0,
         "Top": 1.0,
         "Bottom": 1.0
+      },
+      "ReportUnit": {
+        "Ident": "StiCentimetersUnit"
       }
     }
   }

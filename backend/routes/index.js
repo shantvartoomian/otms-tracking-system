@@ -13,5 +13,6 @@ router.get("/signIn",showSignIn)
 router.post("/sendData",loginRequired,getData)
 router.post("/login",login)
 router.get("/printArrivalNotice",printArrivalNotice)
+// router.get("/showReport",showReport)
 
 module.exports=router;
