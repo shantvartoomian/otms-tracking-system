@@ -1,15 +1,15 @@
 <!--*********************** RESAULT ************************ -->
 <% if (result) { %>
-    <div class="  text-center body-container" id="OH" ><button class="btn btn-dark fa fa-moon float-left" onclick="darkLight()"></button>
-      <h3 class="text-center body-container">Results</h3><hr>
+    <div class="  text-center " id="OH" >
+      <h3 class="text-center ">Results</h3><hr>
       
-        <div class="container body-container"  style="max-width: 100%;">
-          <article class="card body-container " >
+        <div class="container "  style="max-width: 100%;">
+          <article class="card  " >
               <!-- <header class="card-header body-container"> My Orders / Tracking </header> -->
-              <div class="card-body body-container" >
+              <div class="card-body " >
                 <span id="printableArea" ><span id="printableArea">
-                  <article class="card body-container">
-                      <div class="card-body row body-container">
+                  <article class="card ">
+                      <div class="card-body row ">
                         <% if (result[0].PNo) { %>
                           <div class="col"> <strong>PNo:</strong> <br><%=result[0].PNo%> </div>
                           <% } else { %>

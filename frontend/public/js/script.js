@@ -58,18 +58,18 @@ function printDiv(divName) {
 
 //darkmode
 
-$('.body-container').toggleClass(localStorage.toggled);
+// $('.body-container').toggleClass(localStorage.toggled);
 
-function darkLight() {
-  if (localStorage.toggled != 'dark') {
-    $('.body-container').toggleClass('dark', true);
-    localStorage.toggled = "dark";
+// function darkLight() {
+//   if (localStorage.toggled != 'dark') {
+//     $('.body-container').toggleClass('dark', true);
+//     localStorage.toggled = "dark";
      
-  } else {
-    $('.body-container').toggleClass('dark', false);
-    localStorage.toggled = "";
-  }
-}
+//   } else {
+//     $('.body-container').toggleClass('dark', false);
+//     localStorage.toggled = "";
+//   }
+// }
 //darkmode end
 
 
