@@ -207,13 +207,13 @@ $('input').on('keypress', (event)=> {
 
 
 //arrival notice function for print
-function loadarrivalprint() {
-  const xhttp = new XMLHttpRequest();
-  xhttp.onload = function() {
-    document.getElementById("arrivalnotice").innerHTML = this.responseText;
-  }
-  xhttp.open("POST", "/printArrivalNotice");
-  xhttp.send();
-}
+// function loadarrivalprint() {
+  // const xhttp = new XMLHttpRequest();
+  // xhttp.onload = function() {
+  //   document.getElementById("arrivalnotice").innerHTML = this.responseText;
+  // }
+  // xhttp.open("POST", "/printArrivalNotice",true,{hbl:'HL20080189'});
+  // xhttp.send();
+// }
 
 //end of arrival notice function for print

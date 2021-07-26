@@ -27,7 +27,7 @@
                         <% } %>
   
                         <% if (result[0].HBL) { %>
-                          <div class="col"> <strong>HBL:</strong> <br> <span > <%=result[0].HBL %></span>  </div>
+                          <div class="col"> <strong>HBL:</strong> <br> <span id="HBL"><%=result[0].HBL %></span>  </div>
                           <% } else { %>
                             <div class="col"> <strong>HBL:</strong> <br> <span > - </span>  </div>
                         <% } %>
@@ -212,3 +212,19 @@
       
       </div>
   <% } %>
+
+  <script>
+    function loadarrivalprint() {
+      var param=document.getElementById('HBL').innerText
+      axios({
+        method:'post',
+        url:`/printArrivalNotice?hbl=${param}`
+      }).then(res=>{
+        if(res){
+          document.getElementById("arrivalnotice").innerHTML = res.data;
+        }else{
+          console.log('Data Not Found')
+        }
+      })
+    }
+  </script>

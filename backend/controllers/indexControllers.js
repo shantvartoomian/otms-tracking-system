@@ -60,7 +60,7 @@ module.exports.getData=async(req,res)=>{
     var result=new Array()
  
         try {
-            if(req.body.BlNumber){
+            if(req.query.BlNumber){
                 data=await sequelize.query
                 ('SELECT        TOP (100) PERCENT dbo.TbBL.PNo, dbo.TbBL.FileNo, dbo.TbBL.HBL, dbo.TbBL.BLIssueDateH, ISNULL(dbo.TbVoyage.ETA, TbVoyage_1.ETA) AS ETA, ISNULL(dbo.TbVoyage.ArrivalDate, dbo.TbBLCAT.DischargeDate) '
                 +'AS ArrivalDate, dbo.TbBL.DORcvdDate, dbo.TbBL.DOSendDate, dbo.TbCNTRBase.CNTR AS Sea_CNTR, dbo.TbCNTR.GateOut AS Sea_GateOut, dbo.TbCNTR.MTRTN AS Sea_MTRTN, dbo.TbTruck.TruckNo AS OverLand_TruckNo, '
@@ -74,21 +74,24 @@ module.exports.getData=async(req,res)=>{
                 +' dbo.TbCNTRBase ON dbo.TbCNTR.CNTRBaseID = dbo.TbCNTRBase.ID LEFT OUTER JOIN'
                 +' dbo.TbVoyage ON dbo.TbBL.VID = dbo.TbVoyage.ID'
                 +' WHERE        (dbo.TbBL.RecStatus > 0) AND (dbo.TbBL.HBL = :HBL)',{
-                    replacements:{HBL:req.body.BlNumber},
+                    replacements:{HBL:req.query.BlNumber},
                     type:QueryTypes.SELECT
                 })
                 if(data.length>0){
 
                     result.push(data)
                 }
+                res.render("index",{
+                    pageTitle:'Track & Trace',
+                    result : result.length>0 ? result[0] : null,
+                    middlewareError: req.flash("middlewareError")[0],
+                    middlewareSuccess: req.flash("middlewareSuccess")[0],
+                    session:req.session
+                })
+            }else{
+                res.redirect('/')
             }
-             res.render("index",{
-                pageTitle:'Track & Trace',
-                result : result.length>0 ? result[0] : null,
-                middlewareError: req.flash("middlewareError")[0],
-                middlewareSuccess: req.flash("middlewareSuccess")[0],
-                session:req.session
-            })
+            
         } catch (err) {
             console.log(err)          
         }

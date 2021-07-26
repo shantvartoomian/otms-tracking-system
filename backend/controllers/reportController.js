@@ -38,42 +38,12 @@ module.exports.printArrivalNotice=async(req,res)=>{
     
         fileName=uuidv4()
 
-         report.renderAsync(()=>{
+        report.renderAsync(()=>{
 
-            //save Rendered Report
-            // console.log("Report rendered. Pages count: ", report.renderedPages.count);
-
-            // // Saving rendered report to file
-            // report.saveDocumentFile(`report/temp/${fileName}.mdc`);
-            // console.log("Rendered report saved");
-            // res.end(`report/temp/${fileName}.mdc`)
-            //Save Rendered Report
-
-
-            //Word
-            // var data = report.exportDocument(Stimulsoft.Report.StiExportFormat.Word2007);
-
-            // var buffer = new Buffer(data, "utf-8");
-            // fs.writeFileSync(`report/temp/${fileName}.docx`, buffer);
-            // res.download(`report/temp/${fileName}.docx`)
-            //Word
-
-            //PDF
-            // var data = report.exportDocument(Stimulsoft.Report.StiExportFormat.Pdf);
-
-
-            // var buffer = new Buffer(data, "utf-8");
-            // fs.writeFileSync(`report/temp/${fileName}.pdf`, buffer);
-
-            // res.download(`report/temp/${fileName}.pdf`)
-            //PDF
-
-            //HTML
             var data = report.exportDocument(Stimulsoft.Report.StiExportFormat.Html);
 
-            fs.writeFileSync(`report/temp/${fileName}.html`, data);
-            res.send(data)
-            //HTML
+            //fs.writeFileSync(`report/temp/${fileName}.html`, data);
+           return res.send(data)
     
          })
     }else{
