@@ -4,6 +4,10 @@
       <h3 class="text-center ">Results</h3><hr>
       
         <div class="container "  style="max-width: 100%;">
+          <div class="arrivalnotice">
+
+
+          </div>
           <article class="card  " >
               <!-- <header class="card-header body-container"> My Orders / Tracking </header> -->
               <div class="card-body " >
@@ -200,7 +204,7 @@
                   </ul> -->
                    <!-- <a href="#" class="btn btn-warning" data-abc="true"> <i class="fa fa-chevron-left"></i> Back to orders</a> --> <br>
                   <button class="btn btn-primary" onclick="printDiv('printableArea')"><i class="fa fa-print" aria-hidden="true" style="    font-size: 17px;"> Print Arrival Notice</i></button>
-                  <a class="btn btn-success" href="/printArrivalNotice?hbl=<%=result[0].HBL%>" target="_blank">Download Arrival Notice</a>
+                  <a class="btn btn-success"  onclick="loadarrivalprint()" href="/printArrivalNotice?hbl=<%=result[0].HBL%>" target="_blank">Download Arrival Notice</a>
       
               </div>
           </article>

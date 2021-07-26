@@ -204,3 +204,16 @@ $('input').on('keypress', (event)=> {
 });
 
 // end of enter key for login
+
+
+//arrival notice function for print
+function loadarrivalprint() {
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function() {
+    document.getElementById("arrivalnotice").innerHTML = this.responseText;
+  }
+  xhttp.open("POST", "");
+  xhttp.send();
+}
+
+//end of arrival notice function for print
