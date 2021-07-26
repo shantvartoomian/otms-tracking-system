@@ -54,7 +54,6 @@ module.exports.printArrivalNotice=async(req,res)=>{
             // var data = report.exportDocument(Stimulsoft.Report.StiExportFormat.Word2007);
 
             // var buffer = new Buffer(data, "utf-8");
-            // var fs = require("fs");
             // fs.writeFileSync(`report/temp/${fileName}.docx`, buffer);
             // res.download(`report/temp/${fileName}.docx`)
             //Word
@@ -64,7 +63,6 @@ module.exports.printArrivalNotice=async(req,res)=>{
 
 
             // var buffer = new Buffer(data, "utf-8");
-            // var fs = require("fs");
             // fs.writeFileSync(`report/temp/${fileName}.pdf`, buffer);
 
             // res.download(`report/temp/${fileName}.pdf`)
