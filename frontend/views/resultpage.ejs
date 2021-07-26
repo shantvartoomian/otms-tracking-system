@@ -4,8 +4,17 @@
   <div  class="se-pre-con"></div>
 
   <%- include('./includes/navbar.ejs')  %> 
+<%if (result) { %>
+    <%- include('./includes/result.ejs')  %>
+<% }else{ %>
+    
+    <br><br><br><div class="text-center" style="background-color: darkgray;color: #000;">
+        <h3>خطا</h3>
+        <p>!!بارنامه مورد نظر یافت نشد</p>
+      </div>
+<% } %>
 
-  <%- include('./includes/result.ejs')  %>
+  
 
 
 
@@ -21,4 +30,3 @@
     <span class=" btn-sm  text-center"></span>
   </button>
   
-  <%- include('./includes/footer.ejs')  %> 
