@@ -6,13 +6,12 @@ const {loginRequired}=require('../middlewares/user');
 
 const router=express.Router();
 
-
-router.get("/",showIndex)
 router.get("/profile",showProfile)
 router.get("/signIn",showSignIn)
 router.get("/sendData",loginRequired,getData)
 router.post("/login",login)
-router.post("/printArrivalNotice",printArrivalNotice)
+router.post("/printArrivalNotice",loginRequired,printArrivalNotice)
+router.get("/",showIndex)
 // router.get("/showReport",showReport)
 
 module.exports=router;

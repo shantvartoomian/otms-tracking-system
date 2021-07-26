@@ -22,8 +22,6 @@ module.exports.printArrivalNotice=async(req,res)=>{
     
         // Stimulsoft.Base.StiFontCollection.addOpentypeFontFile("report/Roboto-Black.ttf");
         Stimulsoft.Base.StiFontCollection.addOpentypeFontFile("report/BNazanin.ttf");
-        console.log("Font loaded");
-
     
         var report = new Stimulsoft.Report.StiReport();
         
@@ -38,9 +36,9 @@ module.exports.printArrivalNotice=async(req,res)=>{
     
         fileName=uuidv4()
 
-        report.renderAsync(()=>{
+        report.renderAsync(async()=>{
 
-            var data = report.exportDocument(Stimulsoft.Report.StiExportFormat.Html);
+            var data =await report.exportDocument(Stimulsoft.Report.StiExportFormat.Html);
 
             //fs.writeFileSync(`report/temp/${fileName}.html`, data);
            return res.send(data)
