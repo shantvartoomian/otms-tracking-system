@@ -35,6 +35,7 @@ app.use(express.static(path.join(__dirname, '../frontend/')));
 app.use(flash())
 app.use(cookieParser())
 
+
 app.use(indexRoutes)
 
 sequelize.sync().then((result)=>{
