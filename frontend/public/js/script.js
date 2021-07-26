@@ -212,7 +212,7 @@ function loadarrivalprint() {
   xhttp.onload = function() {
     document.getElementById("arrivalnotice").innerHTML = this.responseText;
   }
-  xhttp.open("POST", "");
+  xhttp.open("POST", "/printArrivalNotice");
   xhttp.send();
 }
 
