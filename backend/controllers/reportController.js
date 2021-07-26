@@ -46,11 +46,11 @@ module.exports.printArrivalNotice=async(req,res)=>{
          })
     }else{
         req.flash("middlewareError" , "اعلامیه ورود صادر نشده است");
-        return res.redirect("/");
+        return res.redirect("/resultPage");
     }
     } catch (err) {
         console.log(err)
-        res.redirect('/')
+        res.redirect('/resultPage')
     }
     
 }
