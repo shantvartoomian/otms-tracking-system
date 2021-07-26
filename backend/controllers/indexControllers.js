@@ -4,6 +4,8 @@ const sequelize=require('../utils/database');
 
 
 module.exports.showIndex=async(req,res)=>{
+var path=require('path');
+path.join(__dirname,'/frontend/views/index.ejs')
     res.render("index",{
         pageTitle:'Track & Trace',
         result:null,
