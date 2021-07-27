@@ -227,11 +227,8 @@ $(document).ready(function() {
   $(this).prop("disabled", true);
   // add spinner to button
   $(this).html(
-  '<i class="fa fa-circle-notch fa-spin"></i> Creating The file...'
-  );
-  $(document.getElementsByClassName(Disabledbtn)).html(
-    style="background-color:#ccc;"
-  )
+    `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Loading...`  );
+
   });
   });
 
