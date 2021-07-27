@@ -4,29 +4,256 @@
   <div  class="se-pre-con"></div>
 
   <%- include('./includes/navbar.ejs')  %> 
-<%if (result) { %>
-    <%- include('./includes/result.ejs')  %>
-<% }else{ %>
+  
+<!--*********************** RESAULT ************************ -->
+<% if (result) { %>
+  <div class="  text-center " id="OH" >
+    <h3 class="text-center ">Results</h3><hr>
     
-    <br><br><br><div class="text-center" style="background-color: darkgray;color: #000;">
-        <h3>خطا</h3>
-        <p>!!بارنامه مورد نظر یافت نشد</p>
-      </div>
+      <div class="container "  style="max-width: 100%;">
+
+        <article class="card  " >
+            <!-- <header class="card-header body-container"> My Orders / Tracking </header> -->
+            <div class="card-body " >
+              
+                <article class="card ">
+                    <div class="card-body row ">
+                      <% if (result[0].PNo) { %>
+                        <div class="col"> <strong>PNo:</strong> <br><%=result[0].PNo%> </div>
+                        <% } else { %>
+                          <div class="col"> <strong>PNo:</strong> <br> - </div>
+                      <% } %>
+                        
+                      <% if (result[0].FileNo) { %>
+                        <div class="col"> <strong>FileNo:</strong> <br><%=result[0].FileNo %> </div>
+                        <% } else { %>
+                          <div class="col"> <strong>FileNo:</strong> <br> - </div>
+                      <% } %>
+
+                      <% if (result[0].HBL) { %>
+                        <div class="col"> <strong>HBL:</strong> <br> <span id="HBL"><%=result[0].HBL %></span>  </div>
+                        <% } else { %>
+                          <div class="col"> <strong>HBL:</strong> <br> <span > - </span>  </div>
+                      <% } %>
+
+                      <% if (result[0].BLIssueDateH) { %>
+                        <div class="col"> <strong>BLIssueDateH:</strong> <br> <%=result[0].BLIssueDateH %> </div>
+                        <% } else { %>
+                          <div class="col"> <strong>BLIssueDateH:</strong> <br> - </div>
+                      <% } %>
+                        
+                    </div>
+
+                    <div class="card-body row">
+
+                      <% if (result[0].ETA) { %>
+                        <div class="col"> <strong>ETA:</strong> <br> <%=result[0].ETA %></div>
+                        <% } else { %>
+                          <div class="col"> <strong>ETA:</strong> <br> - %></div>
+                      <% } %>
+
+                      <% if (result[0].ArrivalDate) { %>
+                        <div class="col"> <strong>ArrivalDate:</strong> <br> <%=result[0].ArrivalDate %> </div>
+                        <% } else { %>
+                          <div class="col"> <strong>ArrivalDate:</strong> <br> - </div>
+                      <% } %>
+
+                      <% if (result[0].DORcvdDate) { %>
+                        <div class="col"> <strong>DORcvdDate:</strong> <br> <%=result[0].DORcvdDate %> </div> 
+                        <% } else { %>
+                          <div class="col"> <strong>DORcvdDate:</strong> <br> - </div>
+                      <% } %>
+                      
+                      <% if (result[0].DOSendDate) { %>
+                        <div class="col"> <strong>DOSendDate:</strong> <br> <%=result[0].DOSendDate %> </div>
+                        <% } else { %>
+                          <div class="col"> <strong>DOSendDate:</strong> <br> - </div>
+                      <% } %>
+                      
+                  </div>
+
+
+                  
+                  
+                
+              <div class="card-body row">
+
+                    <% if (result[0].POL) { %>
+                      <div class="col-sm-3"> <strong>POL:</strong> <br><%=result[0].POL %> </div>
+                      <% } else { %>
+                        <div class="col-sm-3"> <strong>POL:</strong> <br> - </div>
+                    <% } %>
+                
+                    <% if (result[0].POT) { %>
+                      <div class="col-sm-3"> <strong>POT:</strong> <br> <%=result[0].POT %> </div>
+                      <% } else { %>
+                       <div class="col-sm-3"> <strong>POT:</strong> <br> - </div>
+                    <% } %>
+                
+                    <% if (result[0].POD) { %>
+                      <div class="col-sm-3"> <strong>POD:</strong> <br> <%=result[0].POD %> </div>
+                      <% } else { %>
+                        <div class="col-sm-3"> <strong>POD:</strong> <br> - </div>
+                    <% } %>
+   
+            </div>
+
+          <!-- tables for multiple container -->
+
+<hr>
+            <div >
+            
+          <div class="list-group"  >
+                   
+
+              
+              <div class="table-responsive">
+                <table class="table  table-striped table-default table-sm"  width="100%" id="myTable" >
+                  <% if (result[0].TransportationMode == 1 || result[0].TransportationMode == 5) { %>
+                    <thead style="background-color: rgb(173, 171, 171);">
+                      <tr>
+                        <th class="th-sm" onclick="sortTable(0)">CNTR</th>
+                        <th class="th-sm" onclick="sortTable(1)">GateOut</th>
+                        <th class="th-sm" onclick="sortTable(2)">MTRTN</th>
+                        
+      
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <% result.forEach(item => { %>  
+                      <tr>
+                        <td><%=item.Sea_CNTR%></td>
+                        <td><%=item.Sea_GateOut%></td>
+                        <td><%=item.Sea_MTRTN%></td>
+                        
+      
+                      </tr>
+                      <% }) %>
+                    </tbody>
+                    
+                  <% } %>
+                  <% if (result[0].TransportationMode == 3) { %>
+                    <thead style="background-color: rgb(173, 171, 171);">
+                      <tr>
+                        <th onclick="sortTable(0)">OverLand_TruckNo</th>
+                        <th onclick="sortTable(1)">OverLand_Dispatch</th>
+                        <th onclick="sortTable(2)">OverLand_BorderCrossing</th>
+                        <th onclick="sortTable(3)">OverLand_Discharge</th>  
+      
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <% result.forEach(item => { %>  
+                      <tr>
+                       
+                        <td><%=item.OverLand_TruckNo%></td>
+                        <td><%=item.Overland_Dispatch%></td>
+                        <td><%=item.Overland_BorderCrossing%></td>
+                        <td><%=item.Overland_Discharge%></td>
+      
+                      </tr>
+                      <% }) %>
+                    </tbody>
+                  <% } %>
+                  
+
+                  
+
+                </table>
+
+                
+
+                
+              </div>
+
+
+
+           
+          </div>
+        </div>
+         
+
+
+
+          <!-- end of tables for multiple container -->
+  </article>
+
+
+
+                <!-- <ul class="row ">
+                    <li class="col-md-4">
+                        <figure class="itemside mb-3">
+                            <div class="aside"><img src="/../public/pics/profile-picture-test.png" class="img-sm border"></div>
+                            <figcaption class="info align-self-center">
+                                <p class="title">General Cargo using X Shipments <br> 125kg G.W</p> <span class="text-muted">$950 </span>
+                            </figcaption>
+                        </figure>
+                    </li>
+                    <li class="col-md-4">
+                        <figure class="itemside mb-3">
+                            <div class="aside"><img src="/../public/pics/shipping.jpg" class="img-sm border"></div>
+                            <figcaption class="info align-self-center">
+                                <p class="title">DG Cargo using X Shipments<br> 250kg G.W</p> <span class="text-muted">$850 </span>
+                            </figcaption>
+                        </figure>
+                    </li>
+                    <li class="col-md-4">
+                        <figure class="itemside mb-3">
+                            <div class="aside"><img src="/../public/pics/litium bromide.jpeg" class="img-sm border"></div>
+                            <figcaption class="info align-self-center">
+                                <p class="title">General Cargo using X Shipments <br> 500kg G.w</p> <span class="text-muted">$650 </span>
+                            </figcaption>
+                        </figure>
+                    </li>
+                </ul> -->
+                 <!-- <a href="#" class="btn btn-warning" data-abc="true"> <i class="fa fa-chevron-left"></i> Back to orders</a> -->
+                 <span id="printableArea" ><span id="printableArea">
+                 <div id="arrivalnotice">
+        
+                  </div>
+
+                 <br>
+                <button class="btn btn-primary" onclick="printDiv('printableArea')"><i class="fa fa-print" aria-hidden="true" style="    font-size: 17px;"> Print Arrival Notice</i></button>
+                <a class="btn btn-success"  onclick="loadarrivalprint()">Download Arrival Notice</a>
+    
+            </div>
+        </article>
+    </div> 
+    
+    </div>
+
+<% }else { %>
+  <br><br><br><div class="text-center" style="background-color: darkgray;color: #000;">
+    <h3>خطا</h3>
+    <p>!!بارنامه مورد نظر یافت نشد</p>
+  </div>
 <% } %>
 
-  
+<button
+type="button"
+class="btn btn-md  float-right  cd-top  js-cd-top cd-top--is-visible cd-top--fade-out"
+id="toTopBtn"
+data-abc="true"
+>
+<span class=" btn-sm  text-center"></span>
+</button>
 
+<script>
+  function loadarrivalprint() {
+    debugger
+    var param=document.getElementById('HBL').innerText
+    axios({
+      method:'post',
+      url:`/printArrivalNotice?hbl=${param}`
+    })
+    .then(res=>{
+      if(res){
+        document.getElementById("arrivalnotice").innerHTML = res.data;
+      }else{
+        console.log('Data Not Found')
+      }
+    })
+  }
+</script>
+<%- include('./includes/footer.ejs')  %> 
 
-
-
-
-  
-  <button
-          type="button"
-          class="btn btn-md  float-right  cd-top  js-cd-top cd-top--is-visible cd-top--fade-out"
-          id="toTopBtn"
-          data-abc="true"
-          >
-    <span class=" btn-sm  text-center"></span>
-  </button>
-  
