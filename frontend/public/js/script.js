@@ -229,6 +229,9 @@ $(document).ready(function() {
   $(this).html(
   '<i class="fa fa-circle-notch fa-spin"></i> Creating The file...'
   );
+  $(document.getElementsByClassName(Disabledbtn)).html(
+    style="background-color:#ccc;"
+  )
   });
   });
 
