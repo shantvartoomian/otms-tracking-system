@@ -217,3 +217,20 @@ $('input').on('keypress', (event)=> {
 // }
 
 //end of arrival notice function for print
+
+
+
+//spinner for result
+$(document).ready(function() {
+  $("#btnFetch").click(function() {
+  // disable button
+  $(this).prop("disabled", true);
+  // add spinner to button
+  $(this).html(
+  '<i class="fa fa-circle-notch fa-spin"></i> Creating The file...'
+  );
+  });
+  });
+
+// end of spinner for result
+
