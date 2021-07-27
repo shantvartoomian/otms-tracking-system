@@ -531,8 +531,19 @@ th {
         background-color: transparent
     }
    
+    .btn-primary:disabled {
+        color: #fff;
+        background-color: #000;
+        border-color: #000
+    }
+    .btn-success:disabled {
+        color: #fff;
+        background-color: #000;
+        border-color: #000
+    }
+   
 
-
+   
     .spinner-button i {
         color: #fff
     }
