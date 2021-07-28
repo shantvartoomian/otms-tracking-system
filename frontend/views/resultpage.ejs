@@ -211,7 +211,7 @@
                  <span id="printableArea" ><span id="printableArea">
 
                     <div id="arrivalnotice"></div>
-                    <img id="loading-gif" src="/../public/pics/loading-gif.gif" style="visibility: hidden;height: 0;"/>
+                    <img id="loading-gif" src="/../public/pics/loading-gif.gif" style="display:none;height: 0; padding: 5% 40% 5% 40%;"/>
                   </div>
 
                  <br>
@@ -247,7 +247,7 @@ data-abc="true"
 <script>
   function loadarrivalprint() {
     debugger
-    document.getElementById('loading-gif').style.visibility='visible'
+    document.getElementById('loading-gif').style.display='block'
     document.getElementById('loading-gif').style.height='auto'
     var param=document.getElementById('HBL').innerText
     axios({
@@ -257,7 +257,7 @@ data-abc="true"
     .then(res=>{
       if(res){
         document.getElementById("btnFetch").innerText="Ready to print";
-        document.getElementById('loading-gif').style.visibility='hidden'
+        document.getElementById('loading-gif').style.display='none'
         document.getElementById("arrivalnotice").innerHTML = res.data;
       }else{
         console.log('Data Not Found')
