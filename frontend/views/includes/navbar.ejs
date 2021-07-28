@@ -1,7 +1,7 @@
 <!--Navbar -->
-<nav class="navbar  fixed-top navbar-expand-sm navbar-dark  float-right" style="background-color: rgb(62, 68, 96); font-size: 14px;">
+<nav class="navbar  fixed-top navbar-expand-sm navbar-dark  float-right" style="background-color: rgba(62, 68, 96, 0.8); ">
     <!--BRAND (Logo)-->
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="http://localhost:3000/">
       <img src="/../public/pics/cropped-logo-otms-4.png" alt="">
     </a>
     <!--end of BRAND (Logo)-->
@@ -10,7 +10,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav mr-auto" style="font-size: 16px;">
         <li class="nav-item active">
           <a class="nav-link" onclick="smoothScroll(document.getElementById('Home'))" style="cursor: pointer;"
           href="http://localhost:3000/">
@@ -44,7 +44,7 @@
       <ul class="navbar-nav ml-auto dropdown" style="float: right;">
         <% if (session.isLogedin) { %>
 
-          <button class="dropbtn nav-item nav-link"><%= session.user.DesFa %></button>
+          <button class="dropbtn nav-item nav-link" style="background: rgba(62, 68, 96, 0.1); font-size: 13px;">ggg</button>
           <div style="margin-top: -5px !important;" class="dropdown-content dropdown-menu dropdown-menu-end animate slideIn" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="/logout">خروج</a>
             <a class="dropdown-item" href="/profile">پروفایل</a>

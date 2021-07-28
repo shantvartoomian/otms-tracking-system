@@ -457,7 +457,7 @@ th {
       opacity: 0;
     }
     100% {
-      transform: translateX(0rem);
+      transform: translateX(-8rem);
       opacity: 1;
     }
     0% {
@@ -472,7 +472,7 @@ th {
       -webkit-opacity: 0;
     }
     100% {
-      -webkit-transform: translateY(0);
+      -webkit-transform: translateY(-8rem);
       -webkit-opacity: 1;
     }
     0% {
