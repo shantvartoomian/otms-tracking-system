@@ -58,6 +58,17 @@ module.exports.login = async(req, res) => {
     }
   };
 
+  module.exports.logout=(req,res)=>{
+        req.session.isLogedin = false;
+        req.session.user = null;
+        const _url = req.headers.referer.split("?")[0];
+        if (_url.toLowerCase().includes("/dashboard") || _url.toLowerCase().includes("/users/editprofile") || _url.toLowerCase().includes("/contact") || _url.toLowerCase().includes("/rules")) {
+          res.redirect("/");
+        } else {
+          res.redirect(_url);
+        }
+  }
+
 module.exports.getData=async(req,res)=>{
     var result=new Array()
  
