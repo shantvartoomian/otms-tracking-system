@@ -1,7 +1,5 @@
 const {QueryTypes} = require('sequelize');
-
 const sequelize=require('../utils/database');
-
 
 module.exports.showIndex=async(req,res)=>{
 var path=require('path');
@@ -52,6 +50,9 @@ module.exports.login = async(req, res) => {
     }else{
         req.session.isLogedin = true;
         req.session.user = data[0];
+        if (req.body.rememberCheck) {
+            req.session.cookie.originalMaxAge = 60*60*24*30*1000;
+          }
         req.flash("middlewareSuccess" , "ورود کاربر با موفقیت انجام شد");
         return res.redirect("/");
     }

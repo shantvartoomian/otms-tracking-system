@@ -6,6 +6,7 @@ const path = require('path');
 const bodyParser=require('body-parser');
 
 const setHeaders=require('./middlewares/setHeaders');
+const {checkLogin}=require('./middlewares/user');
 const sequelize=require('./utils/database');
 
 const indexRoutes=require('./routes/index');
@@ -31,7 +32,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // app.use(express.static(path.join(__dirname, "../backend/report")));
 app.use(express.static(path.join(__dirname, '../frontend/')));
-
+app.use(checkLogin);
 app.use(flash())
 app.use(cookieParser())
 
