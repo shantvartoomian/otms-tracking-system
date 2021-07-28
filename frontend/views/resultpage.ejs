@@ -255,12 +255,14 @@ data-abc="true"
       url:`/printArrivalNotice?hbl=${param}`
     })
     .then(res=>{
-      if(res){
+      if(res.data.length>0){
         document.getElementById("btnFetch").innerText="Ready to print";
         document.getElementById('loading-gif').style.display='none'
         document.getElementById("arrivalnotice").innerHTML = res.data;
       }else{
         console.log('Data Not Found')
+        document.getElementById('loading-gif').style.display='none'
+        document.getElementById("btnFetch").innerText="Check With Company";
       }
     })
   }

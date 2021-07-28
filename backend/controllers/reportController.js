@@ -46,7 +46,7 @@ module.exports.printArrivalNotice=async(req,res)=>{
          })
     }else{
         req.flash("middlewareError" , "اعلامیه ورود صادر نشده است");
-        return res.redirect("/resultPage");
+        return res.send(null);
     }
     } catch (err) {
         console.log(err)
