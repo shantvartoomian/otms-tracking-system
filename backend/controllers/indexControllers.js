@@ -17,7 +17,8 @@ path.join(__dirname,'/frontend/views/index.ejs')
 
 module.exports.showProfile=async(req,res)=>{
     res.render("profile",{
-        pageTitle:'Track & Trace'
+        pageTitle:'Track & Trace',
+        session:req.session
     })
 }
 
