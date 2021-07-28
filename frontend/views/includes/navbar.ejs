@@ -44,7 +44,7 @@
       <ul class="navbar-nav ml-auto dropdown" style="float: right;">
         <% if (session.isLogedin) { %>
 
-          <button class="dropbtn nav-item nav-link" style="background: rgba(62, 68, 96, 0.1); font-size: 13px;">ggg</button>
+          <button class="dropbtn nav-item nav-link" style="background: rgba(62, 68, 96, 0.1); font-size: 13px;"><%= session.user.DesFa %></button>
           <div style="margin-top: -5px !important;" class="dropdown-content dropdown-menu dropdown-menu-end animate slideIn" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="/logout">خروج</a>
             <a class="dropdown-item" href="/profile">پروفایل</a>
