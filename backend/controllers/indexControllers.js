@@ -52,7 +52,6 @@ module.exports.login = async(req, res) => {
     }else{
         req.session.isLogedin = true;
         req.session.user = data[0];
-        console.log(req.session.user)
         req.flash("middlewareSuccess" , "ورود کاربر با موفقیت انجام شد");
         return res.redirect("/");
     }
