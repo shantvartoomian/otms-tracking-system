@@ -51,7 +51,7 @@ body {
     font-family: 'Open Sans', sans-serif;
     width: 100%;
     min-height: 100%;
-    background: #00bcd4;
+    background: radial-gradient(rgb(18, 174, 185),rgb(62, 68, 96));
     font-size: 16px;
     overflow: hidden;
 }
@@ -193,8 +193,7 @@ body {
                 <h6><%= session.user.DesEn %></h6>
                 <h6><b>email: </b><%= session.user.Email %></h6>
                 <h6><b>ID: </b><%= session.user.ID %></h6>
-                <p class="bio">
-                    اطلاعات دیگر مانند بیوگرافی و غیره</p>
+
 
 
 
@@ -207,6 +206,7 @@ body {
         <a class="fab fa-whatsapp btn btn-success"> </a>
         <a class="fab fa-google btn btn-danger"></a>
         <a class="fab fa-twitter btn btn-info"> </a>
+        <a class="fa fa-cog btn btn-dark"></a>
         
     </div>
 </div>
