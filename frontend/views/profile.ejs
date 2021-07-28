@@ -177,73 +177,8 @@ body {
   </style>
 </head>
 <body>
-     <!--Navbar -->
-<nav class="navbar  fixed-top navbar-expand-sm navbar-dark  float-right" style="background-color: rgb(62, 68, 96); font-size: 14px;">
-    <!--BRAND (Logo)-->
-    <a class="navbar-brand" href="#">
-      <img src="/../public/pics/cropped-logo-otms-4.png" alt="">
-    </a>
-    <!--end of BRAND (Logo)-->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
-      aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" onclick="smoothScroll(document.getElementById('Home'))" style="cursor: pointer;">Home
-            <span class="sr-only">(current)</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">All Shipments</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link "  onclick="smoothScroll(document.getElementById('OH'))" style="cursor: pointer;">Order History</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link "  onclick="smoothScroll(document.getElementById('Contact'))" style="cursor: pointer;">Contact Us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">Bookings</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">BL</a>
-        </li>
-        
-      </ul>
-  
-  
-  
-  
-      <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
-        <li class="nav-item order-2 order-md-1"><a href="#" class="nav-link" title="settings"><i class="fa fa-cog fa-fw fa-lg"></i></a></li>
-        <li class="dropdown order-1">
-            <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn btn-outline-secondary dropdown-toggle">Login <span class="caret"></span></button>
-            <ul class="dropdown-menu dropdown-menu-right mt-2">
-               <li class="px-3 py-2">
-                   <form class="form" role="form">
-                        <div class="form-group">
-                            <input id="emailInput" placeholder="UserID" class="form-control form-control-sm" type="text" required="">
-                        </div>
-                        <div class="form-group">
-                            <input id="passwordInput" placeholder="Password" class="form-control form-control-sm" type="password" required="">
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-primary btn-block">Login</button>
-                        </div>
-                        <div class="form-group text-center">
-                            <small><a href="#" data-toggle="modal" data-target="#modalPassword">Forgot password?</a></small>
-                        </div>
-                    </form>
-                </li>
-            </ul>
-        </li>
-    </ul>
-  
-    </div>
-  </nav><br>
-  <!------------------------/.Navbar ---------------------------------->
+    
+    <%- include('./includes/navbar.ejs')  %> 
 
 
 
