@@ -62,7 +62,7 @@ module.exports.login = async(req, res) => {
         req.session.isLogedin = false;
         req.session.user = null;
         const _url = req.headers.referer.split("?")[0];
-        if (_url.toLowerCase().includes("/dashboard") || _url.toLowerCase().includes("/users/editprofile") || _url.toLowerCase().includes("/contact") || _url.toLowerCase().includes("/rules")) {
+        if (_url.toLowerCase().includes("/senddata") || _url.toLowerCase().includes("/profile") || _url.toLowerCase().includes("/resultpage")  ) {
           res.redirect("/");
         } else {
           res.redirect(_url);
