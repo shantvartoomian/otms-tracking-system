@@ -254,7 +254,7 @@ data-abc="true"
     })
     .then(res=>{
       if(res){
-        document.getElementById("btnFetch").innerHTML="Ready to print";
+        document.getElementById("btnFetch").innerText="Ready to print";
 
         document.getElementById("arrivalnotice").innerHTML = res.data;
       }else{
