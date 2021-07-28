@@ -13,6 +13,6 @@ router.post("/login",login)
 router.get("/logout",logout)
 router.post("/printArrivalNotice",loginRequired,printArrivalNotice)
 router.get("/",showIndex)
-// router.get("/showReport",showReport)
+
 
 module.exports=router;
