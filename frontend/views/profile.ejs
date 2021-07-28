@@ -188,9 +188,11 @@ body {
   <div class="content" style="font-family: B nazanin,Arial;">
     <div class="card">
         <div class="firstinfo"><img src="../public/pics/avatar6.png" />
-            <div class="profileinfo text-center float-right "><span class="btn btn-sm btn-success" style="cursor: default;">Admin</span>
-                <h1>لئو وارطومیان</h1>
-                <h3>OTMSکارشناس نرم‌افزار</h3>
+            <div class="profileinfo text-center float-right "><span class="btn btn-sm btn-success" style="cursor: default;"><%= session.user.role %></span>
+                <h3><%= session.user.DesFa %></h3>
+                <h6><%= session.user.DesEn %></h6>
+                <h6><b>email: </b><%= session.user.Email %></h6>
+                <h6><b>ID: </b><%= session.user.ID %></h6>
                 <p class="bio">
                     اطلاعات دیگر مانند بیوگرافی و غیره</p>
 
