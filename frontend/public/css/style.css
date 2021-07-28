@@ -601,4 +601,4 @@ th {
       .dropdown-content a:hover {text-decoration: none;}
       .dropdown-content a:enabled {text-decoration: none;}
       .dropdown:hover .dropdown-content {display: block;}
-      .dropdown:hover .dropbtn {}
+      /* .dropdown:hover .dropbtn {} */

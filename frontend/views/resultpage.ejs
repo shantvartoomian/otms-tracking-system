@@ -212,6 +212,9 @@
 
                     <div id="arrivalnotice"></div>
                     <img id="loading-gif" src="/../public/pics/loading-gif.gif" style="display:none;height: 0; margin: auto"/>
+                    <div id="arrivalNoticeError" style="display: none; margin: auto;">
+                      <br><p><b><i>اعلامیه ورود صادر نشده است</i></b></p>
+                    </div>
                   </div>
 
                  <br>
@@ -247,6 +250,7 @@ data-abc="true"
 <script>
   function loadarrivalprint() {
     debugger
+    document.getElementById('arrivalNoticeError').style.display='none'
     document.getElementById('loading-gif').style.display='block'
     document.getElementById('loading-gif').style.height='auto'
     var param=document.getElementById('HBL').innerText
@@ -258,11 +262,13 @@ data-abc="true"
       if(res.data.length>0){
         document.getElementById("btnFetch").innerText="Ready to print";
         document.getElementById('loading-gif').style.display='none'
+        document.getElementById('arrivalNoticeError').style.display='none'
         document.getElementById("arrivalnotice").innerHTML = res.data;
       }else{
         console.log('Data Not Found')
         document.getElementById('loading-gif').style.display='none'
         document.getElementById("btnFetch").innerText="Check With Company";
+        document.getElementById('arrivalNoticeError').style.display='block'
       }
     })
   }
