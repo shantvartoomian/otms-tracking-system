@@ -1,5 +1,6 @@
 const {QueryTypes} = require('sequelize');
-const sequelize=require('../utils/database');
+const {sequelize}=require('../utils/database');
+const moment=require('moment');
 
 module.exports.showIndex=async(req,res)=>{
 var path=require('path');
@@ -52,6 +53,8 @@ module.exports.login = async(req, res) => {
         req.session.user = data[0];
         if (req.body.rememberCheck) {
             req.session.cookie.originalMaxAge = 60*60*24*30*1000;
+          }else{
+            req.session.cookie.expire = null; 
           }
         req.flash("middlewareSuccess" , "ورود کاربر با موفقیت انجام شد");
         return res.redirect("/");
@@ -99,7 +102,8 @@ module.exports.getData=async(req,res)=>{
                     result : result.length>0 ? result[0] : null,
                     middlewareError: req.flash("middlewareError")[0],
                     middlewareSuccess: req.flash("middlewareSuccess")[0],
-                    session:req.session
+                    session:req.session,
+                    moment
                 })
             }else{
                 res.redirect('/')

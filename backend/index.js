@@ -1,5 +1,6 @@
 const express=require('express');
 const flash=require('connect-flash');
+const dotEnv=require('dotenv');
 const session = require("express-session");
 var cookieParser = require('cookie-parser')
 const path = require('path');
@@ -7,7 +8,7 @@ const bodyParser=require('body-parser');
 
 const setHeaders=require('./middlewares/setHeaders');
 const {checkLogin}=require('./middlewares/user');
-const sequelize=require('./utils/database');
+const {sequelize}=require('./utils/database');
 
 const indexRoutes=require('./routes/index');
 
@@ -23,7 +24,6 @@ app.set("views","../frontend/views")
 app.use(
     session({
       secret: "1R4e_*tnCx$^53dn#?",
-      cookie:{maxAge:60000},
       saveUninitialized: false,
       resave: false
     })

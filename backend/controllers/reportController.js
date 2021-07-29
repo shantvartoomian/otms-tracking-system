@@ -3,7 +3,7 @@ const { v4: uuidv4 } = require('uuid');
 var fs = require("fs");
 const {QueryTypes} = require('sequelize');
 
-const sequelize=require('../utils/database');
+const {sequelize}=require('../utils/database');
 
 
 module.exports.printArrivalNotice=async(req,res)=>{

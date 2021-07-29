@@ -1,6 +1,6 @@
 const {QueryTypes} = require('sequelize');
 
-const sequelize=require('../utils/database');
+const {sequelize}=require('../utils/database');
 
 
 module.exports.checkLogin = (req, res, next) => {
