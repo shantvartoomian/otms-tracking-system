@@ -123,8 +123,8 @@
                       <% result.forEach(item => { %>  
                       <tr>
                         <td><%=item.Sea_CNTR%></td>
-                        <td><%=item.Sea_GateOut%></td>
-                        <td><%=item.Sea_MTRTN%></td>
+                        <td><%=moment(item.Sea_GateOut).format('YYYY/MM/DD hh:mm A')%></td>
+                        <td><%=moment(item.Sea_MTRTN).format('YYYY/MM/DD hh:mm A')%></td>
                         
       
                       </tr>
@@ -147,9 +147,9 @@
                       <tr>
                        
                         <td><%=item.OverLand_TruckNo%></td>
-                        <td><%=item.Overland_Dispatch%></td>
-                        <td><%=item.Overland_BorderCrossing%></td>
-                        <td><%=item.Overland_Discharge%></td>
+                        <td><%=moment(item.Overland_Dispatch).format('YYYY/MM/DD hh:mm A')%></td>
+                        <td><%=moment(item.Overland_BorderCrossing).format('YYYY/MM/DD hh:mm A')%></td>
+                        <td><%=moment(item.Overland_Discharge).format('YYYY/MM/DD hh:mm A')%></td>
       
                       </tr>
                       <% }) %>
