@@ -519,7 +519,9 @@ th {
         color: #fff
     }
 
-
+    div#arrivalnotice table {
+        margin: auto;
+    }
     /* end of spinner for result */
 
   
