@@ -33,8 +33,8 @@ module.exports.showSignIn=async(req,res)=>{
 }
 
 module.exports.login = async(req, res) => {
-    const _username = req.body.loginemail.toLowerCase();
-    const _password = req.body.loginpassword;
+    const _username = req.body.loginUsername.toLowerCase();
+    const _password = req.body.loginPassword;
   
     if(!_username || !_password ){
       req.flash("middlewareError" , "لطفا نام کاربری و رمز عبور خود را وارد نمایید");
@@ -43,8 +43,8 @@ module.exports.login = async(req, res) => {
     data=await sequelize.query
     ('SELECT        ID, DesEn, DesFa, Email, password '
     +'FROM            TbEntity '
-    +'WHERE        (RecStatus > 0) AND (Email = :Email) AND (password = :Password)',{
-        replacements:{Email:_username,Password:_password},
+    +'WHERE        (RecStatus > 0) AND (NationalID = :Username) AND (Text1 = :Password)',{
+        replacements:{Username:_username,Password:_password},
         type:QueryTypes.SELECT
     })
     if (!data.length>0) {
