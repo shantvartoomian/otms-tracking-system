@@ -41,17 +41,17 @@
         
         
       </ul>
-      <ul class="navbar-nav">
+      <ul class="navbar-nav ">
         <% if (session.isLogedin) { %>
 
 
           <div class="dropdown">
-            <button type="button" class="btn btn-defult dropdown-toggle text-white" data-toggle="dropdown">
-              <%= session.user.DesFa %>
+            <button type="button" class="btn btn-defult  text-white" data-toggle="dropdown">
+              <span class="fa fa-caret-down"></span> <%= session.user.DesFa %>
             </button>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="/logout">خروج</a>
-              <a class="dropdown-item" href="/profile">پروفایل</a>
+              <a class="dropdown-item"  href="/logout">خروج</a>
+              <a class="dropdown-item"  href="/profile">پروفایل</a>
             </div>
           </div>
 

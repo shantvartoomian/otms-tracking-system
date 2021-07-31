@@ -112,9 +112,9 @@
                   <% if (result[0].TransportationMode == 1 || result[0].TransportationMode == 5) { %>
                     <thead style="background-color: rgb(173, 171, 171);">
                       <tr>
-                        <th class="th-sm" onclick="sortTable(0)">CNTR</th>
-                        <th class="th-sm" onclick="sortTable(1)">GateOut</th>
-                        <th class="th-sm" onclick="sortTable(2)">MTRTN</th>
+                        <th class="th-sm" onclick="sortTable(0)">CNTR <span class="fa fa-sort"></span></th>
+                        <th class="th-sm" onclick="sortTable(1)">GateOut <span class="fa fa-sort"></span></th>
+                        <th class="th-sm" onclick="sortTable(2)">MTRTN <span class="fa fa-sort"></span></th>
                         
       
                       </tr>
@@ -213,7 +213,7 @@
                     <div id="arrivalnotice"></div>
                     <img id="loading-gif" src="/../public/pics/loading-gif.gif" style="display:none;height: 0; margin: auto"/>
                     <div id="arrivalNoticeError" style="display: none; margin: auto; background: rgba(253, 52, 17,0.7); padding: 5px;">
-                      <b><i>اعلامیه ورود صادر نشده است</i></b>
+                      <b><i>اعلامیه ورود صادر نشده است</i></b><br><b><i>No arrival notice has been issued</i></b>
                     </div>
                   </div>
 
