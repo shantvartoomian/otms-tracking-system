@@ -37,7 +37,7 @@
                       <% } %>
 
                       <% if (result[0].BLIssueDateH) { %>
-                        <div class="col"> <strong>BLIssueDateH:</strong> <br> <%=result[0].BLIssueDateH %> </div>
+                        <div class="col"> <strong>BLIssueDateH:</strong> <br> <%=moment(result[0].BLIssueDateH).format('YYYY/MM/DD hh:mm A')%> </div>
                         <% } else { %>
                           <div class="col"> <strong>BLIssueDateH:</strong> <br> - </div>
                       <% } %>
@@ -47,25 +47,25 @@
                     <div class="card-body row">
 
                       <% if (result[0].ETA) { %>
-                        <div class="col"> <strong>ETA:</strong> <br> <%=result[0].ETA %></div>
+                        <div class="col"> <strong>ETA:</strong> <br> <%=moment(result[0].ETA).format('YYYY/MM/DD hh:mm A')%></div>
                         <% } else { %>
                           <div class="col"> <strong>ETA:</strong> <br> - %></div>
                       <% } %>
 
                       <% if (result[0].ArrivalDate) { %>
-                        <div class="col"> <strong>ArrivalDate:</strong> <br> <%=result[0].ArrivalDate %> </div>
+                        <div class="col"> <strong>ArrivalDate:</strong> <br> <%=moment(result[0].ArrivalDate).format('YYYY/MM/DD hh:mm A')%></div>
                         <% } else { %>
                           <div class="col"> <strong>ArrivalDate:</strong> <br> - </div>
                       <% } %>
 
                       <% if (result[0].DORcvdDate) { %>
-                        <div class="col"> <strong>DORcvdDate:</strong> <br> <%=result[0].DORcvdDate %> </div> 
+                        <div class="col"> <strong>DORcvdDate:</strong> <br> <%=moment(result[0].DORcvdDate).format('YYYY/MM/DD hh:mm A')%> </div> 
                         <% } else { %>
                           <div class="col"> <strong>DORcvdDate:</strong> <br> - </div>
                       <% } %>
                       
                       <% if (result[0].DOSendDate) { %>
-                        <div class="col"> <strong>DOSendDate:</strong> <br> <%=result[0].DOSendDate %> </div>
+                        <div class="col"> <strong>DOSendDate:</strong> <br> <%=moment(result[0].DOSendDate).format('YYYY/MM/DD hh:mm A')%> </div>
                         <% } else { %>
                           <div class="col"> <strong>DOSendDate:</strong> <br> - </div>
                       <% } %>
