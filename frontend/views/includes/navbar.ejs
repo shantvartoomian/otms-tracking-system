@@ -41,15 +41,21 @@
         
         
       </ul>
-      <ul class="navbar-nav ml-auto dropdown" style="float: right;">
+      <ul class="navbar-nav">
         <% if (session.isLogedin) { %>
 
-          <button class="dropbtn nav-item nav-link" style="background: rgba(62, 68, 96, 0.1); font-size: 13px;"><%= session.user.DesFa %></button>
-          <div style="margin-top: -5px !important;" class="dropdown-content dropdown-menu dropdown-menu-end animate slideIn" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="/logout">خروج</a>
-            <a class="dropdown-item" href="/profile">پروفایل</a>
 
+          <div class="dropdown">
+            <button type="button" class="btn btn-defult dropdown-toggle text-white" data-toggle="dropdown">
+              <%= session.user.DesFa %>
+            </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="/logout">خروج</a>
+              <a class="dropdown-item" href="/profile">پروفایل</a>
+            </div>
           </div>
+
+
           <% } else { %>
             <li class="nav-item ">
               <a class="nav-link" href="signIn"  ><b>ورود به سامانه
