@@ -10,14 +10,16 @@ path.join(__dirname,'/frontend/views/index.ejs')
         result:null,
         middlewareError: req.flash("middlewareError")[0],
         middlewareSuccess: req.flash("middlewareSuccess")[0],
-        session:req.session
+        session:req.session,
+        csrfToken: req.csrfToken(),
     })
 }
 
 module.exports.showProfile=async(req,res)=>{
     res.render("profile",{
         pageTitle:'Track & Trace',
-        session:req.session
+        session:req.session,
+        csrfToken: req.csrfToken(),
     })
 }
 
@@ -25,7 +27,8 @@ module.exports.showSignIn=async(req,res)=>{
     res.render("signIn",{
         pageTitle:'Track & Trace',
         middlewareError: req.flash("middlewareError")[0],
-        middlewareSuccess: req.flash("middlewareSuccess")[0]
+        middlewareSuccess: req.flash("middlewareSuccess")[0],
+        csrfToken: req.csrfToken(),
     })
 }
 
@@ -103,7 +106,8 @@ module.exports.getData=async(req,res)=>{
                     middlewareError: req.flash("middlewareError")[0],
                     middlewareSuccess: req.flash("middlewareSuccess")[0],
                     session:req.session,
-                    moment
+                    moment,
+                    csrfToken: req.csrfToken(),
                 })
             }else{
                 res.redirect('/')

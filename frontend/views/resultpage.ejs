@@ -244,7 +244,10 @@ data-abc="true"
     var param=document.getElementById('HBL').innerText
     axios({
       method:'post',
-      url:`/printArrivalNotice?hbl=${param}`
+      url:`/printArrivalNotice?hbl=${param}`,
+      headers: {
+          'CSRF-Token': "<%= csrfToken %>"
+        }
     })
     .then(res=>{
       if(res.data.length>0){
