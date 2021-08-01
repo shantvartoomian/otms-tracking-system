@@ -1,8 +1,12 @@
 const {Sequelize}=require('sequelize');
+const dotEnv=require('dotenv');
+const path=require('path');
 
-module.exports.sequelize=new Sequelize("tempOTMS","sa","Kian@09122116470",{
+dotEnv.config({path:path.join(__dirname, '../config/config.env')}).parsed;
+
+module.exports.sequelize=new Sequelize(process.env.DATABASE,process.env.DB_USERNAME,process.env.DB_PASSWORD,{
     dialect:'mssql',
-    host:'37.156.29.46',
+    host:process.env.HOST,
     dialectOptions:{
         options:{
             encrypt:false
