@@ -12,6 +12,9 @@ const {sequelize}=require('./utils/database');
 
 const indexRoutes=require('./routes/index');
 
+//* Load Config
+dotEnv.config({ path: "./config/config.env" });
+
 const app=express();
 
 app.use(setHeaders)
@@ -36,13 +39,12 @@ app.use(checkLogin);
 app.use(flash())
 app.use(cookieParser())
 
-
 app.use(indexRoutes)
 
 sequelize.sync().then((result)=>{
     console.log(result)
-    app.listen(3000,()=>{
-        console.log('Server is running on Port 3000')
+    app.listen(process.env.PORT,()=>{
+        console.log(`Server is running on Port ${process.env.PORT}`)
     })
 }).catch((err)=>{
     console.log(err)
