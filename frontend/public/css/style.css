@@ -4,7 +4,8 @@
 body {
 
     background-color: #eeeeee;
-    font-family: 'Open Sans', serif, 'B Nazanin'}
+    font-family: 'Open Sans', serif, 'B Nazanin','IranYekan';
+}
 
     .dark {
         background-color: rgb(55, 62, 90) !important;
@@ -288,7 +289,7 @@ input[type="submit"] {
     display: inline-block;
     padding: 6px 12px;
     vertical-align: middle;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 700;
     line-height: 22px;
     text-transform: uppercase;
@@ -372,10 +373,10 @@ input[type="submit"] {
     animation-name: slideIn;
   }
 #OH strong{
-    font-size: 14px;
+    font-size: 16px;
 }
 #OH {
-    font-size: 12px;
+    font-size: 14px;
 }
 /*  */
 
