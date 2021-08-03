@@ -168,6 +168,8 @@ body .bbbootstrap {
     opacity: 0.7;
     background-size: cover;
     padding: 280px 0 80px 0;
+
+    background-attachment: fixed;
 }
 .bbbootstrap {
     padding: 40px;
