@@ -8,10 +8,9 @@
   <%- include('./includes/searchbar.ejs')  %>
 
   <div id="mySidenav" class="sidenav">
-    <a href="#" id="about"><span class="fa fa-phone"></span></a>
-    <a href="#" id="blog"><span class="fa fa-envelope"></span></a>
-    <a href="#" id="projects"><span class="fa fa-globe"></span></a>
-
+    <a style="overflow: hidden;" onmouseover="document.getElementById('phone').innerText=' 8 8274446';"          onmouseout="document.getElementById('phone').innerText=' ';"   href="tel:02188274446"        id="phonenumber"><span class="fa fa-phone"></span><i   id="phone" ></i></a>
+    <a style="overflow: hidden;" onmouseover="document.getElementById('support').innerText=' support@otms.ir';" onmouseout="document.getElementById('support').innerText=' ';" href="mailto:support@otms.ir" id="email"><span  class="fa fa-envelope"></span><i id="support" ></i></a>
+    <a style="overflow: hidden;" onmouseover="document.getElementById('website').innerText=' otms';"            onmouseout="document.getElementById('website').innerText=' ';"  href="https://otms.ir" target="_blank" id="sitelink"><span class="fa fa-globe"></span><i   id="website" ></i></a>
   </div>
 
 
