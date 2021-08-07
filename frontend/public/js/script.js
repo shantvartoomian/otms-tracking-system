@@ -233,4 +233,3 @@ $(document).ready(function() {
   });
 
 // end of spinner for result
-
