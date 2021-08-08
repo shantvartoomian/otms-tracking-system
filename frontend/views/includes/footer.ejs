@@ -1,6 +1,19 @@
 
 <!----------------------- Footer ------------------------>
-<footer class=" text-center text-white footer fixed-bottom " id="Contact" style="background-color: rgb(62, 68, 96);">
+
+<footer class=" text-center text-white footer fixed-bottom bg-dark " id="Contact">
+
+
+  <section id="customer-logo-slider" class="customer-logos slider" style="height: 80px; z-index: 10 !important;background-color: rgba(62, 68, 96, 1);">
+    <div class="slide rotate linear infinite "><img src="../public/pics/FDP-Logo.jpeg"></div>
+    <div class="slide rotate linear infinite"><img src="../public/pics/Maroos-Logo.jpeg"></div>
+    <div class="slide rotate linear infinite"><img src="../public/pics/Namdaran-Logo.jpeg"></div>
+    <div class="slide rotate linear infinite"><img src="../public/pics/Seavand-Logo.jpeg"></div>
+    <div class="slide rotate linear infinite"><img src="../public/pics/Akam-Logo.jpeg"></div>
+    <div class="slide rotate linear infinite"><img src="../public/pics/Barkav-Logo.jpeg"></div>
+    <div class="slide rotate linear infinite"><img src="../public/pics/EliteAria-Logo.jpeg"></div>
+    <div class="slide rotate linear infinite"><img src="../public/pics/Espad-Logo.jpeg"></div>
+  </section>
 
   <div class="container p-2" style="margin-bottom: 0.25rem !important ;">
 
@@ -146,9 +159,9 @@
   <!-- Grid container -->
 
   <!-- Copyright -->
-  <div class="text-center " >
-     <span class="fab fa-html5 btn btn-warning btn-sm" title="Html" style="cursor:auto;"></span> <span class="fab fa-css3 btn btn-primary btn-sm" style="cursor:auto;" title="Css"></span> تهیه شده با <span class="fa fa-heart btn btn-danger btn-sm" style="cursor:auto;" title="عشق"></span>  و کمی چاشنی
-    <br> © 2021<a href="" class="btn btn-dark btn-sm">PrivacyPolicy</a>.<a class="text-white btn btn-sm btn-dark" href="https://otms.ir/">KSP</a> توسط
+  <div class="text-center " style="font-size: 12px;" >
+     <span class="fab fa-html5 btn btn-warning btn-sm" title="Html" style="cursor:auto;"></span> <span class="fab fa-css3 btn btn-primary btn-sm" style="cursor:auto;" title="Css"></span>  تهیه شده با  <span class="fa fa-heart btn btn-danger btn-sm" style="cursor:auto;" title="عشق"></span>  و کمی چاشنی
+      © 2021 <a href="" class="btn btn-dark btn-sm">PrivacyPolicy</a>.<a class="text-white btn btn-sm btn-dark" href="https://otms.ir/">KSP</a> 
   </div>
   <!-- Copyright -->
 </footer>
@@ -160,6 +173,8 @@
 <script src="../public/js/script.js"></script>
 <script src="/../public/js/toastr.min.js"></script>
 <script src="/../public/js/axios.min.js"></script>
+<!-- Slick Slider JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
 
 <% if(middlewareError){ %>
   <script>

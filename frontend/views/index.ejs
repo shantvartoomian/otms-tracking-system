@@ -7,16 +7,19 @@
   
   <%- include('./includes/searchbar.ejs')  %>
 
+<!-- side nav -->
   <div id="mySidenav" class="sidenav">
-    <a style="overflow: hidden;" onmouseover="document.getElementById('phone').innerText=' 88274446';"          onmouseout="document.getElementById('phone').innerText=' ';"   href="tel:02188274446"        id="phonenumber"><span class="fa fa-phone"></span><i   id="phone" ></i></a>
-    <a style="overflow: hidden;" onmouseover="document.getElementById('support').innerText=' support@otms.ir support2@otms.ir support3@otms.ir';" onmouseout="document.getElementById('support').innerText=' ';" href="#" id="email"><span  class="fa fa-envelope"></span><i style="font-size: 12px;" id="support" ></i></a>
-    <a style="overflow: hidden;" onmouseover="document.getElementById('website').innerText=' otms';"            onmouseout="document.getElementById('website').innerText=' ';"  href="https://otms.ir" target="_blank" id="sitelink"><span class="fa fa-globe"></span><i   id="website" ></i></a>
+    <a style="overflow: hidden; z-index: 1031 !important;" onmouseover="document.getElementById('phone').innerText=' 88274446';"          onmouseout="document.getElementById('phone').innerText=' ';"   href="tel:02188274446"        id="phonenumber"><span class="fa fa-phone"></span><i   id="phone" ></i></a>
+    <a style="overflow: hidden;z-index: 1031 !important;" onmouseover="document.getElementById('support').innerText=' support@otms.ir support2@otms.ir support3@otms.ir';" onmouseout="document.getElementById('support').innerText=' ';" href="#" id="email"><span  class="fa fa-envelope"></span><i style="font-size: 12px;" id="support" ></i></a>
+    <a style="overflow: hidden;z-index: 1031 !important;" onmouseover="document.getElementById('website').innerText=' otms';"            onmouseout="document.getElementById('website').innerText=' ';"  href="https://otms.ir" target="_blank" id="sitelink"><span class="fa fa-globe"></span><i   id="website" ></i></a>
   </div>
 
 
 
 
 
+
+<!-- button back to top -->
 <button
         type="button"
         class="btn btn-md  float-right  cd-top  js-cd-top cd-top--is-visible cd-top--fade-out"
@@ -26,5 +29,9 @@
   <span class="btn-sm  text-center"></span>
 </button>
 
+
+
 <%- include('./includes/footer.ejs')  %> 
+<!-- customer logos -->
+
 
