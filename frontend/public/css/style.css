@@ -656,6 +656,7 @@ div#arrivalnotice table {
       transition: all 0.5s;
       -webkit-filter: grayscale(0%);
       filter: grayscale(0%);
+       box-shadow: rgba(4, 184, 255, 0.25) 0px 54px 55px, rgba(4, 184, 255, 0.12) 0px -12px 30px, rgba(4, 184, 255, 0.12) 0px 4px 6px, rgba(4, 184, 255, 0.17) 0px 12px 13px, rgba(4, 184, 255, 0.09) 0px -3px 5px;;
   }
 
 
